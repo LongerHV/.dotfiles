@@ -1,0 +1,7 @@
+" Copying and pasting
+vnoremap <leader>c "+y
+map <leader>c "+yy
+map <leader>v "+P
+
+" Duplicate line
+map <leader>d yyp

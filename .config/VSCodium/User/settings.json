@@ -1,0 +1,12 @@
+{
+    "workbench.colorTheme": "Solarized Dark",
+    "window.menuBarVisibility": "visible",
+    "window.restoreFullscreen": true,
+    "window.titleBarStyle": "custom",
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "/home/michal/.config/VSCodium/User/vimrc",
+    "editor.lineNumbers": "relative",
+    "extensions.autoCheckUpdates": false,
+    "git.autofetch": false,
+    "vim.leader": ","
+}
