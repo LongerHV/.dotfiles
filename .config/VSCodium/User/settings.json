@@ -8,5 +8,8 @@
     "editor.lineNumbers": "relative",
     "extensions.autoCheckUpdates": false,
     "git.autofetch": false,
-    "vim.leader": ","
+    "vim.leader": ",",
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    }
 }
