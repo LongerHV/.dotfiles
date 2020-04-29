@@ -162,5 +162,5 @@ bindkey '^ ' autosuggest-accept
 source $HOME/.config/broot/launcher/bash/br
 
 # run neofetch for extra flex
-neofetch
+# neofetch
 alias 'config=/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
