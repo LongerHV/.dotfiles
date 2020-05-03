@@ -105,5 +105,5 @@ source $HOME/.config/broot/launcher/bash/br
 neofetch
 
 # alias for managing dotfiles git bare repo
-alias 'config=/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias 'config=/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
