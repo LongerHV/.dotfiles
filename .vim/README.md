@@ -60,7 +60,7 @@ List of plugins:
   - auto completion
   - https://github.com/valloric/youcompleteme
 
-- Syntastic         
+- Syntastic
   - syntax checker
   - https://github.com/vim-syntastic/syntastic
 
@@ -70,7 +70,8 @@ List of plugins:
 
 
 To add:
-- tagbar            
+- Try coc for completion and linting
+- tagbar
   - shows ctags
   - https://github.com/majutsushi/tagbar
 - Reference with PyDoc
