@@ -55,3 +55,6 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
+[submodule ".vim/bundle/vim-css-color"]
+	path = .vim/bundle/vim-css-color
+	url = https://github.com/ap/vim-css-color
