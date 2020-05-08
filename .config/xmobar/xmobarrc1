@@ -1,0 +1,21 @@
+-- http://projects.haskell.org/xmobar/
+-- install xmobar with these flags: --flags="with_alsa" --flags="with_mpd" --flags="with_xft"  OR --flags="all_extensions"
+-- you can find weather location codes here: http://weather.noaa.gov/index.html
+
+Config { font    = "xft:Hack Nerd Font:pixelsize=14:antialias=true:hinting=true"
+       , additionalFonts = [ "xft:FontAwesome:pixelsize=14" ]
+       , bgColor = "#073642"
+       , fgColor = "#859900"
+       , position = Top
+       , lowerOnStart = True
+       , hideOnStart = False
+       , allDesktops = True
+       , persistent = True
+       , iconRoot = "$Home/.xmonad/xpm/"  -- default: "."
+       , commands = [ Run Date "%a, %b %d %Y, %H:%M:%S" "date" 10
+                    , Run UnsafeStdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = " %UnsafeStdinReader% }{ <fc=#268bd2>%date%</fc> "
+       }
