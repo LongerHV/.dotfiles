@@ -176,10 +176,10 @@ myKeys =
         --   , ("Steam", "steam")
         --   , ("Surf Browser",    "surf suckless.org")
         --   , ("Xonotic", "xonotic-glx")
-        --   ])
+        -- ])
 
-        -- , ("M-S-g", goToSelected $ mygridConfig myColorizer)
-        -- , ("M-S-b", bringSelected $ mygridConfig myColorizer)
+        , ("M-S-g", goToSelected $ mygridConfig myColorizer)
+        , ("M-S-b", bringSelected $ mygridConfig myColorizer)
 
     -- Windows navigation
         , ("M-m", windows W.focusMaster)             -- Move focus to the master window
@@ -238,7 +238,6 @@ myKeys =
 
     -- Scratchpads
         , ("M-C-<Return>", namedScratchpadAction myScratchPads "terminal")
-        , ("M-C-c", namedScratchpadAction myScratchPads "cmus")
         
     -- Open Terminal
         , ("M-<Return>", spawn myTerminal)
@@ -295,15 +294,15 @@ myWorkspaces = clickable . (map xmobarEscape)
 myManageHook :: Query (Data.Monoid.Endo WindowSet)
 myManageHook = composeAll
      [
-        className =? "Firefox"     --> doShift "<action=xdotool key super+2>www</action>"
-      , title =? "Vivaldi"         --> doShift "<action=xdotool key super+2>www</action>"
-      , title =? "irssi"           --> doShift "<action=xdotool key super+6>chat</action>"
-      , className =? "cmus"        --> doShift "<action=xdotool key super+7>media</action>"
-      , className =? "vlc"         --> doShift "<action=xdotool key super+7>media</action>"
-      , className =? "Virtualbox"  --> doFloat
-      , className =? "Gimp"        --> doFloat
-      , className =? "Gimp"        --> doShift "<action=xdotool key super+8>gfx</action>"
-      , (className =? "Firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
+      --   className =? "Firefox"     --> doShift "<action=xdotool key super+2>www</action>"
+      -- , title =? "Vivaldi"         --> doShift "<action=xdotool key super+2>www</action>"
+      -- , title =? "irssi"           --> doShift "<action=xdotool key super+6>chat</action>"
+      -- , className =? "cmus"        --> doShift "<action=xdotool key super+7>media</action>"
+      -- , className =? "vlc"         --> doShift "<action=xdotool key super+7>media</action>"
+      -- , className =? "Virtualbox"  --> doFloat
+      -- , className =? "Gimp"        --> doFloat
+      -- , className =? "Gimp"        --> doShift "<action=xdotool key super+8>gfx</action>"
+      -- , (className =? "Firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
      ] <+> namedScratchpadManageHook myScratchPads
 
 ------------------------------------------------------------------------
@@ -324,9 +323,7 @@ floats     = renamed [Replace "floats"]   $ limitWindows 20 $ simplestFloat
 ---SCRATCHPADS
 ------------------------------------------------------------------------
 
-myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
-                , NS "cmus" spawnCmus findCmus manageCmus  
-                ]
+myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm ]
 
     where
     spawnTerm  = myTerminal ++  " -n scratchpad"
@@ -337,11 +334,4 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
                  w = 0.9
                  t = 0.95 -h
                  l = 0.95 -w
-    spawnCmus  = myTerminal ++  " -n cmus 'cmus'"
-    findCmus   = resource =? "cmus"
-    manageCmus = customFloating $ W.RationalRect l t w h
-                 where
-                 h = 0.9
-                 w = 0.9
-                 t = 0.95 -h
-                 l = 0.95 -w
+
