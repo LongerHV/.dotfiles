@@ -113,6 +113,7 @@ myStartupHook = do
           spawnOnce "nitrogen --restore &" 
           spawnOnce "compton --config $HOME/.config/compton/compton.conf &" 
           spawnOnce "compton &"
+          spawnOnce "lxsession &"
           setWMName "LG3D"
 
 ------------------------------------------------------------------------
