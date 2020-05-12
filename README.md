@@ -6,9 +6,11 @@
 
 - alacritty configuration
 
-- vim configuration
+- vim configuration (with plugons as submodules)
 
-- zsh configuration
+- zsh configuration (with oh-my-zsh and plugins as submodules)
+
+- Hack Nerd Font
 
 All programs configured to use solarized dark theme
 
