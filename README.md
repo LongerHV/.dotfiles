@@ -1,19 +1,48 @@
 # dotfiles
 
-Execute following commands to clone and initialize:
+## Content:
 
-  git clone --bare https://gitlab.com/LongerHV/.dotfiles $HOME/.dotfiles
+- qtile contiguration (dual monitor)
 
-  git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout -f
+- alacritty configuration
 
-  config submodule update --init --recursive
+- vim configuration
 
-  cd $HOME/.vim/bundle/youcompleteme
+- zsh configuration
 
-  python3 install.py --all
+All programs configured to use solarized dark theme
 
-In order to update submodules do following:
+## Dependencies:
 
+- zsh
+
+- vim
+
+- qtile
+
+- alacritty
+
+- dmenu
+
+- compton
+
+- lxsession
+
+- nitrogen
+
+## Clone and initialize:
+
+git clone --bare https://gitlab.com/LongerHV/.dotfiles $HOME/.dotfiles
+
+git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout -f
+
+config submodule update --init --recursive
+
+cd $HOME/.vim/bundle/youcompleteme
+
+python3 install.py --all
+
+## Update submodules:
 config submodule foreach git pull origin master
 
 config status
@@ -23,4 +52,3 @@ config add <module_path> (for each updated subomdule)
 config commit -m "message"
 
 config push origin master
-
