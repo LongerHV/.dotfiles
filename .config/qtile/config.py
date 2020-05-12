@@ -224,7 +224,7 @@ group_names = [(" WWW", {'layout': 'max'}),
                (" SYS", {'layout': 'monadtall'}),
                (" VM", {'layout': 'monadtall'}),
                (" MUS", {'layout': 'max'}),
-               ("ﳜ VID", {'layout': 'max'})]
+               (" VID", {'layout': 'max'})]
 
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
 
@@ -303,8 +303,8 @@ def init_widgets_list():
                         rounded=False,
                         highlight_method="block",
                         this_current_screen_border=myColors['green'],
-                        this_screen_border=myColors['cyan'],
-                        other_current_screen_border=myColors['blue'],
+                        this_screen_border=myColors['blue'],
+                        other_current_screen_border=myColors['cyan'],
                         other_screen_border=myColors['cyan'],
                         foreground=myColors['white'],
                         background=myColors['black']
