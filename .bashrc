@@ -17,7 +17,3 @@ fi
 # Put your fun stuff here.
 
 PATH=$PATH:~/.local/bin
-
-source /home/michal/.config/broot/launcher/bash/br
-
-neofetch
