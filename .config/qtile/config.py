@@ -1,12 +1,7 @@
 # -*- coding: utf-8 -*-
-#  ____ _____
-# |  _ \_   _|  Derek Taylor (DistroTube)
-# | | | || |    http://www.youtube.com/c/DistroTube
-# | |_| || |    http://www.gitlab.com/dwt1/
-# |____/ |_|
-#
 # A customized config.py for Qtile window manager (http://www.qtile.org)
-# Modified by Derek Taylor (http://www.gitlab.com/dwt1/ )
+# Modified by LongerHV (http://www.gitlab.com/LongerHV)
+# Based on Derek Taylor configuration (http://www.gitlab.com/dwt1)
 #
 # The following comments are the copyright and licensing information from the default
 # qtile config. Copyright (c) 2010 Aldo Cortesi, 2010, 2014 dequis, 2012 Randall Ma,
@@ -220,11 +215,11 @@ keys = [
 
 ##### GROUPS #####
 group_names = [(" WWW", {'layout': 'max'}),
-               ("{} DEV", {'layout': 'monadtall'}),
+               (" DEV", {'layout': 'monadtall'}),
                (" SYS", {'layout': 'monadtall'}),
-               (" VM", {'layout': 'monadtall'}),
-               (" MUS", {'layout': 'max'}),
-               (" VID", {'layout': 'max'})]
+               (" VM", {'layout': 'monadtall'}),
+               (" MUS", {'layout': 'max'}),
+               (" VID", {'layout': 'max'})]
 
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
 
@@ -318,7 +313,7 @@ def init_widgets_list():
         ),
         widget.Sep(
             linewidth=0,
-            padding=40,
+            padding=8,
             foreground=colors[2],
             background=colors[0]
         ),
@@ -386,6 +381,7 @@ def init_widgets_list():
         widget.Clock(
             foreground=colors[2],
             background=colors[5],
+            padding=5,
             format="%A, %d %B [ %H:%M ]"
         ),
         widget.Sep(
