@@ -1,5 +1,7 @@
 # dotfiles
 
+![qtile screen](/Obrazy/qtile_shot.png)
+
 ## Content:
 
 - qtile contiguration (dual monitor)
