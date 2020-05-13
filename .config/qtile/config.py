@@ -206,11 +206,11 @@ keys = [
         lazy.spawn("code"),
         desc='VSCode'
     ),
-    Key(
-        [], "3270_PrintScreen",
-        lazy.spawn("spectacle"),
-        desc="Print Screen"
-    ),
+    #  Key(
+    #      [], "3270_PrintScreen",
+    #      lazy.spawn("spectacle"),
+    #      desc="Print Screen"
+    #  ),
     #  Key(
     #      [mod, "mod1"], "v",
     #      lazy.spawn(myTerm+" -e vim"),
