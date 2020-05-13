@@ -206,6 +206,11 @@ keys = [
         lazy.spawn("code"),
         desc='VSCode'
     ),
+    Key(
+        [], "3270_PrintScreen",
+        lazy.spawn("spectacle"),
+        desc="Print Screen"
+    ),
     #  Key(
     #      [mod, "mod1"], "v",
     #      lazy.spawn(myTerm+" -e vim"),
@@ -233,7 +238,7 @@ for i, (name, kwargs) in enumerate(group_names, 1):
 layout_theme = {"border_width": 3,
                 "margin": 6,
                 "border_focus": myColors['green'],
-                "border_normal": myColors['white']
+                "border_normal": myColors['black']
                 }
 
 ##### THE LAYOUTS #####
@@ -386,13 +391,18 @@ def init_widgets_list():
         ),
         widget.Sep(
             linewidth=0,
-            padding=10,
+            padding=5,
             foreground=colors[0],
             background=colors[5]
         ),
         widget.Systray(
-            background=colors[0],
+            background=myColors['black'],
             padding=5
+        ),
+        widget.Sep(
+            linewidth=0,
+            padding=5,
+            background=myColors['black']
         ),
     ]
     return widgets_list
