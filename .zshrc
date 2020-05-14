@@ -100,6 +100,7 @@ bindkey '^ ' autosuggest-accept
 
 # zsh plugin configuration
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=13,regular,underline"
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # add broot command
 # source $HOME/.config/broot/launcher/bash/br
