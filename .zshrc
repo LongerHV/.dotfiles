@@ -106,7 +106,7 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 # source $HOME/.config/broot/launcher/bash/br
 
 # run neofetch for extra flex
-neofetch
+neofetch --gtk2 off --gtk3 off
 
 # alias for managing dotfiles git bare repo
 alias 'config=/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
