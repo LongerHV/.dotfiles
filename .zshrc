@@ -98,8 +98,11 @@ bindkey '^e' edit-command-line
 # zsh plugin bindkeys
 bindkey '^ ' autosuggest-accept
 
+# zsh plugin configuration
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=13,regular,underline"
+
 # add broot command
-source $HOME/.config/broot/launcher/bash/br
+# source $HOME/.config/broot/launcher/bash/br
 
 # run neofetch for extra flex
 neofetch
