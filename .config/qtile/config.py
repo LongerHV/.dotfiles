@@ -206,6 +206,11 @@ keys = [
         lazy.spawn("code"),
         desc='VSCode'
     ),
+    Key(
+        [mod, "mod1"], "g",
+        lazy.spawn("steam"),
+        desc='Steam'
+    ),
     #  Key(
     #      [], "3270_PrintScreen",
     #      lazy.spawn("spectacle"),
@@ -224,7 +229,8 @@ group_names = [(" WWW", {'layout': 'max'}),
                (" SYS", {'layout': 'monadtall'}),
                (" VM", {'layout': 'monadtall'}),
                (" MUS", {'layout': 'max'}),
-               (" VID", {'layout': 'max'})]
+               (" VID", {'layout': 'max'}),
+               (" FUN", {'layout': 'max'})]
 
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
 
@@ -407,6 +413,55 @@ def init_widgets_list():
     ]
     return widgets_list
 
+
+def init_widgets_list2():
+    widgets_list = [
+        widget.Sep(
+            linewidth=0,
+            padding=6,
+            foreground=colors[2],
+            background=colors[0]
+        ),
+        widget.AGroupBox(font=myFont,
+                        fontsize=20,
+                        borderwidth=0,
+                        foreground=myColors['white'],
+                        background=myColors['green']
+                        ),
+        widget.WindowName(
+            fontsize=16,
+            foreground=myColors['green'],
+            background=myColors['black'],
+            padding=0
+        ),
+        widget.CurrentLayoutIcon(
+            custom_icon_paths=[os.path.expanduser(
+                "$HOME/.config/qtile/icons")],
+            foreground=colors[0],
+            background=colors[4],
+            padding=0,
+            scale=0.7
+        ),
+        widget.CurrentLayout(
+            foreground=colors[2],
+            background=colors[4],
+            padding=5
+        ),
+        widget.Clock(
+            foreground=colors[2],
+            background=colors[5],
+            padding=5,
+            format="%A, %d %B [ %H:%M ]"
+        ),
+        widget.Sep(
+            linewidth=0,
+            padding=5,
+            foreground=colors[0],
+            background=colors[5]
+        ),
+    ]
+    return widgets_list
+
 # SCREENS ##### (TRIPLE MONITOR SETUP)
 
 
@@ -417,7 +472,7 @@ def init_widgets_screen1():
 
 
 def init_widgets_screen2():
-    widgets_screen2 = init_widgets_list()
+    widgets_screen2 = init_widgets_list2()
     # Monitor 2 will display all widgets in widgets_list
     return widgets_screen2
 
