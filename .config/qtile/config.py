@@ -423,11 +423,17 @@ def init_widgets_list2():
             background=colors[0]
         ),
         widget.AGroupBox(font=myFont,
-                        fontsize=20,
-                        borderwidth=0,
-                        foreground=myColors['white'],
-                        background=myColors['green']
+                         fontsize=20,
+                         borderwidth=0,
+                         foreground=myColors['white'],
+                         background=myColors['green']
                         ),
+        widget.Sep(
+            linewidth=0,
+            padding=12,
+            foreground=colors[2],
+            background=colors[0]
+        ),
         widget.WindowName(
             fontsize=16,
             foreground=myColors['green'],
