@@ -19,6 +19,7 @@ run-or-restart() {
 run lxsession
 run nitrogen --restore
 run picom
+run redshift-gtk -t 5000:3500 -b 0.8:0.8
 # run light-locker					# Screen locker
 # run xfce4-clipman					# Clipboard management
 
