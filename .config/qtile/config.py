@@ -421,6 +421,7 @@ floating_layout = layout.Floating(float_rules=[
     {'wmclass': 'maketag'},  # gitk
     {'wname': 'branchdialog'},  # gitk
     {'wname': 'pinentry'},  # GPG key password entry
+    {'wname': 'Connect to SPICE'},
     {'wmclass': 'ssh-askpass'},  # ssh-askpass
     {'wmclass': 'Steam'},
     {'wmclass': 'lxpolkit'}
