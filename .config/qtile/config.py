@@ -161,6 +161,9 @@ keys = [
     Key([MOD, ALT], "g",
         lazy.spawn("steam"),
         desc='Steam'),
+    Key([MOD, ALT], "Return",
+        lazy.group["ScratchPad"].dropdown_toggle(MYTERM),
+        desc='Dropdown terminal'),
     #  Key(
     #      [], "3270_PrintScreen",
     #      lazy.spawn("spectacle"),
@@ -177,7 +180,7 @@ keys = [
 group_names = [(" WWW", {'layout': 'max'}),
                (" DEV", {'layout': 'monadtall'}),
                (" SYS", {'layout': 'monadtall'}),
-               (" VM", {'layout': 'monadtall'}),
+               (" VM", {'layout': 'max'}),
                (" MUS", {'layout': 'max'}),
                (" VID", {'layout': 'max'}),
                (" FUN", {'layout': 'max'})]
@@ -419,7 +422,8 @@ floating_layout = layout.Floating(float_rules=[
     {'wname': 'branchdialog'},  # gitk
     {'wname': 'pinentry'},  # GPG key password entry
     {'wmclass': 'ssh-askpass'},  # ssh-askpass
-    {'wmclass': 'Steam'}
+    {'wmclass': 'Steam'},
+    {'wmclass': 'lxsession'}
 ])
 auto_fullscreen = True
 focus_on_window_activation = "smart"
