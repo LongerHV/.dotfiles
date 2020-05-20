@@ -256,6 +256,15 @@ widgets_list1 = [
         background=BLACK,
         padding=0
     ),
+    widget.Systray(
+        background=BLACK,
+        padding=5
+    ),
+    widget.Sep(
+        linewidth=0,
+        padding=5,
+        background=BLACK
+    ),
     widget.TextBox(
         text=" 🌡",
         padding=2,
@@ -321,16 +330,7 @@ widgets_list1 = [
         linewidth=0,
         padding=5,
         background=GREEN
-    ),
-    widget.Systray(
-        background=BLACK,
-        padding=5
-    ),
-    widget.Sep(
-        linewidth=0,
-        padding=5,
-        background=BLACK
-    ),
+    )
 ]
 
 
@@ -376,7 +376,7 @@ widgets_list2 = [
         linewidth=0,
         padding=5,
         background=GREEN
-    ),
+    )
 ]
 
 
