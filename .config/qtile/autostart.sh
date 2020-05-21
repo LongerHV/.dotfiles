@@ -16,10 +16,9 @@ run-or-restart() {
 	fi
 }
 
-run nitrogen --restore
-run picom
-run redshift-gtk -t 5000:3500 -b 0.8:0.8
-run lxpolkit
-# run light-locker					# Screen locker
-# run xfce4-clipman					# Clipboard management
+run nitrogen --restore                      # wallpaper
+run picom                                   # compositor
+run redshift-gtk -t 5000:3500 -b 0.8:0.8    # redshift
+run lxpolkit                                # policy kit
+run cadence                                 # audio settings (jack etc.)
 
