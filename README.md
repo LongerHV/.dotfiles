@@ -30,7 +30,7 @@ All programs configured to use solarized dark theme
 
 - picon
 
-- lxsession
+- lxsession-gtk3
 
 - nitrogen
 
