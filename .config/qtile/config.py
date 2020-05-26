@@ -24,6 +24,7 @@ from typing import List  # noqa: F401
 from libqtile.config import Key, Screen, Group, Drag, Click
 from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook, extension
+from mylib import BGroupBox
 
 ##### DEFINING SOME VARIABLES #####
 MOD = "mod4"  # Sets mod key to SUPER/WINDOWS
@@ -161,6 +162,9 @@ keys = [
     Key([MOD, ALT], "g",
         lazy.spawn("steam"),
         desc='Steam'),
+    Key([MOD, ALT], "t",
+        lazy.spawn("teams"),
+        desc='Teams'),
     Key([MOD, ALT], "Return",
         lazy.group["ScratchPad"].dropdown_toggle(MYTERM),
         desc='Dropdown terminal'),
@@ -183,7 +187,8 @@ group_names = [(" WWW", {'layout': 'max'}),
                (" VM", {'layout': 'max'}),
                (" MUS", {'layout': 'max'}),
                (" VID", {'layout': 'max'}),
-               (" FUN", {'layout': 'max'})]
+               (" FUN", {'layout': 'max'}),
+               (" MSG", {'layout': 'max'})]
 
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
 
@@ -239,9 +244,9 @@ widgets_list1 = [
         rounded=False,
         highlight_method="block",
         this_current_screen_border=GREEN,
-        this_screen_border=BLUE,
-        other_current_screen_border=CYAN,
-        other_screen_border=CYAN,
+        this_screen_border=CYAN,
+        other_current_screen_border=BLACK,
+        other_screen_border=BLACK,
         foreground=WHITE,
         background=BLACK
     ),
@@ -335,12 +340,20 @@ widgets_list1 = [
 
 
 widgets_list2 = [
-    widget.AGroupBox(
+    #  widget.AGroupBox(
+    #      font=MYFONT,
+    #      fontsize=20,
+    #      borderwidth=0,
+    #      foreground=WHITE,
+    #      background=GREEN
+    #  ),
+    BGroupBox(
         font=MYFONT,
         fontsize=20,
         borderwidth=0,
         foreground=WHITE,
-        background=GREEN
+        this_current_screen_border=GREEN,
+        this_screen_border=CYAN,
     ),
     widget.Sep(
         linewidth=0,
