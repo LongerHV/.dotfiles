@@ -40,6 +40,8 @@ git clone --bare https://gitlab.com/LongerHV/.dotfiles $HOME/.dotfiles
 
 git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout -f
 
+source $HOME/.zshrc
+
 config submodule update --init --recursive
 
 cd $HOME/.vim/bundle/youcompleteme
