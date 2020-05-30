@@ -29,7 +29,7 @@ from mylib import BGroupBox
 ##### DEFINING SOME VARIABLES #####
 MOD = "mod4"  # Sets mod key to SUPER/WINDOWS
 ALT = "mod1"
-MYTERM = "lxterminal"
+MYTERM = "alacritty"
 MYFONT = "Hack Nerd Font"
 MYCOLORS = {
     'black':   '#073642',
@@ -165,6 +165,9 @@ keys = [
     Key([MOD, ALT], "t",
         lazy.spawn("teams"),
         desc='Teams'),
+    Key([MOD, ALT], "f",
+        lazy.spawn("pcmanfm"),
+        desc='File manager'),
     Key([MOD, ALT], "Return",
         lazy.group["ScratchPad"].dropdown_toggle(MYTERM),
         desc='Dropdown terminal'),
