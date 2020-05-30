@@ -28,7 +28,7 @@ All programs configured to use solarized dark theme
 
 - dmenu
 
-- picon
+- picom
 
 - lxsession-gtk3
 
