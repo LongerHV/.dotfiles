@@ -29,7 +29,7 @@ from mylib import BGroupBox
 ##### DEFINING SOME VARIABLES #####
 MOD = "mod4"  # Sets mod key to SUPER/WINDOWS
 ALT = "mod1"
-MYTERM = "alacritty"
+MYTERM = "lxterminal"
 MYFONT = "Hack Nerd Font"
 MYCOLORS = {
     'black':   '#073642',
@@ -271,7 +271,7 @@ widgets_list1 = [
         background=BLACK
     ),
     widget.TextBox(
-        text=" 🌡",
+        text=" ",
         padding=2,
         foreground=WHITE,
         background=GREEN,
