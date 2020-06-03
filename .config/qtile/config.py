@@ -281,6 +281,7 @@ widgets_list1 = [
         fontsize=16
     ),
     widget.ThermalSensor(
+        tag_sensor="Package id 0",
         foreground=WHITE,
         background=GREEN,
         padding=5
