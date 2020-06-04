@@ -21,7 +21,7 @@
 import os
 import subprocess
 from typing import List  # noqa: F401
-from libqtile.config import Key, Screen, Group, Drag, Click
+from libqtile.config import Key, Screen, Group, Drag, Click, ScratchPad, DropDown
 from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook, extension
 from mylib import BGroupBox
@@ -168,9 +168,12 @@ keys = [
     Key([MOD, ALT], "f",
         lazy.spawn("pcmanfm"),
         desc='File manager'),
-    Key([MOD, ALT], "Return",
-        lazy.group["ScratchPad"].dropdown_toggle(MYTERM),
+    Key([], "F12",
+        lazy.group["scratchpad"].dropdown_toggle('term'),
         desc='Dropdown terminal'),
+    #  Key([MOD, ALT], "Return",
+    #      lazy.group["ScratchPad"].dropdown_toggle(MYTERM),
+    #      desc='Dropdown terminal'),
     #  Key(
     #      [], "3270_PrintScreen",
     #      lazy.spawn("spectacle"),
@@ -184,16 +187,21 @@ keys = [
 ]
 
 ##### GROUPS #####
-group_names = [(" WWW", {'layout': 'max'}),
-               (" DEV", {'layout': 'monadtall'}),
-               (" SYS", {'layout': 'monadtall'}),
-               (" VM", {'layout': 'max'}),
-               (" MUS", {'layout': 'max'}),
-               (" VID", {'layout': 'max'}),
-               (" FUN", {'layout': 'max'}),
-               (" MSG", {'layout': 'max'})]
+group_names = [
+    (" WWW", {'layout': 'max'}),
+    (" DEV", {'layout': 'max'}),
+    (" SYS", {'layout': 'monadtall'}),
+    (" VRT", {'layout': 'max'}),
+    (" MUS", {'layout': 'max'}),
+    (" VID", {'layout': 'max'}),
+    (" FUN", {'layout': 'max'}),
+    (" MSG", {'layout': 'max'})
+]
 
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
+drop_term = DropDown('term', MYTERM, width=0.9, height=0.9,
+                   x=0.05, y=0.05)
+groups.append(ScratchPad('scratchpad', [drop_term]))
 
 for i, (name, kwargs) in enumerate(group_names, 1):
     # Switch to another group
