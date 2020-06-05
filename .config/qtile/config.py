@@ -200,7 +200,7 @@ group_names = [
 
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
 drop_term = DropDown('term', MYTERM, width=0.9, height=0.9,
-                   x=0.05, y=0.05)
+                   x=0.05, y=0.05, opacity=1.0)
 groups.append(ScratchPad('scratchpad', [drop_term]))
 
 for i, (name, kwargs) in enumerate(group_names, 1):
