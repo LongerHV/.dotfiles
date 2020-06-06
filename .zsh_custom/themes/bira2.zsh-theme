@@ -21,7 +21,11 @@ PROMPT="╭─${user_host}${current_dir}${rvm_ruby}${git_branch}${venv_prompt}${
 RPROMPT="%B${return_code}%b"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
-ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%} ✗%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%} ✔%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[cyan] %}§%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%} ✚%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[yellow]%}›%{$reset_color%}"
 
 ZSH_THEME_RUBY_PROMPT_PREFIX="%{$fg[red]%}‹"
 ZSH_THEME_RUBY_PROMPT_SUFFIX="› %{$reset_color%}"
@@ -30,3 +34,7 @@ ZSH_THEME_VIRTUAL_ENV_PROMPT_PREFIX="%{$fg[green]%}‹"
 ZSH_THEME_VIRTUAL_ENV_PROMPT_SUFFIX="› %{$reset_color%}"
 ZSH_THEME_VIRTUALENV_PREFIX=$ZSH_THEME_VIRTUAL_ENV_PROMPT_PREFIX
 ZSH_THEME_VIRTUALENV_SUFFIX=$ZSH_THEME_VIRTUAL_ENV_PROMPT_SUFFIX
+
+ZSH_THEME_SVN_PROMPT_PREFIX="%{$fg[cyan]%}‹"
+ZSH_THEME_SVN_PROMPT_SUFFIX="› %{$reset_color%}"
+
