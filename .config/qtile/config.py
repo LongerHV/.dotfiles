@@ -76,6 +76,9 @@ keys = [
     Key([MOD, "shift"], "q",
         lazy.shutdown(),
         desc='Shutdown Qtile'),
+    Key([MOD, "shift"], "l",
+        lazy.spawn("light-locker-command -l"),
+        desc='Lock screen'),
     # Switch focus to specific monitor (out of three)
     Key([MOD], "w",
         lazy.to_screen(0),
@@ -174,11 +177,12 @@ keys = [
     #  Key([MOD, ALT], "Return",
     #      lazy.group["ScratchPad"].dropdown_toggle(MYTERM),
     #      desc='Dropdown terminal'),
-    #  Key(
-    #      [], "3270_PrintScreen",
-    #      lazy.spawn("spectacle"),
-    #      desc="Print Screen"
-    #  ),
+    Key(
+        # [], "3270_PrintScreen",
+        [MOD], "Insert",
+        lazy.spawn("screengrab"),
+        desc="Print Screen"
+    ),
     #  Key(
     #      [MOD, ALT], "v",
     #      lazy.spawn(MYTERM+" -e vim"),
