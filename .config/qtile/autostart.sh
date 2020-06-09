@@ -20,6 +20,6 @@ run nitrogen --restore                      # wallpaper
 run picom                                   # compositor
 run redshift-gtk -t 5000:3500 -b 0.8:0.8    # redshift
 run lxpolkit                                # policy kit
-run jack_control start
-# run cadence                                 # audio settings (jack etc.)
+run jack_control start                      # jack2 audio server
+run light-locker                            # screen locker
 
