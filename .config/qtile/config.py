@@ -308,7 +308,7 @@ widgets_list1 = [
     ),
     widget.Pacman(
         execute=' '.join([MYTERM, '-e', 'sudo', 'pacman', '-Syu']),
-        update_interval=300,
+        update_interval=18000,
         foreground=WHITE,
         background=CYAN,
     ),
