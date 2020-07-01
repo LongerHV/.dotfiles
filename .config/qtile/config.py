@@ -169,7 +169,7 @@ keys = [
         lazy.spawn("teams"),
         desc='Teams'),
     Key([MOD, ALT], "f",
-        lazy.spawn("pcmanfm"),
+        lazy.spawn("thunar"),
         desc='File manager'),
     Key([], "F12",
         lazy.group["scratchpad"].dropdown_toggle('term'),
