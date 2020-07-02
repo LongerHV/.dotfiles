@@ -235,7 +235,7 @@ layouts = [
     #  layout.Stack(num_stacks=2),
     layout.MonadTall(**layout_theme),
     layout.Max(**layout_theme),
-    layout.Floating(**layout_theme)
+    #  layout.Floating(**layout_theme)
 ]
 
 ##### DEFAULT WIDGET SETTINGS #####
