@@ -59,9 +59,34 @@ GUI applications use materia-dark theme
 
 | Keybinding | Action |
 | :--- | :--- |
-| SUPER + RETURN | open terminal |
-| SUPER + SHIFT + RETURN | open dmenu |
-| SUPER + TAB | open dmenu |
+| `SUPER + RETURN` | open terminal |
+| `SUPER + SHIFT + RETURN` | open dmenu |
+| `SUPER + TAB` | open dmenu |
+| `SUPER + SHIFT + c` | kill active window |
+| `SUPER + SHIFT + q` | quit qtile |
+| `SUPER + SHIFT + r` | restart qtile |
+| `SUPER + SHIFT + l` | lock screen |
+| `SUPER +  w` | focus on monitor 1 |
+| `SUPER +  e` | focus on monitor 2 |
+| `SUPER +  ,` | focus on prev monitor |
+| `SUPER +  .` | focus on next monitor |
+| `SUPER +  j` | focus down in stack |
+| `SUPER +  k` | focus up in stack |
+| `SUPER +  h` | grow master size |
+| `SUPER +  l` | shrink master size |
+| `SUPER +  n` | normalize ratios |
+| `SUPER +  m` | toggle min/max size |
+| `SUPER + SHIFT +  SPACE` | swap panes |
+| `SUPER + ALT + b` | open Brave |
+| `SUPER + ALT + m` | open Spotify |
+| `SUPER + ALT + s` | open Spicy |
+| `SUPER + ALT + v` | open Virt-manager |
+| `SUPER + ALT + h` | open VMWare Horizon |
+| `SUPER + ALT + c` | open VSCode |
+| `SUPER + ALT + g` | open Steam |
+| `SUPER + ALT + t` | open Teams |
+| `SUPER + ALT + f` | open Thunar |
+| `F12` | open dropdown terminal |
 
 ## Clone and initialize:
 

@@ -103,10 +103,10 @@ keys = [
     #      desc='Move down a section in treetab'
     #      ),
     # Window controls
-    Key([MOD], "k",
+    Key([MOD], "j",
         lazy.layout.down(),
         desc='Move focus down in current stack pane'),
-    Key([MOD], "j",
+    Key([MOD], "k",
         lazy.layout.up(),
         desc='Move focus up in current stack pane'),
     Key([MOD, "shift"], "k",
@@ -137,12 +137,12 @@ keys = [
         lazy.layout.rotate(),
         lazy.layout.flip(),
         desc='Switch which side main pane occupies (XmonadTall)'),
-    Key([MOD], "space",
-        lazy.layout.next(),
-        desc='Switch window focus to other pane(s) of stack'),
-    Key([MOD, "control"], "Return",
-        lazy.layout.toggle_split(),
-        desc='Toggle between split and unsplit sides of stack'),
+    #  Key([MOD], "space",
+    #      lazy.layout.next(),
+    #      desc='Switch window focus to other pane(s) of stack'),
+    #  Key([MOD, "control"], "Return",
+    #      lazy.layout.toggle_split(),
+    #      desc='Toggle between split and unsplit sides of stack'),
     # My applications launched with SUPER + ALT + KEY
     Key([MOD, ALT], "b",
         lazy.spawn("brave"),
@@ -177,12 +177,12 @@ keys = [
     #  Key([MOD, ALT], "Return",
     #      lazy.group["ScratchPad"].dropdown_toggle(MYTERM),
     #      desc='Dropdown terminal'),
-    Key(
-        # [], "3270_PrintScreen",
-        [MOD], "Insert",
-        lazy.spawn("screengrab"),
-        desc="Print Screen"
-    ),
+    #  Key(
+        #  [], "3270_PrintScreen",
+        #  [MOD], "Insert",
+        #  lazy.spawn("screengrab"),
+        #  desc="Print Screen"
+    #  ),
     #  Key(
     #      [MOD, ALT], "v",
     #      lazy.spawn(MYTERM+" -e vim"),
