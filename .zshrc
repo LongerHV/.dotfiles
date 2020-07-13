@@ -105,7 +105,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=13,regular,underline"
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # add broot command
-# source $HOME/.config/broot/launcher/bash/br
+source $HOME/.config/broot/launcher/bash/br
+alias br='br -h'
 
 # run neofetch for extra flex
 neofetch --gtk2 off --gtk3 off
@@ -115,3 +116,10 @@ alias 'config=/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # fix tldr
 alias tldr='LANG=en_US.utf8 tldr'
+
+# aliases for config editing
+alias cq='$EDITOR $HOME/.config/qtile/config.py'
+alias ca='$EDITOR $HOME/.config/alacritty/alacritty.yml'
+alias cv='$EDITOR $HOME/.vim/vimrc'
+alias cz='$EDITOR $HOME/.zshrc'
+
