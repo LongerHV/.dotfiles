@@ -1,4 +1,4 @@
-#! /bin/bash 
+#! /bin/zsh
 
 # If the process doesn't exists, start one in background
 run() {

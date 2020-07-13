@@ -223,7 +223,6 @@ layout_theme = {"border_width": 3,
 
 ##### THE LAYOUTS #####
 layouts = [
-    # layout.MonadWide(**layout_theme),
     # layout.Bsp(**layout_theme),
     # layout.Stack(stacks=2, **layout_theme),
     # layout.Columns(**layout_theme),
@@ -234,6 +233,7 @@ layouts = [
     #  layout.Tile(shift_windows=True, **layout_theme),
     #  layout.Stack(num_stacks=2),
     layout.MonadTall(**layout_theme),
+    layout.MonadWide(**layout_theme),
     layout.Max(**layout_theme),
     #  layout.Floating(**layout_theme)
 ]

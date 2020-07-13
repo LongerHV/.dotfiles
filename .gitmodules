@@ -58,3 +58,6 @@
 [submodule ".vim/bundle/vim-css-color"]
 	path = .vim/bundle/vim-css-color
 	url = https://github.com/ap/vim-css-color
+[submodule ".zsh_custom/plugins/zsh-you-should-use"]
+	path = .zsh_custom/plugins/zsh-you-should-use
+	url = https://github.com/MichaelAquilina/zsh-you-should-use
