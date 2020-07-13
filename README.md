@@ -41,9 +41,9 @@ GUI applications use materia-dark theme
 
 - LightDM
 
-- Lightlocker
+- Light-locker
 
-# Other used programs
+### Other used programs:
 
 - Brave browser
 
