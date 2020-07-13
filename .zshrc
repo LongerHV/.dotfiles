@@ -41,37 +41,28 @@ alias ca='$EDITOR $HOME/.config/alacritty/alacritty.yml'
 alias cv='$EDITOR $HOME/.vim/vimrc'
 alias cz='$EDITOR $HOME/.zshrc'
 
-SPACESHIP_PROMPT_ADD_NEWLINE=true
-SPACESHIP_PROMPT_SEPARATE_LINE=true
-SPACESHIP_CHAR_SYMBOL=❯
-SPACESHIP_CHAR_SUFFIX=" "
-SPACESHIP_HG_SHOW=false
-SPACESHIP_PACKAGE_SHOW=false
-SPACESHIP_NODE_SHOW=false
-SPACESHIP_RUBY_SHOW=false
-SPACESHIP_ELM_SHOW=false
-SPACESHIP_ELIXIR_SHOW=false
-SPACESHIP_XCODE_SHOW_LOCAL=false
-SPACESHIP_SWIFT_SHOW_LOCAL=false
-SPACESHIP_GOLANG_SHOW=false
-SPACESHIP_PHP_SHOW=false
-SPACESHIP_RUST_SHOW=false
-SPACESHIP_JULIA_SHOW=false
-SPACESHIP_DOCKER_SHOW=false
-SPACESHIP_DOCKER_CONTEXT_SHOW=false
-SPACESHIP_AWS_SHOW=false
-SPACESHIP_CONDA_SHOW=false
-SPACESHIP_VENV_SHOW=false
-SPACESHIP_PYENV_SHOW=false
-SPACESHIP_DOTNET_SHOW=false
-SPACESHIP_EMBER_SHOW=false
-SPACESHIP_KUBECONTEXT_SHOW=false
-SPACESHIP_TERRAFORM_SHOW=false
-SPACESHIP_TERRAFORM_SHOW=false
-SPACESHIP_VI_MODE_SHOW=false
-SPACESHIP_JOBS_SHOW=false
-
 # Spaceship Prompt
+SPACESHIP_USER_SHOW=always
+SPACESHIP_USER_SUFFIX=""
+SPACESHIP_USER_COLOR="green"
+SPACESHIP_HOST_SHOW=always
+SPACESHIP_HOST_PREFIX="%F{green}@"
+SPACESHIP_HOST_COLOR="green"
+SPACESHIP_HOST_SHOW=always
+SPACESHIP_DIR_PREFIX=""
+SPACESHIP_CHAR_SYMBOL=$
+SPACESHIP_CHAR_SUFFIX=" "
+
+SPACESHIP_PROMPT_ORDER=(
+  user          # Username section
+  host          # Hostname section
+  dir           # Current directory section
+  git           # Git section (git_branch + git_status)
+  line_sep      # Line break
+  exit_code     # Exit code section
+  char          # Prompt character
+)
+
 autoload -U promptinit; promptinit
 prompt spaceship
 
