@@ -55,6 +55,14 @@ GUI applications use materia-dark theme
 
 - kvantum
 
+## Qtile keybindings
+
+| Keybinding | Action |
+| :--- | :--- |
+| SUPER + RETURN | open terminal |
+| SUPER + SHIFT + RETURN | open dmenu |
+| SUPER + TAB | open dmenu |
+
 ## Clone and initialize:
 
 git clone --bare https://gitlab.com/LongerHV/.dotfiles $HOME/.dotfiles
