@@ -61,7 +61,7 @@ GUI applications use materia-dark theme
 | :--- | :--- |
 | `SUPER + RETURN` | open terminal |
 | `SUPER + SHIFT + RETURN` | open dmenu |
-| `SUPER + TAB` | open dmenu |
+| `SUPER + TAB` | Toggle layouts |
 | `SUPER + SHIFT + c` | kill active window |
 | `SUPER + SHIFT + q` | quit qtile |
 | `SUPER + SHIFT + r` | restart qtile |
