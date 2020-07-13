@@ -455,7 +455,8 @@ floating_layout = layout.Floating(float_rules=[
     {'wname': 'Steam'},
     {'wmclass': 'ssh-askpass'},  # ssh-askpass
     {'wmclass': 'Steam'},
-    {'wmclass': 'lxpolkit'}
+    {'wmclass': 'lxpolkit'},
+    {'wmclass': 'redshift-gtk'}
 ], **layout_theme)
 
 auto_fullscreen = True
