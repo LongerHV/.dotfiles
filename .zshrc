@@ -19,8 +19,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=13,regular,underline"
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # source plugins
-source $HOME/.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOME/.zsh_custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source $HOME/.zsh_custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # add broot command
 source $HOME/.config/broot/launcher/bash/br
