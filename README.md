@@ -10,15 +10,18 @@
 
 - vim configuration (with plugons as submodules)
 
-- zsh configuration (with oh-my-zsh and plugins as submodules)
+- zsh configuration (with plugins as submodules)
 
 - Hack Nerd Font
 
-All programs configured to use solarized dark theme
+Qtile and Alacritty configured to use solarized dark theme,
+GUI applications use materia-dark theme
 
 ## Dependencies:
 
 - zsh
+
+- spaceship zsh prompt
 
 - vim
 
@@ -30,9 +33,27 @@ All programs configured to use solarized dark theme
 
 - picom
 
-- lxsession-gtk3
+- lxsession (for polkit)
 
 - nitrogen
+
+- thunar
+
+- LightDM
+
+- Lightlocker
+
+# Other used programs
+
+- Brave browser
+
+- Jack2
+
+- redshift-gtk
+
+- lxappearance
+
+- kvantum
 
 ## Clone and initialize:
 
@@ -53,7 +74,7 @@ config submodule foreach git pull origin master
 
 config status
 
-config add <module_path> (for each updated subomdule)
+config add -u
 
 config commit -m "message"
 
