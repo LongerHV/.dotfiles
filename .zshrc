@@ -30,7 +30,7 @@ alias br='br -h'
 neofetch --gtk2 off --gtk3 off
 
 # alias for managing dotfiles git bare repo
-alias 'config=/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # fix tldr
 alias tldr='LANG=en_US.utf8 tldr'
@@ -40,6 +40,10 @@ alias cq='$EDITOR $HOME/.config/qtile/config.py'
 alias ca='$EDITOR $HOME/.config/alacritty/alacritty.yml'
 alias cv='$EDITOR $HOME/.vim/vimrc'
 alias cz='$EDITOR $HOME/.zshrc'
+
+# aliases for ls
+alias ll='ls -l'
+alias la='ls -la'
 
 # Spaceship Prompt
 SPACESHIP_USER_SHOW=always
