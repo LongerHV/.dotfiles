@@ -11,16 +11,15 @@ export EDITOR="$VISUAL"
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
+test -e $HOME/.cache/zsh \
+    || mkdir $HOME/.cache/zsh
+test -f $HOME/.cache/zsh/history \
+    || touch $HOME/.cache/zsh/history
 HISTFILE=~/.cache/zsh/history
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
-
-# zsh plugin bindkeys
-bindkey '^ ' autosuggest-accept
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down 
 
 # zsh plugin configuration
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=13,regular,underline"
@@ -31,6 +30,12 @@ source $HOME/.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.
 source $HOME/.zsh_custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source $HOME/.zsh_custom/plugins/zsh-completions/zsh-completions.plugin.zsh
 source $HOME/.zsh_custom/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
+
+
+# zsh plugin bindkeys
+bindkey '^ ' autosuggest-accept
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down 
 
 # add broot command
 source $HOME/.config/broot/launcher/bash/br
