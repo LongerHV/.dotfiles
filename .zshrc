@@ -47,6 +47,12 @@ neofetch --gtk2 off --gtk3 off
 # alias for managing dotfiles git bare repo
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+cfg () {
+    config add -u \
+    && config commit -m "$1" \
+    && config push origin master
+}
+
 # fix tldr
 alias tldr='LANG=en_US.utf8 tldr'
 
