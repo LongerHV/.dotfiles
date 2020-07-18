@@ -19,6 +19,8 @@ bindkey '^e' edit-command-line
 
 # zsh plugin bindkeys
 bindkey '^ ' autosuggest-accept
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down 
 
 # zsh plugin configuration
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=13,regular,underline"
@@ -28,6 +30,7 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 source $HOME/.zsh_custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source $HOME/.zsh_custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source $HOME/.zsh_custom/plugins/zsh-completions/zsh-completions.plugin.zsh
+source $HOME/.zsh_custom/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
 
 # add broot command
 source $HOME/.config/broot/launcher/bash/br
@@ -51,6 +54,10 @@ alias cz='$EDITOR $HOME/.zshrc'
 # aliases for ls
 alias ll='ls -l'
 alias la='ls -la'
+
+# load completions
+autoload -Uz compinit && compinit
+zstyle ':completion:*' menu yes select
 
 # Spaceship Prompt
 SPACESHIP_USER_SHOW=always
@@ -76,8 +83,4 @@ SPACESHIP_PROMPT_ORDER=(
 
 autoload -U promptinit; promptinit
 prompt spaceship
-
-# load completions
-autoload -Uz compinit && compinit
-zstyle ':completion:*' menu yes select
 
