@@ -66,6 +66,9 @@ alias cz='$EDITOR $HOME/.zshrc'
 alias ll='ls -l'
 alias la='ls -la'
 
+# aliases for personal scripts
+alias paser='/bin/sh $HOME/scripts/paser.sh'
+
 # load completions
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu yes select
