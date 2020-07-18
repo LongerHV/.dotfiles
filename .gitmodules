@@ -55,3 +55,6 @@
 [submodule ".vim/bundle/vim-css-color"]
 	path = .vim/bundle/vim-css-color
 	url = https://github.com/ap/vim-css-color
+[submodule ".zsh_custom/plugins/zsh-completions"]
+	path = .zsh_custom/plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions.git
