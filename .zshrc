@@ -79,4 +79,5 @@ prompt spaceship
 
 # load completions
 autoload -Uz compinit && compinit
+zstyle ':completion:*' menu yes select
 
