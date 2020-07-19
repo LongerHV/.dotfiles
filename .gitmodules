@@ -61,3 +61,6 @@
 [submodule ".zsh_custom/plugins/zsh-history-substring-search"]
 	path = .zsh_custom/plugins/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
+[submodule ".zsh_custom/themes/spaceship-prompt"]
+	path = .zsh_custom/themes/spaceship-prompt
+	url = https://github.com/denysdovhan/spaceship-prompt.git
