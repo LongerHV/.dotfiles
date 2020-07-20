@@ -1,10 +1,17 @@
 # Spaceship Prompt
+if [ $(whoami) = 'root' ]
+then
+    color='red'
+else
+    color='green'
+fi
+
 SPACESHIP_USER_SHOW=always
 SPACESHIP_USER_SUFFIX=""
-SPACESHIP_USER_COLOR="green"
+SPACESHIP_USER_COLOR=$color
 SPACESHIP_HOST_SHOW=always
-SPACESHIP_HOST_PREFIX="%F{green}@"
-SPACESHIP_HOST_COLOR="green"
+SPACESHIP_HOST_PREFIX="%F{$color}@"
+SPACESHIP_HOST_COLOR=$color
 SPACESHIP_DIR_SHOW=always
 SPACESHIP_DIR_PREFIX=""
 SPACESHIP_DIR_COLOR="blue"
