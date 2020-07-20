@@ -21,8 +21,6 @@ GUI applications use materia-dark theme
 
 - zsh
 
-- spaceship zsh prompt
-
 - vim
 
 - qtile
@@ -90,7 +88,7 @@ GUI applications use materia-dark theme
 
 ## Clone and initialize:
 
-git clone --bare https://gitlab.com/LongerHV/.dotfiles $HOME/.dotfiles
+git clone --bare https://gitlab.com/LongerHV/.dotfiles.git $HOME/.dotfiles
 
 git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout -f
 
@@ -107,8 +105,4 @@ config submodule foreach git pull origin master
 
 config status
 
-config add -u
-
-config commit -m "message"
-
-config push origin master
+cfg "message"
