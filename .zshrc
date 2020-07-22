@@ -47,5 +47,8 @@ zstyle ':completion:*' menu yes select
 for f in $HOME/.config/zsh/*; do source "$f"; done
 
 # run neofetch for extra flex
-neofetch --gtk2 off --gtk3 off
+if [ $(whoami) != 'root' ]
+then
+    neofetch --gtk2 off --gtk3 off
+fi
 
