@@ -216,7 +216,7 @@ for i, (name, kwargs) in enumerate(group_names, 1):
 
 ##### DEFAULT THEME SETTINGS FOR LAYOUTS #####
 layout_theme = {"border_width": 3,
-                "margin": 10,
+                "margin": 16,
                 "border_focus": GREEN,
                 "border_normal": BLACK
                 }
