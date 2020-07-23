@@ -6,6 +6,9 @@ else
     color='green'
 fi
 
+themes=$HOME/.zsh_custom/themes
+source $themes/spaceship-prompt/spaceship.zsh-theme
+
 SPACESHIP_USER_SHOW=always
 SPACESHIP_USER_SUFFIX=""
 SPACESHIP_USER_COLOR=$color

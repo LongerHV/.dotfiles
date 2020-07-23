@@ -27,12 +27,10 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # source plugins and theme
 plugins=$HOME/.zsh_custom/plugins
-themes=$HOME/.zsh_custom/themes
 source $plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source $plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source $plugins/zsh-completions/zsh-completions.plugin.zsh
 source $plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
-source $themes/spaceship-prompt/spaceship.zsh-theme
 
 # zsh plugin bindkeys
 bindkey '^ ' autosuggest-accept
