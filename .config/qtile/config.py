@@ -238,6 +238,10 @@ layouts = [
     #  layout.Floating(**layout_theme)
 ]
 
+##### SPAWN APPLICATONS
+def spawn_pavu(qtile):
+    qtile.cmd_spawn('pavucontrol')
+
 ##### DEFAULT WIDGET SETTINGS #####
 widget_defaults = dict(
     font=MYFONT,
@@ -322,7 +326,8 @@ widgets_list1 = [
         text=" Vol:",
         foreground=WHITE,
         background=GREEN,
-        padding=0
+        padding=0,
+        mouse_callbacks={'Button1': spawn_pavu}
     ),
     widget.Volume(
         foreground=WHITE,
