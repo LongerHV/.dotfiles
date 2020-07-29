@@ -291,8 +291,8 @@ widgets_list1 = [
         background=BLACK
     ),
     widget.TextBox(
-        text=" ",
-        padding=2,
+        text="",
+        padding=5,
         foreground=WHITE,
         background=GREEN,
         fontsize=16
@@ -304,23 +304,19 @@ widgets_list1 = [
         padding=5
     ),
     widget.TextBox(
-        text=" ⟳",
-        padding=2,
+        text="⟳",
+        padding=5,
         foreground=WHITE,
         background=CYAN,
         fontsize=16
     ),
-    widget.Pacman(
+    widget.CheckUpdates(
         execute=' '.join([MYTERM, '-e', 'sudo', 'pacman', '-Syu']),
-        update_interval=18000,
+        distro='Arch',
+        update_interval=1800,
         foreground=WHITE,
         background=CYAN,
-    ),
-    widget.TextBox(
-        text="Updates",
-        padding=5,
-        foreground=WHITE,
-        background=CYAN,
+        padding=5
     ),
     widget.TextBox(
         text=" Vol:",
@@ -339,7 +335,7 @@ widgets_list1 = [
             "$HOME/.config/qtile/icons")],
         foreground=WHITE,
         background=CYAN,
-        padding=0,
+        padding=5,
         scale=0.7
     ),
     widget.CurrentLayout(
