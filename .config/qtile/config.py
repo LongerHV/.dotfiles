@@ -268,18 +268,9 @@ widgets_list1 = [
         other_current_screen_border=BLACK,
         other_screen_border=BLACK,
         foreground=WHITE,
-        background=BLACK
-    ),
-    widget.Sep(
-        linewidth=0,
-        padding=8,
-        background=BLACK
-    ),
-    widget.WindowName(
-        fontsize=16,
-        foreground=GREEN,
         background=BLACK,
-        padding=0
+    ),
+    widget.TaskList(
     ),
     widget.Systray(
         background=BLACK,
@@ -312,7 +303,7 @@ widgets_list1 = [
     ),
     widget.CheckUpdates(
         execute=' '.join([MYTERM, '-e', 'sudo', 'pacman', '-Syu']),
-        distro='Arch',
+        distro='Arch_yay',
         update_interval=1800,
         foreground=WHITE,
         background=CYAN,
@@ -358,13 +349,6 @@ widgets_list1 = [
 
 
 widgets_list2 = [
-    #  widget.AGroupBox(
-    #      font=MYFONT,
-    #      fontsize=20,
-    #      borderwidth=0,
-    #      foreground=WHITE,
-    #      background=GREEN
-    #  ),
     BGroupBox(
         font=MYFONT,
         fontsize=20,
@@ -375,14 +359,10 @@ widgets_list2 = [
     ),
     widget.Sep(
         linewidth=0,
-        padding=12,
+        padding=5,
         background=BLACK
     ),
-    widget.WindowName(
-        fontsize=16,
-        foreground=GREEN,
-        background=BLACK,
-        padding=0
+    widget.TaskList(
     ),
     widget.CurrentLayoutIcon(
         custom_icon_paths=[os.path.expanduser(
