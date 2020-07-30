@@ -330,7 +330,7 @@ widgets_list1 = [
         text="Vol:",
         foreground=WHITE,
         background=GREEN,
-        padding=0,
+        padding=5,
         mouse_callbacks={'Button1': spawn_pavu}
     ),
     widget.Volume(
