@@ -31,6 +31,7 @@ MOD = "mod4"  # Sets mod key to SUPER/WINDOWS
 ALT = "mod1"
 MYTERM = "alacritty"
 MYFONT = "Hack Nerd Font"
+MYHOME = os.environ.get('HOME')
 MYCOLORS = {
     'black':   '#073642',
     'red':     '#dc322f',
@@ -242,6 +243,9 @@ layouts = [
 def spawn_pavu(qtile):
     qtile.cmd_spawn('pavucontrol')
 
+def spawn_xmenu(qtile):
+    qtile.cmd_spawn(['/bin/bash',os.path.join(MYHOME, 'scripts', 'xmenu.sh')])
+
 ##### DEFAULT WIDGET SETTINGS #####
 widget_defaults = dict(
     font=MYFONT,
@@ -254,6 +258,19 @@ extension_defaults = widget_defaults.copy()
 ##### WIDGETS #####
 
 widgets_list1 = [
+    widget.TextBox(
+        text="",
+        foreground=WHITE,
+        background=BLACK,
+        fontsize=32,
+        padding=10,
+        mouse_callbacks={'Button1': spawn_xmenu}
+    ),
+    # widget.Image(
+        # background=BLACK,
+        # filename='$HOME/.config/qtile/python.png',
+        # mouse_callbacks={'Button1': spawn_xmenu}
+    # ),
     widget.GroupBox(
         font=MYFONT,
         fontsize=20,
@@ -310,7 +327,7 @@ widgets_list1 = [
         padding=5
     ),
     widget.TextBox(
-        text=" Vol:",
+        text="Vol:",
         foreground=WHITE,
         background=GREEN,
         padding=0,
