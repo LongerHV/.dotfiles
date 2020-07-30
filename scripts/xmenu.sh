@@ -1,13 +1,28 @@
 #!/bin/sh
 
 cat <<EOF | xmenu | sh &
-Applications
-	# IMG:./icons/web.png	Web Browser	firefox
-	# IMG:./icons/gimp.png	Image editor	gimp
-Terminal (xterm)	xterm
-Terminal (urxvt)	urxvt
-Terminal (st)		st
+System
+	 Terminal		alacritty
+	漣 lxappearance	lxappearance
+	漣 kvantum		kvantummanager
+Virtual
+	 Virt-manger	virt-manager
+	 Spice			spicy
+	 Horizon		vmware-view
+Editors
+	﬏ VSCode		code
+	 VIM			alacritty -e vim
 
-Shutdown		poweroff
-Reboot			reboot
+ Files			thunar
+ Brave			brave
+ Spotify		spotify
+嗢 VLC			vlc
+戮 Steam		steam
+ Screenshot	screengrab
+
+ $(uname -r)	
+
+ Lock			light-locker-command -l
+ﰇ Reboot		reboot
+襤 Shutdown		poweroff
 EOF
