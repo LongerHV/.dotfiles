@@ -266,11 +266,6 @@ widgets_list1 = [
         padding=10,
         mouse_callbacks={'Button1': spawn_xmenu}
     ),
-    # widget.Image(
-        # background=BLACK,
-        # filename='$HOME/.config/qtile/python.png',
-        # mouse_callbacks={'Button1': spawn_xmenu}
-    # ),
     widget.GroupBox(
         font=MYFONT,
         fontsize=20,
@@ -298,30 +293,23 @@ widgets_list1 = [
         padding=5,
         background=BLACK
     ),
+    widget.CheckUpdates(
+        execute=' '.join([MYTERM, '-e', 'sudo', 'pacman', '-Syu']),
+        distro='Arch_yay',
+        display_format='⟳ Updates: {opdates}',
+        update_interval=1800,
+        foreground=WHITE,
+        background=GREEN,
+    ),
     widget.TextBox(
         text="",
-        padding=5,
-        foreground=WHITE,
-        background=GREEN,
-        fontsize=16
-    ),
-    widget.ThermalSensor(
-        tag_sensor="Package id 0",
-        foreground=WHITE,
-        background=GREEN,
-        padding=5
-    ),
-    widget.TextBox(
-        text="⟳",
         padding=5,
         foreground=WHITE,
         background=CYAN,
         fontsize=16
     ),
-    widget.CheckUpdates(
-        execute=' '.join([MYTERM, '-e', 'sudo', 'pacman', '-Syu']),
-        distro='Arch_yay',
-        update_interval=1800,
+    widget.ThermalSensor(
+        tag_sensor="Package id 0",
         foreground=WHITE,
         background=CYAN,
         padding=5
@@ -343,7 +331,6 @@ widgets_list1 = [
             "$HOME/.config/qtile/icons")],
         foreground=WHITE,
         background=CYAN,
-        padding=5,
         scale=0.7
     ),
     widget.CurrentLayout(
@@ -386,7 +373,6 @@ widgets_list2 = [
             "$HOME/.config/qtile/icons")],
         foreground=WHITE,
         background=CYAN,
-        padding=0,
         scale=0.7
     ),
     widget.CurrentLayout(
