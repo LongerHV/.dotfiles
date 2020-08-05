@@ -82,11 +82,14 @@ keys = [
         desc='Lock screen'),
     # Switch focus to specific monitor (out of three)
     Key([MOD], "w",
-        lazy.to_screen(0),
+        lazy.to_screen(2),
         desc='Keyboard focus to monitor 1'),
     Key([MOD], "e",
-        lazy.to_screen(1),
+        lazy.to_screen(0),
         desc='Keyboard focus to monitor 2'),
+    Key([MOD], "r",
+        lazy.to_screen(1),
+        desc='Keyboard focus to monitor 3'),
     # Switch focus of monitors
     Key([MOD], "period",
         lazy.next_screen(),
@@ -257,7 +260,8 @@ extension_defaults = widget_defaults.copy()
 
 ##### WIDGETS #####
 
-widgets_list1 = [
+def init_wide_bar():
+    return [
     widget.TextBox(
         text="",
         foreground=WHITE,
@@ -352,7 +356,8 @@ widgets_list1 = [
 ]
 
 
-widgets_list2 = [
+def init_short_bar():
+    return [
     BGroupBox(
         font=MYFONT,
         fontsize=20,
@@ -393,16 +398,22 @@ widgets_list2 = [
     )
 ]
 
+widgets_list1 = init_wide_bar()
+widgets_list2 = init_short_bar()
+widgets_list3 = init_wide_bar()
 
 # SCREENS ##### (DUAL MONITOR SETUP)
 myScreens = [Screen(top=bar.Bar(widgets=widgets_list1, opacity=0.95, size=28)),
-             Screen(top=bar.Bar(widgets=widgets_list2, opacity=0.95, size=28))]
+             Screen(top=bar.Bar(widgets=widgets_list2, opacity=0.95, size=28)),
+             Screen(top=bar.Bar(widgets=widgets_list3, opacity=0.95, size=28))
+]
 
 
 if __name__ in ["config", "__main__"]:
     screens = myScreens
     widgets_list = widgets_list1
     widgets_screen1 = widgets_list2
+    widgets_screen2 = widgets_list3
 
 ##### DRAG FLOATING WINDOWS #####
 mouse = [
