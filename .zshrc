@@ -11,11 +11,12 @@ export EDITOR="$VISUAL"
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
-test -e $HOME/.cache/zsh \
-    || mkdir $HOME/.cache/zsh
-test -f $HOME/.cache/zsh/history \
-    || touch $HOME/.cache/zsh/history
-HISTFILE=~/.cache/zsh/history
+ZSHCACHE=$HOME/.cache/zsh
+HISTFILE=$ZSHCACHE/history
+test -e $ZSHCACHE \
+    || mkdir $ZSHCACHE
+test -f $HISTFILE \
+    || touch $HISTFILE
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
