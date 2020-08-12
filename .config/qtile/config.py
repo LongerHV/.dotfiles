@@ -300,10 +300,11 @@ def init_wide_bar():
     widget.CheckUpdates(
         execute=' '.join([MYTERM, '-e', 'sudo', 'pacman', '-Syu']),
         distro='Arch_yay',
-        display_format='⟳ Updates: {updates}',
+        display_format=' Updates: {updates}',
         update_interval=1800,
         foreground=WHITE,
         background=GREEN,
+        padding=5
     ),
     widget.TextBox(
         text="",
