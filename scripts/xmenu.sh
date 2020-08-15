@@ -22,6 +22,7 @@ Editors
 
  $(uname -r)	
 
+ Exit			qtile-cmd -o cmd -f shutdown
  Lock			light-locker-command -l
 ﰇ Reboot		reboot
 襤 Shutdown		poweroff
