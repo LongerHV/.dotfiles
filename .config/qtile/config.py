@@ -260,7 +260,7 @@ extension_defaults = widget_defaults.copy()
 
 ##### WIDGETS #####
 
-def init_wide_bar():
+def init_wide_bar(tray=True):
     return [
     widget.TextBox(
         text="",
@@ -291,7 +291,7 @@ def init_wide_bar():
     widget.Systray(
         background=BLACK,
         padding=5
-    ),
+    ) if tray else widget.Sep(linewidth=0),
     widget.Sep(
         linewidth=0,
         padding=5,
@@ -401,7 +401,7 @@ def init_short_bar():
 
 widgets_list1 = init_wide_bar()
 widgets_list2 = init_short_bar()
-widgets_list3 = init_wide_bar()
+widgets_list3 = init_wide_bar(tray=False)
 
 # SCREENS ##### (DUAL MONITOR SETUP)
 myScreens = [Screen(top=bar.Bar(widgets=widgets_list1, opacity=0.95, size=28)),
