@@ -10,7 +10,7 @@ config="$HOME/.config/nitrogen/bg-saved.cfg"
 url_preffix="http://www.bing.com"
 
 # actual script
-url_suffix=$(curl --no-progress-meter "http://www.bing.com/HPImageArchive.aspx?format=xml&idx=0&n=1" | xmllint --xpath "string(//url)" -) || exit 1 && \
+url_suffix=$(curl --no-progress-meter "http://www.bing.com/HPImageArchive.aspx?format=xml&idx=0&n=1" | xmllint --xpath "string(//url)" -) && \
 url="$url_preffix$url_suffix" && \
 name=$(echo $url | awk -F'&' '{print $2}' | awk -F'=' '{print $2}') && \
 file_path="$images_dir/$name" && \
