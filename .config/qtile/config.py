@@ -301,7 +301,7 @@ def init_wide_bar(tray=True):
         background=BLACK
     ),
     widget.CheckUpdates(
-        execute=' '.join([MYTERM, '-e', 'sudo', 'pacman', '-Syu']),
+        execute=' '.join([MYTERM, '-e', 'yay']),
         distro='Arch_yay',
         display_format=' Updates: {updates}',
         update_interval=1800,
