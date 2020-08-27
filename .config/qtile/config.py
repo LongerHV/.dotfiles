@@ -32,24 +32,25 @@ ALT = "mod1"
 MYTERM = "alacritty"
 MYFONT = "Hack Nerd Font"
 MYHOME = os.environ.get('HOME')
-MYCOLORS = {
-    'black':   '#073642',
-    'red':     '#dc322f',
-    'green':   '#859900',
-    'yellow':  '#b58900',
-    'blue':    '#268bd2',
-    'magenta': '#d33682',
-    'cyan':    '#2aa198',
-    'white':   '#eee8d5'}
+MYCOLORS = [
+    '#073642',
+    '#dc322f',
+    '#859900',
+    '#b58900',
+    '#268bd2',
+    '#d33682',
+    '#2aa198',
+    '#eee8d5'
+]
 
-BLACK = MYCOLORS['black']
-RED = MYCOLORS['red']
-GREEN = MYCOLORS['green']
-YELLOW = MYCOLORS['yellow']
-BLUE = MYCOLORS['blue']
-MAGENTA = MYCOLORS['magenta']
-CYAN = MYCOLORS['cyan']
-WHITE = MYCOLORS['white']
+BLACK = MYCOLORS[0]
+RED = MYCOLORS[1]
+GREEN = MYCOLORS[2]
+YELLOW = MYCOLORS[3]
+BLUE = MYCOLORS[4]
+MAGENTA = MYCOLORS[5]
+CYAN = MYCOLORS[6]
+WHITE = MYCOLORS[7]
 
 ##### KEYBINDINGS #####
 keys = [
@@ -198,7 +199,7 @@ keys = [
 ]
 
 ##### GROUPS #####
-group_names = [
+group_names = (
     (" WWW", {'layout': 'max'}),
     (" DEV", {'layout': 'max'}),
     (" SYS", {'layout': 'monadtall'}),
@@ -207,7 +208,7 @@ group_names = [
     (" VID", {'layout': 'max'}),
     (" FUN", {'layout': 'max'}),
     (" MSG", {'layout': 'max'})
-]
+)
 
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
 drop_term = DropDown('term', MYTERM, width=0.9, height=0.9,
@@ -229,7 +230,7 @@ layout_theme = {"border_width": 3,
                 }
 
 ##### THE LAYOUTS #####
-layouts = [
+layouts = (
     # layout.Bsp(**layout_theme),
     # layout.Stack(stacks=2, **layout_theme),
     # layout.Columns(**layout_theme),
@@ -243,7 +244,7 @@ layouts = [
     layout.MonadWide(**layout_theme),
     layout.Max(**layout_theme),
     #  layout.Floating(**layout_theme)
-]
+)
 
 ##### SPAWN APPLICATONS
 def spawn_pavu(qtile):
@@ -264,7 +265,7 @@ extension_defaults = widget_defaults.copy()
 ##### WIDGETS #####
 
 def init_wide_bar(tray=True):
-    return [
+    return (
     widget.TextBox(
         text="",
         foreground=WHITE,
@@ -357,11 +358,11 @@ def init_wide_bar(tray=True):
         padding=5,
         background=GREEN
     )
-]
+)
 
 
 def init_short_bar():
-    return [
+    return (
     BGroupBox(
         font=MYFONT,
         fontsize=20,
@@ -400,33 +401,27 @@ def init_short_bar():
         padding=5,
         background=GREEN
     )
-]
+)
 
-widgets_list1 = init_wide_bar()
-widgets_list2 = init_short_bar()
-widgets_list3 = init_wide_bar(tray=False)
-
-# SCREENS ##### (DUAL MONITOR SETUP)
-myScreens = [Screen(top=bar.Bar(widgets=widgets_list1, opacity=0.95, size=28)),
-             Screen(top=bar.Bar(widgets=widgets_list2, opacity=0.95, size=28)),
-             Screen(top=bar.Bar(widgets=widgets_list3, opacity=0.95, size=28))
-]
-
+bar_list = (
+    init_wide_bar(),
+    init_short_bar(),
+    init_wide_bar(tray=False)
+)
 
 if __name__ in ["config", "__main__"]:
-    screens = myScreens
-    widgets_list = widgets_list1
-    widgets_screen1 = widgets_list2
-    widgets_screen2 = widgets_list3
+    screens = []
+    for widgets in bar_list:
+        screens.append(Screen(top=bar.Bar(widgets=widgets, opacity=0.95, size=28)))
 
 ##### DRAG FLOATING WINDOWS #####
-mouse = [
+mouse = (
     Drag([MOD], "Button1", lazy.window.set_position_floating(),
          start=lazy.window.get_position()),
     Drag([MOD], "Button2", lazy.window.set_size_floating(),
          start=lazy.window.get_size()),
     Click([MOD], "Button3", lazy.window.bring_to_front())
-]
+)
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
@@ -436,7 +431,7 @@ bring_front_click = False
 cursor_warp = False
 
 ##### FLOATING WINDOWS #####
-floating_layout = layout.Floating(float_rules=[
+floating_layout = layout.Floating(float_rules=(
     {'wmclass': 'confirm'},
     {'wmclass': 'dialog'},
     {'wmclass': 'download'},
@@ -456,7 +451,7 @@ floating_layout = layout.Floating(float_rules=[
     {'wmclass': 'Steam'},
     {'wmclass': 'lxpolkit'},
     {'wmclass': 'redshift-gtk'}
-], **layout_theme)
+), **layout_theme)
 
 auto_fullscreen = True
 focus_on_window_activation = "smart"
