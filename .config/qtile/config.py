@@ -150,10 +150,10 @@ keys = [
     #      desc='Toggle between split and unsplit sides of stack'),
     # My applications launched with SUPER + ALT + KEY
     Key([MOD, ALT], "b",
-        lazy.spawn("brave"),
+        lazy.spawn("brave-nightly"),
         desc='Brave browser'),
     Key([MOD, ALT], "i",
-        lazy.spawn("brave --incognito"),
+        lazy.spawn("brave-nightly --incognito"),
         desc='Incognito window for perverted stuff '),
     Key([MOD, ALT], "m",
         lazy.spawn("spotify"),

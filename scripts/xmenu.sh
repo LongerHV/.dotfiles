@@ -19,6 +19,7 @@ Editors
 嗢 VLC			vlc
 戮 Steam		steam
  Screenshot	screengrab
+ Refresh wallpaper	nitrogen --restore
 
  $(uname -r)	
 
