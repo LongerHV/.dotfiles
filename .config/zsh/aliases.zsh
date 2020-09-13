@@ -17,8 +17,8 @@ alias cv='$EDITOR $HOME/.vim/vimrc'
 alias cz='$EDITOR $HOME/.zshrc'
 
 # aliases for ls
-alias ll='ls -lh'
-alias la='ls -lah'
+alias ll='ls -lh --color=always'
+alias la='ls -lah --color=always'
 
 # aliases for personal scripts
 alias paser='/bin/sh $HOME/scripts/paser.sh'
