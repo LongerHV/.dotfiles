@@ -84,9 +84,11 @@ editor_stop_format_chars=-+*\\,.;:&>
 mcview_eof=
 skin=modarin256-defbg
 
+filepos_max_saved_entries=1024
+
 [Layout]
 output_lines=0
-left_panel_size=77
+left_panel_size=37
 top_panel_size=0
 message_visible=true
 keybar_visible=true
