@@ -24,4 +24,5 @@ run-or-restart lxpolkit                                # policy kit
 run-or-restart jack_control start                      # jack2 audio server
 run-or-restart light-locker                            # screen locker
 run-or-restart clipmenud                               # clipboard manager
+run-or-restart nm-applet                               # network manager applet
 

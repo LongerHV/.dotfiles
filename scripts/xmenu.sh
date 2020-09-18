@@ -1,24 +1,27 @@
 #!/bin/sh
+term='alacritty'
 
 cat <<EOF | xmenu | sh &
 System
-	 Terminal		alacritty
+	 Terminal		$term
 	漣 lxappearance	lxappearance
 	漣 kvantum		kvantummanager
+	 network		nm-connection-editor
+	墳 volume		pavucontrol
 Virtual
 	 Virt-manger	virt-manager
 	 Spice			spicy
 	 Horizon		vmware-view
 Editors
 	﬏ VSCode		code
-	 VIM			alacritty -e vim
+	 VIM			$term -e vim
 
- Files			thunar
- Brave			brave
- Spotify		spotify
-嗢 VLC			vlc
-戮 Steam		steam
- Screenshot	screengrab
+ Files				thunar
+ Brave				brave
+ Spotify			spotify
+嗢 VLC				vlc
+戮 Steam			steam
+ Screenshot		screengrab
  Refresh wallpaper	nitrogen --restore
 
  $(uname -r)	
