@@ -408,8 +408,8 @@ def init_short_bar():
 
 bar_list = (
     init_wide_bar(),
-    init_wide_bar(tray=False),
-    init_short_bar()
+    init_short_bar(),
+    init_wide_bar(tray=False)
 )
 
 if __name__ in ["config", "__main__"]:
