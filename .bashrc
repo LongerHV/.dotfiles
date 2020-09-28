@@ -17,3 +17,5 @@ fi
 # Put your fun stuff here.
 
 PATH=$PATH:~/.local/bin
+
+source /home/longer/.config/broot/launcher/bash/br

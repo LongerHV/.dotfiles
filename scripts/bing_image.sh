@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # initial wallpaper set
-nitrogen --restore
+DISPLAY=":0" nitrogen --restore
 
 # setting paths
 images_dir="$HOME/.local/share/wallpapers"
@@ -17,7 +17,7 @@ file_path="$images_dir/$name" && \
 curl "$url" -o $file_path && \
 cp "$template" "$config" && \
 sed -i "s|<==>|$file_path|g" "$config" && \
-nitrogen --restore && \
+DISPLAY=":0" nitrogen --restore && \
 exit 0
 
 # return exitcode if above crashed
