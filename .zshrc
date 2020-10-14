@@ -17,6 +17,7 @@ bindkey '^e' edit-command-line
 # zsh plugin configuration
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=13,regular,underline"
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_COMPLETION_IGNORE="git *"
 
 # source plugins and theme
 plugins=$HOME/.zsh_custom/plugins
