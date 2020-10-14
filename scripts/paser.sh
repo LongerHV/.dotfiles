@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Interactive sarch and install pacman packages
 
