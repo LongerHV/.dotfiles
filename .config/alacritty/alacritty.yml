@@ -227,6 +227,9 @@ schemes:
       cyan:    '0x93a1a1'
       white:   '0xfdf6e3'
 
+  # Adapta background/foreground
+  # and Monokai colors
+  # https://gist.github.com/tnptop/0e66c887520ed51a3588b50903ed32b2
   adapta: &adapta
     primary:
       background: '0x1E1E1E'
@@ -241,34 +244,24 @@ schemes:
       background: '0xD4D4D4'
 
     normal:
-      black:   '0x073642'
-      red:     '0xdc322f'
-      green:   '0x859900'
-      yellow:  '0xb58900'
-      blue:    '0x268bd2'
-      magenta: '0xd33682'
-      cyan:    '0x2aa198'
-      white:   '0xeee8d5'
+      black:   '0x000000'
+      red:     '0xF92672'
+      green:   '0x6CC72C'
+      yellow:  '0xFE9720'
+      blue:    '0x5F91EF'
+      magenta: '0x9358FE'
+      cyan:    '0x36AF90'
+      white:   '0x8C8C8C'
 
     bright:
-      black:   '0x6c71c4'
-      red:     '0xdc322f'
-      green:   '0x859900'
-      yellow:  '0xb58900'
-      blue:    '0x268bd2'
-      magenta: '0xd33682'
-      cyan:    '0x2aa198'
-      white:   '0xeee8d5'
-
-    dim:
-      black:   '0x002b36'
-      red:     '0xcb4b16'
-      green:   '0x586e75'
-      yellow:  '0x657b83'
-      blue:    '0x839496'
-      magenta: '0x6c71c4'
-      cyan:    '0x93a1a1'
-      white:   '0xfdf6e3'
+      black:   '0x4C4C4C'
+      red:     '0xFF80F4'
+      green:   '0xA7E22E'
+      yellow:  '0xFFEE99'
+      blue:    '0x5FD9EF'
+      magenta: '0xAE82FE'
+      cyan:    '0x66EFD5'
+      white:   '0xC7CECE'
 
   oceanic: &oceanic
     # Default colors
@@ -298,9 +291,9 @@ schemes:
       cyan:    '0x5fb3b3'
       white:   '0xadb5c0'
 
-# colors: *adapta
+colors: *adapta
 # colors: *solarized
-colors: *oceanic
+# colors: *oceanic
 
 # Visual Bell
 #
