@@ -232,16 +232,16 @@ schemes:
   # https://gist.github.com/tnptop/0e66c887520ed51a3588b50903ed32b2
   adapta: &adapta
     primary:
-      background: '0x1E1E1E'
-      foreground: '0xD4D4D4'
+      background: '0x263238'
+      foreground: '0xb7bbbd'
 
     cursor:
-      text:   '0x1E1E1E'
-      cursor: '0xD4D4D4'
+      text:   '0x263238'
+      cursor: '0xb7bbbd'
 
     selection:
-      text:       '0x1E1E1E'
-      background: '0xD4D4D4'
+      text:       '0x263238'
+      background: '0xb7bbbd'
 
     normal:
       black:   '0x000000'
