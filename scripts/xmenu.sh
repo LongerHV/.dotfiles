@@ -4,10 +4,10 @@ term='alacritty'
 cat <<EOF | xmenu | sh &
 System
 	 Terminal		$term
-	漣 lxappearance	lxappearance
+	漣 QT config	qt5ct
 	漣 kvantum		kvantummanager
 	 network		nm-connection-editor
-	墳 volume		pavucontrol
+	墳 volume		pavucontrol-qt
 Virtual
 	 Virt-manger	virt-manager
 	 Spice			spicy
@@ -16,7 +16,7 @@ Editors
 	﬏ VSCode		code
 	 VIM			$term -e vim
 
- Files				thunar
+ Files				pcmanfm-qt
  Brave				brave
  Spotify			spotify
 嗢 VLC				vlc
