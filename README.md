@@ -4,7 +4,7 @@
 
 ## Content:
 
-- qtile contiguration (dual monitor)
+- qtile contiguration
 
 - alacritty configuration
 
@@ -14,8 +14,8 @@
 
 - Hack Nerd Font
 
-Qtile and Alacritty configured to use solarized dark theme,
-GUI applications use materia-dark theme
+Qtile configured to use solarized dark theme,
+GUI applications use adapta theme
 
 ## Dependencies:
 
@@ -35,8 +35,6 @@ GUI applications use materia-dark theme
 
 - nitrogen
 
-- thunar
-
 - LightDM
 
 - Light-locker
@@ -45,13 +43,15 @@ GUI applications use materia-dark theme
 
 - Brave browser
 
-- Jack2
+- Jack2 (+ cadence, pavucontrol-qt)
 
 - redshift-gtk
 
-- lxappearance
+- qt5ct
 
 - kvantum
+
+- adapta-gtk-theme
 
 ## Qtile keybindings
 
@@ -79,11 +79,9 @@ GUI applications use materia-dark theme
 | `SUPER + ALT + m` | open Spotify |
 | `SUPER + ALT + s` | open Spicy |
 | `SUPER + ALT + v` | open Virt-manager |
-| `SUPER + ALT + h` | open VMWare Horizon |
 | `SUPER + ALT + c` | open VSCode |
 | `SUPER + ALT + g` | open Steam |
-| `SUPER + ALT + t` | open Teams |
-| `SUPER + ALT + f` | open Thunar |
+| `SUPER + ALT + f` | open File manager |
 | `F12` | open dropdown terminal |
 
 ## Clone and initialize:
