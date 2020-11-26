@@ -27,6 +27,7 @@ from libqtile import layout, bar, widget, hook, extension
 from mylib import BGroupBox
 
 ##### DEFINING SOME VARIABLES #####
+os.environ['QT_QPA_PLATFORMTHEME'] = 'qt5ct'
 MOD = "mod4"  # Sets mod key to SUPER/WINDOWS
 ALT = "mod1"
 MYTERM = "alacritty"
