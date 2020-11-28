@@ -28,6 +28,7 @@ Editors
 
  Exit			qtile-cmd -o cmd -f shutdown
  Lock			light-locker-command -l
+鈴 Suspend			systemctl suspend
 ﰇ Reboot		reboot
 襤 Shutdown		poweroff
 EOF
