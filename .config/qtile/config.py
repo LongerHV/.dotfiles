@@ -246,7 +246,7 @@ layouts = (
 
 ##### SPAWN APPLICATONS
 def spawn_pavu(qtile):
-    qtile.cmd_spawn('pavucontrol')
+    qtile.cmd_spawn('pavucontrol-qt')
 
 def spawn_xmenu(qtile):
     qtile.cmd_spawn(['/bin/bash',os.path.join(MYHOME, 'scripts', 'xmenu.sh')])
