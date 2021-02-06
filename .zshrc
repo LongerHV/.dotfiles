@@ -1,3 +1,8 @@
+# Add home directory to path
+PATH=$PATH:~/.local/bin
+PATH=$PATH:~/.platformio/penv/bin
+PATH=$PATH:~/go/bin
+
 # Default editor
 export VISUAL=vim
 export EDITOR="$VISUAL"

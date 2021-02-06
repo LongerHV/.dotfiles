@@ -403,8 +403,8 @@ def init_short_bar():
 
 bar_list = (
     init_wide_bar(),
+    init_wide_bar(tray=False),
     init_short_bar(),
-    init_wide_bar(tray=False)
 )
 
 if __name__ in ["config", "__main__"]:
@@ -448,7 +448,8 @@ floating_layout = layout.Floating(float_rules=(
     {'wmclass': 'ssh-askpass'},  # ssh-askpass
     {'wmclass': 'Steam'},
     {'wmclass': 'lxpolkit'},
-    {'wmclass': 'redshift-gtk'}
+    {'wmclass': 'redshift-gtk'},
+    {'wmclass': 'qjackctl'}
 ), **layout_theme)
 
 auto_fullscreen = True

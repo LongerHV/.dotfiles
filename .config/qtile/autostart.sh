@@ -20,8 +20,8 @@ run-or-restart() {
 run /bin/bash "$HOME/scripts/bing_image.sh"
 run-or-restart picom                                   # compositor
 run-or-restart redshift-gtk -t 5000:3500 -b 0.8:0.8    # redshift
-run-or-restart lxpolkit                                # policy kit
-run-or-restart jack_control start                      # jack2 audio server
+run-or-restart lxqt-policykit-agent                    # policy kit
+# run-or-restart jack_control start                    # jack2 audio server
 run-or-restart light-locker                            # screen locker
 run-or-restart clipmenud                               # clipboard manager
 run-or-restart nm-applet                               # network manager applet
