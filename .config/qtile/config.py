@@ -429,7 +429,7 @@ bring_front_click = False
 cursor_warp = False
 
 ##### FLOATING WINDOWS #####
-floating_layout = layout.Floating(float_rules=(
+floating_layout = layout.Floating(float_rules=[
     {'wmclass': 'confirm'},
     {'wmclass': 'dialog'},
     {'wmclass': 'download'},
@@ -450,7 +450,7 @@ floating_layout = layout.Floating(float_rules=(
     {'wmclass': 'lxpolkit'},
     {'wmclass': 'redshift-gtk'},
     {'wmclass': 'qjackctl'}
-), **layout_theme)
+], **layout_theme)
 
 auto_fullscreen = True
 focus_on_window_activation = "smart"
