@@ -34,7 +34,7 @@ MYTERM = "alacritty"
 MYFONT = "Hack Nerd Font"
 MYHOME = os.environ.get('HOME')
 MYCOLORS = [
-    '#073642',
+    '#263238',
     '#dc322f',
     '#859900',
     '#b58900',
