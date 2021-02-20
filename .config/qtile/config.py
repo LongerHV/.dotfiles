@@ -84,13 +84,13 @@ keys = [
         desc='Lock screen'),
     # Switch focus to specific monitor (out of three)
     Key([MOD], "w",
-        lazy.to_screen(2),
+        lazy.to_screen(1),
         desc='Keyboard focus to monitor 1'),
     Key([MOD], "e",
         lazy.to_screen(0),
         desc='Keyboard focus to monitor 2'),
     Key([MOD], "r",
-        lazy.to_screen(1),
+        lazy.to_screen(2),
         desc='Keyboard focus to monitor 3'),
     # Switch focus of monitors
     Key([MOD], "period",
