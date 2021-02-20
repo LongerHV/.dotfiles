@@ -21,9 +21,9 @@
 import os
 import subprocess
 from typing import List  # noqa: F401
-from libqtile.config import Key, Screen, Group, Drag, Click, ScratchPad, DropDown
+from libqtile.config import Key, Screen, Group, Drag, Click, ScratchPad, DropDown, Match
 from libqtile.command import lazy
-from libqtile import layout, bar, widget, hook, extension
+from libqtile import layout, bar, widget, hook, extension, qtile
 from mylib import BGroupBox
 
 ##### DEFINING SOME VARIABLES #####
@@ -245,11 +245,11 @@ layouts = (
 )
 
 ##### SPAWN APPLICATONS
-def spawn_pavu(qtile):
+def spawn_pavu():
     qtile.cmd_spawn('pavucontrol-qt')
 
-def spawn_xmenu(qtile):
-    qtile.cmd_spawn(['/bin/bash',os.path.join(MYHOME, 'scripts', 'xmenu.sh')])
+def spawn_xmenu():
+    qtile.cmd_spawn(['/bin/bash', os.path.join(MYHOME, 'scripts', 'xmenu.sh')])
 
 ##### DEFAULT WIDGET SETTINGS #####
 widget_defaults = dict(
@@ -430,26 +430,26 @@ cursor_warp = False
 
 ##### FLOATING WINDOWS #####
 floating_layout = layout.Floating(float_rules=[
-    {'wmclass': 'confirm'},
-    {'wmclass': 'dialog'},
-    {'wmclass': 'download'},
-    {'wmclass': 'error'},
-    {'wmclass': 'file_progress'},
-    {'wmclass': 'notification'},
-    {'wmclass': 'splash'},
-    {'wmclass': 'toolbar'},
-    {'wmclass': 'confirmreset'},  # gitk
-    {'wmclass': 'makebranch'},  # gitk
-    {'wmclass': 'maketag'},  # gitk
-    {'wname': 'branchdialog'},  # gitk
-    {'wname': 'pinentry'},  # GPG key password entry
-    {'wname': 'Connect to SPICE'},
-    {'wname': 'Steam'},
-    {'wmclass': 'ssh-askpass'},  # ssh-askpass
-    {'wmclass': 'Steam'},
-    {'wmclass': 'lxpolkit'},
-    {'wmclass': 'redshift-gtk'},
-    {'wmclass': 'qjackctl'}
+    Match(wm_class='confirm'),
+    Match(wm_class='dialog'),
+    Match(wm_class='download'),
+    Match(wm_class='error'),
+    Match(wm_class='file_progress'),
+    Match(wm_class='notification'),
+    Match(wm_class='splash'),
+    Match(wm_class='toolbar'),
+    Match(wm_class='confirmreset'),  # gitk
+    Match(wm_class='makebranch'),  # gitk
+    Match(wm_class='maketag'),  # gitk
+    Match(title='branchdialog'),  # gitk
+    Match(title='pinentry'),  # GPG key password entry
+    Match(title='Connect to SPICE'),
+    Match(title='Steam'),
+    Match(wm_class='ssh-askpass'),  # ssh-askpass
+    Match(wm_class='Steam'),
+    Match(wm_class='lxpolkit'),
+    Match(wm_class='redshift-gtk'),
+    Match(wm_class='qjackctl')
 ], **layout_theme)
 
 auto_fullscreen = True
