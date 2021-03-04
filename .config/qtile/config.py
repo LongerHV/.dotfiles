@@ -305,6 +305,20 @@ def init_wide_bar(tray=True):
         display_format=' Updates: {updates}',
         update_interval=1800,
         foreground=WHITE,
+        background=CYAN,
+        padding=5
+    ),
+    widget.TextBox(
+        text="",
+        padding=5,
+        foreground=WHITE,
+        background=GREEN,
+        fontsize=16
+    ),
+    widget.BitcoinTicker(
+        # currency='USD',
+        # fmt='{}{}',
+        foreground=WHITE,
         background=GREEN,
         padding=5
     ),
