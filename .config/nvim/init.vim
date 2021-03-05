@@ -9,6 +9,8 @@
 " coc-json
 " coc-vimlsp
 " coc-prettier
+" coc-explorer
+" coc-lists
 
 " TODO:
 " * telescope (for fuzzy search)
@@ -73,7 +75,15 @@ else
 	source $HOME/.config/nvim/plug-config/coc.vim
 
 	" Remaps
-	map <C-P> :CocCommand<CR>
+	map <leader>c :CocCommand<CR>
+	nnoremap <leader>e :CocCommand explorer<CR>
+	nnoremap <C-P> :CocList files<CR>
 	map  <plug>NERDCommenterToggle
+
+	vnoremap <leader>y "+y
+	map <leader>y "+yy
+	map <leader>yy "+yy
+	map <leader>p "+p
+	map <leader>P "+P
 endif
 

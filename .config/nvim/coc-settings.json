@@ -4,6 +4,8 @@
   "python.linting.enabled": true,
   "python.linting.pep8Enabled": true,
   "python.linting.pep8Path": "pycodestyle",
-  "python.linting.pep8Args": ["--ignore", "E501"],
-  "python.formatting.autopep8Args": ["--ignore", "E501"]
+  "python.linting.pep8Args": ["--ignore", "E501,W503"],
+  "python.formatting.autopep8Args": ["--ignore", "E501"],
+
+  "explorer.icon.enableNerdfont": true
 }
