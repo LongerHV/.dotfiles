@@ -29,7 +29,6 @@ else
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-repeat'
 	Plug 'mhartington/oceanic-next'
-	Plug 'morhetz/gruvbox'
 	Plug 'vim-airline/vim-airline'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'yggdroot/indentline'
@@ -49,6 +48,9 @@ else
 
 	" Mouse
 	set mouse=a
+	
+	" Search
+	set ignorecase smartcase
 
 	" Theme
 	syntax enable
