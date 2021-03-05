@@ -4,16 +4,7 @@
 " npm
 " nodejs
 
-" Coc plugins:
-" coc-pyright
-" coc-json
-" coc-vimlsp
-" coc-prettier
-" coc-explorer
-" coc-lists
-
 " TODO:
-" * telescope (for fuzzy search)
 " * vimspector (debugging)
 " * Coc puts weird indents in python
 
@@ -38,9 +29,11 @@ else
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'luochen1990/rainbow'
 	Plug 'sheerun/vim-polyglot'
-	" Plug 'nvim-telescope/telescope.nvim'
 	" Plug 'puremourning/vimspector'
 	call plug#end()
+
+	" Extensions
+	let g:coc_global_extensions = ['coc-pyright', 'coc-json', 'coc-vimlsp', 'coc-prettier', 'coc-explorer', 'coc-lists']
 
 	" Leader
 	let mapleader = ' '
@@ -77,8 +70,7 @@ else
 	source $HOME/.config/nvim/plug-config/coc.vim
 
 	" Remaps
-	map <leader>c :CocCommand<CR>
-	nnoremap <leader>e :CocCommand explorer<CR>
+	nnoremap <leader>t :CocCommand explorer<CR>
 	nnoremap <C-P> :CocList files<CR>
 	map  <plug>NERDCommenterToggle
 
