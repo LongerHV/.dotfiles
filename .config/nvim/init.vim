@@ -72,12 +72,11 @@ else
 	" Remaps
 	nnoremap <leader>t :CocCommand explorer<CR>
 	nnoremap <C-P> :CocList files<CR>
-	map  <plug>NERDCommenterToggle
+	nnoremap  <plug>NERDCommenterToggle
 
 	vnoremap <leader>y "+y
-	map <leader>y "+yy
-	map <leader>yy "+yy
-	map <leader>p "+p
-	map <leader>P "+P
+	nnoremap <leader>y "+yy
+	nnoremap <leader>p "+p
+	nnoremap <leader>P "+P
 endif
 
