@@ -2,9 +2,9 @@
   "coc.preferences.formatOnSaveFiletypes": ["json", "python"],
 
   "python.linting.enabled": true,
-  "python.linting.pep8Enabled": true,
-  "python.linting.pep8Path": "pycodestyle",
-  "python.linting.pep8Args": ["--ignore", "E501,W503"],
+  "python.linting.pycodestyleEnabled": true,
+  "python.linting.pycodestylePath": "pycodestyle",
+  "python.linting.pycodestyleArgs": ["--ignore", "E501,W503"],
   "python.formatting.autopep8Args": ["--ignore", "E501"],
 
   "explorer.icon.enableNerdfont": true
