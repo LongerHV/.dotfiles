@@ -8,20 +8,20 @@
 
 - alacritty configuration
 
-- vim configuration (with plugons as submodules)
+- nvim configuration
 
 - zsh configuration (with plugins as submodules)
 
 - Hack Nerd Font
 
-Qtile configured to use solarized dark theme,
+Qtile and Alacritty configured to use kind of Adapta/Oceanic theme
 GUI applications use adapta theme
 
 ## Dependencies:
 
 - zsh
 
-- vim
+- nvim
 
 - qtile
 
@@ -31,7 +31,9 @@ GUI applications use adapta theme
 
 - picom
 
-- lxsession (for polkit)
+- lxqt-session (for polkit)
+	
+- pcmanfm-qt
 
 - nitrogen
 
@@ -43,7 +45,7 @@ GUI applications use adapta theme
 
 - Brave browser
 
-- Jack2 (+ cadence, pavucontrol-qt)
+- pipewire, pipewire-pulse, pipewire-jack (+ cadence, pavucontrol-qt)
 
 - redshift-gtk
 
@@ -93,10 +95,6 @@ git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout -f
 source $HOME/.zshrc
 
 config submodule update --init --recursive
-
-cd $HOME/.vim/bundle/youcompleteme
-
-python3 install.py --all
 
 ## Update submodules:
 config submodule foreach git pull origin master
