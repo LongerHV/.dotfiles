@@ -1,12 +1,12 @@
 " Dependencies:
 " python
 " python-pynvim
+" python-debugpy
 " npm
 " nodejs
 
 " TODO:
 " * vimspector (debugging)
-" * Coc puts weird indents in python
 
 " Embedded in VSCode
 if exists('g:vscode')
@@ -19,6 +19,8 @@ else
 	" Plugins
 	call plug#begin('~/.config/nvim/plugged')
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'sheerun/vim-polyglot'
+	Plug 'puremourning/vimspector'
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-repeat'
 	Plug 'mhartington/oceanic-next'
@@ -28,12 +30,11 @@ else
 	Plug 'cohama/lexima.vim'
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'luochen1990/rainbow'
-	Plug 'sheerun/vim-polyglot'
-	" Plug 'puremourning/vimspector'
 	call plug#end()
 
 	" Extensions
 	let g:coc_global_extensions = ['coc-pyright', 'coc-json', 'coc-vimlsp', 'coc-prettier', 'coc-explorer', 'coc-lists']
+	let g:vimspector_install_gadgets = ['debugpy']
 
 	" Leader
 	let mapleader = ' '
@@ -69,10 +70,13 @@ else
 	" CoC config
 	source $HOME/.config/nvim/plug-config/coc.vim
 
+	" Vimspector
+	let g:vimspector_enable_mappings = 'HUMAN'
+
 	" Remaps
 	nnoremap <leader>t :CocCommand explorer<CR>
 	nnoremap <C-P> :CocList files<CR>
-	nnoremap  <plug>NERDCommenterToggle
+	map  <plug>NERDCommenterToggle
 
 	vnoremap <leader>y "+y
 	nnoremap <leader>y "+yy
