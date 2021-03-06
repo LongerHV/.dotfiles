@@ -33,25 +33,15 @@ ALT = "mod1"
 MYTERM = "alacritty"
 MYFONT = "Hack Nerd Font"
 MYHOME = os.environ.get('HOME')
-MYCOLORS = [
-    '#263238',
-    '#dc322f',
-    '#859900',
-    '#b58900',
-    '#268bd2',
-    '#d33682',
-    '#2aa198',
-    '#eee8d5'
-]
 
-BLACK = MYCOLORS[0]
-RED = MYCOLORS[1]
-GREEN = MYCOLORS[2]
-YELLOW = MYCOLORS[3]
-BLUE = MYCOLORS[4]
-MAGENTA = MYCOLORS[5]
-CYAN = MYCOLORS[6]
-WHITE = MYCOLORS[7]
+BLACK = '#29414f'
+RED = '#ec5f67'
+GREEN = '#99c794'
+YELLOW = '#fac863'
+BLUE = '#6699cc'
+MAGENTA = '#c594c5'
+CYAN = '#5fb3b3'
+WHITE = '#ffffff'
 
 ##### KEYBINDINGS #####
 keys = [
@@ -184,10 +174,10 @@ keys = [
     #      lazy.group["ScratchPad"].dropdown_toggle(MYTERM),
     #      desc='Dropdown terminal'),
     #  Key(
-        #  [], "3270_PrintScreen",
-        #  [MOD], "Insert",
-        #  lazy.spawn("screengrab"),
-        #  desc="Print Screen"
+    #  [], "3270_PrintScreen",
+    #  [MOD], "Insert",
+    #  lazy.spawn("screengrab"),
+    #  desc="Print Screen"
     #  ),
     #  Key(
     #      [MOD, ALT], "v",
@@ -244,12 +234,16 @@ layouts = (
     #  layout.Floating(**layout_theme)
 )
 
-##### SPAWN APPLICATONS
+# SPAWN APPLICATONS
+
+
 def spawn_pavu():
     qtile.cmd_spawn('pavucontrol-qt')
 
+
 def spawn_xmenu():
     qtile.cmd_spawn(['/bin/bash', os.path.join(MYHOME, 'scripts', 'xmenu.sh')])
+
 
 ##### DEFAULT WIDGET SETTINGS #####
 widget_defaults = dict(
@@ -262,158 +256,160 @@ extension_defaults = widget_defaults.copy()
 
 ##### WIDGETS #####
 
+
 def init_wide_bar(tray=True):
     return (
-    widget.TextBox(
-        text="",
-        foreground=WHITE,
-        background=BLACK,
-        fontsize=32,
-        padding=10,
-        mouse_callbacks={'Button1': spawn_xmenu}
-    ),
-    widget.GroupBox(
-        font=MYFONT,
-        fontsize=20,
-        spacing=0,
-        disable_drag=True,
-        active=WHITE,
-        inactive=WHITE,
-        rounded=False,
-        highlight_method="block",
-        this_current_screen_border=GREEN,
-        this_screen_border=CYAN,
-        other_current_screen_border=BLACK,
-        other_screen_border=BLACK,
-        foreground=WHITE,
-        background=BLACK,
-    ),
-    widget.TaskList(
-    ),
-    widget.Systray(
-        background=BLACK,
-        padding=5
-    ) if tray else widget.Sep(linewidth=0),
-    widget.Sep(
-        linewidth=0,
-        padding=5,
-        background=BLACK
-    ),
-    widget.CheckUpdates(
-        execute=' '.join([MYTERM, '-e', 'yay']),
-        distro='Arch_yay',
-        display_format=' Updates: {updates}',
-        update_interval=1800,
-        foreground=WHITE,
-        background=CYAN,
-        padding=5
-    ),
-    widget.TextBox(
-        text="",
-        padding=5,
-        foreground=WHITE,
-        background=GREEN,
-        fontsize=16
-    ),
-    widget.BitcoinTicker(
-        # currency='USD',
-        # fmt='{}{}',
-        foreground=WHITE,
-        background=GREEN,
-        padding=5
-    ),
-    widget.TextBox(
-        text="",
-        padding=5,
-        foreground=WHITE,
-        background=CYAN,
-        fontsize=16
-    ),
-    widget.ThermalSensor(
-        tag_sensor="Package id 0",
-        foreground=WHITE,
-        background=CYAN,
-        padding=5
-    ),
-    widget.TextBox(
-        text="Vol:",
-        foreground=WHITE,
-        background=GREEN,
-        padding=5,
-        mouse_callbacks={'Button1': spawn_pavu}
-    ),
-    widget.Volume(
-        foreground=WHITE,
-        background=GREEN,
-        padding=5
-    ),
-    widget.CurrentLayoutIcon(
-        custom_icon_paths=[os.path.expanduser(
-            "$HOME/.config/qtile/icons")],
-        foreground=WHITE,
-        background=CYAN,
-        scale=0.7
-    ),
-    widget.CurrentLayout(
-        foreground=WHITE,
-        background=CYAN,
-        padding=5
-    ),
-    widget.Clock(
-        foreground=WHITE,
-        background=GREEN,
-        padding=5,
-        format="%A, %d %B [ %H:%M ]"
-    ),
-    widget.Sep(
-        linewidth=0,
-        padding=5,
-        background=GREEN
+        widget.TextBox(
+            text="",
+            foreground=WHITE,
+            background=BLACK,
+            fontsize=32,
+            padding=10,
+            mouse_callbacks={'Button1': spawn_xmenu}
+        ),
+        widget.GroupBox(
+            font=MYFONT,
+            fontsize=20,
+            spacing=0,
+            disable_drag=True,
+            active=WHITE,
+            inactive=WHITE,
+            rounded=False,
+            highlight_method="block",
+            this_current_screen_border=GREEN,
+            this_screen_border=CYAN,
+            other_current_screen_border=BLACK,
+            other_screen_border=BLACK,
+            foreground=WHITE,
+            background=BLACK,
+        ),
+        widget.TaskList(
+        ),
+        widget.Systray(
+            background=BLACK,
+            padding=5
+        ) if tray else widget.Sep(linewidth=0),
+        widget.Sep(
+            linewidth=0,
+            padding=5,
+            background=BLACK
+        ),
+        widget.CheckUpdates(
+            execute=' '.join([MYTERM, '-e', 'yay']),
+            distro='Arch_yay',
+            display_format=' Updates: {updates}',
+            update_interval=1800,
+            foreground=WHITE,
+            background=CYAN,
+            padding=5
+        ),
+        widget.TextBox(
+            text="",
+            padding=5,
+            foreground=WHITE,
+            background=GREEN,
+            fontsize=16
+        ),
+        widget.BitcoinTicker(
+            # currency='USD',
+            # fmt='{}{}',
+            foreground=WHITE,
+            background=GREEN,
+            padding=5
+        ),
+        widget.TextBox(
+            text="",
+            padding=5,
+            foreground=WHITE,
+            background=CYAN,
+            fontsize=16
+        ),
+        widget.ThermalSensor(
+            tag_sensor="Package id 0",
+            foreground=WHITE,
+            background=CYAN,
+            padding=5
+        ),
+        widget.TextBox(
+            text="Vol:",
+            foreground=WHITE,
+            background=GREEN,
+            padding=5,
+            mouse_callbacks={'Button1': spawn_pavu}
+        ),
+        widget.Volume(
+            foreground=WHITE,
+            background=GREEN,
+            padding=5
+        ),
+        widget.CurrentLayoutIcon(
+            custom_icon_paths=[os.path.expanduser(
+                "$HOME/.config/qtile/icons")],
+            foreground=WHITE,
+            background=CYAN,
+            scale=0.7
+        ),
+        widget.CurrentLayout(
+            foreground=WHITE,
+            background=CYAN,
+            padding=5
+        ),
+        widget.Clock(
+            foreground=WHITE,
+            background=GREEN,
+            padding=5,
+            format="%A, %d %B [ %H:%M ]"
+        ),
+        widget.Sep(
+            linewidth=0,
+            padding=5,
+            background=GREEN
+        )
     )
-)
 
 
 def init_short_bar():
     return (
-    BGroupBox(
-        font=MYFONT,
-        fontsize=20,
-        borderwidth=0,
-        foreground=WHITE,
-        this_current_screen_border=GREEN,
-        this_screen_border=CYAN,
-    ),
-    widget.Sep(
-        linewidth=0,
-        padding=5,
-        background=BLACK
-    ),
-    widget.TaskList(
-    ),
-    widget.CurrentLayoutIcon(
-        custom_icon_paths=[os.path.expanduser(
-            "$HOME/.config/qtile/icons")],
-        foreground=WHITE,
-        background=CYAN,
-        scale=0.7
-    ),
-    widget.CurrentLayout(
-        foreground=WHITE,
-        background=CYAN,
-        padding=5
-    ),
-    widget.Clock(
-        foreground=WHITE,
-        background=GREEN,
-        padding=5,
-        format="%A, %d %B [ %H:%M ]"
-    ),
-    widget.Sep(
-        linewidth=0,
-        padding=5,
-        background=GREEN
+        BGroupBox(
+            font=MYFONT,
+            fontsize=20,
+            borderwidth=0,
+            foreground=WHITE,
+            this_current_screen_border=GREEN,
+            this_screen_border=CYAN,
+        ),
+        widget.Sep(
+            linewidth=0,
+            padding=5,
+            background=BLACK
+        ),
+        widget.TaskList(
+        ),
+        widget.CurrentLayoutIcon(
+            custom_icon_paths=[os.path.expanduser(
+                "$HOME/.config/qtile/icons")],
+            foreground=WHITE,
+            background=CYAN,
+            scale=0.7
+        ),
+        widget.CurrentLayout(
+            foreground=WHITE,
+            background=CYAN,
+            padding=5
+        ),
+        widget.Clock(
+            foreground=WHITE,
+            background=GREEN,
+            padding=5,
+            format="%A, %d %B [ %H:%M ]"
+        ),
+        widget.Sep(
+            linewidth=0,
+            padding=5,
+            background=GREEN
+        )
     )
-)
+
 
 bar_list = (
     init_wide_bar(),
@@ -470,14 +466,18 @@ auto_fullscreen = True
 focus_on_window_activation = "smart"
 
 ##### STARTUP APPLICATIONS #####
+
+
 @hook.subscribe.startup
 def runner():
     subprocess.Popen(['xsetroot', '-cursor_name', 'left_ptr'])
+
 
 @hook.subscribe.startup_once
 def start_once():
     home = os.path.expanduser('~')
     subprocess.call([home + '/.config/qtile/autostart.sh'])
+
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the

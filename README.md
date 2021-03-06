@@ -14,7 +14,8 @@
 
 - Hack Nerd Font
 
-Qtile and Alacritty configured to use kind of Adapta/Oceanic theme
+Qtile and Alacritty configured to use Oceanic theme
+
 GUI applications use adapta theme
 
 ## Dependencies:
