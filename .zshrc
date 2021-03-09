@@ -50,4 +50,4 @@ then
     neofetch --gtk2 off --gtk3 off
 fi
 
-source /home/longer/.config/broot/launcher/bash/br
+# source /home/longer/.config/broot/launcher/bash/br

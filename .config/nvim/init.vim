@@ -42,6 +42,9 @@ else
 	" Line numbering
 	set number relativenumber
 
+	" No line wrapping
+	set nowrap
+
 	" Mouse
 	set mouse=a
 	
