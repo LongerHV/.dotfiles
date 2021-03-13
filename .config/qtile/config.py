@@ -17,22 +17,21 @@
 # The above copyright notice and this permission notice shall be included in all copies
 # or substantial portions of the Software.
 
-##### IMPORTS #####
+# IMPORTS
 import os
 import subprocess
 from typing import List  # noqa: F401
-from libqtile.config import Key, Screen, Group, Drag, Click, ScratchPad, DropDown, Match
+from libqtile.config import Key, Screen, Group, Drag, Click, ScratchPad, DropDown
 from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook, extension, qtile
 from mylib import BGroupBox
 
-##### DEFINING SOME VARIABLES #####
+# DEFINING SOME VARIABLES
 os.environ['QT_QPA_PLATFORMTHEME'] = 'qt5ct'
 MOD = "mod4"  # Sets mod key to SUPER/WINDOWS
 ALT = "mod1"
 MYTERM = "alacritty"
 MYFONT = "Hack Nerd Font"
-MYHOME = os.environ.get('HOME')
 
 BLACK = '#29414f'
 RED = '#ec5f67'
@@ -43,7 +42,7 @@ MAGENTA = '#c594c5'
 CYAN = '#5fb3b3'
 WHITE = '#ffffff'
 
-##### KEYBINDINGS #####
+# KEYBINDINGS
 keys = [
     # The essentials
     Key([MOD], "Return",
@@ -186,38 +185,36 @@ keys = [
     #      ),
 ]
 
-##### GROUPS #####
-group_names = (
-    (" WWW", {'layout': 'max'}),
-    (" DEV", {'layout': 'max'}),
-    (" SYS", {'layout': 'monadtall'}),
-    (" VRT", {'layout': 'max'}),
-    (" MUS", {'layout': 'max'}),
-    (" VID", {'layout': 'max'}),
-    (" FUN", {'layout': 'max'}),
-    (" MSG", {'layout': 'max'})
+# GROUPS
+groups = (
+    Group(' WWW', layout='max'),
+    Group(' DEV', layout='max'),
+    Group(' SYS', layout='monadtall'),
+    Group(' VRT', layout='max'),
+    Group(' MUS', layout='max'),
+    Group(' VID', layout='max'),
+    Group(' FUN', layout='max'),
+    Group(' MSG', layout='max'),
+    ScratchPad('scratchpad', [DropDown(
+        'term', MYTERM, width=0.9, height=0.9,
+        x=0.05, y=0.05, opacity=1.0, on_focus_lost_hide=False
+    )])
 )
 
-groups = [Group(name, **kwargs) for name, kwargs in group_names]
-drop_term = DropDown('term', MYTERM, width=0.9, height=0.9,
-                     x=0.05, y=0.05, opacity=1.0,
-                     on_focus_lost_hide=False)
-groups.append(ScratchPad('scratchpad', [drop_term]))
-
-for i, (name, kwargs) in enumerate(group_names, 1):
+for i, group in enumerate(groups[:-1], 1):
     # Switch to another group
-    keys.append(Key([MOD], str(i), lazy.group[name].toscreen()))
+    keys.append(Key([MOD], str(i), lazy.group[group.name].toscreen()))
     # Send current window to another group
-    keys.append(Key([MOD, "shift"], str(i), lazy.window.togroup(name)))
+    keys.append(Key([MOD, "shift"], str(i), lazy.window.togroup(group.name)))
 
-##### DEFAULT THEME SETTINGS FOR LAYOUTS #####
+# DEFAULT THEME SETTINGS FOR LAYOUTS
 layout_theme = {"border_width": 3,
                 "margin": 16,
                 "border_focus": GREEN,
                 "border_normal": BLACK
                 }
 
-##### THE LAYOUTS #####
+# THE LAYOUTS
 layouts = (
     # layout.Bsp(**layout_theme),
     # layout.Stack(stacks=2, **layout_theme),
@@ -234,18 +231,7 @@ layouts = (
     #  layout.Floating(**layout_theme)
 )
 
-# SPAWN APPLICATONS
-
-
-def spawn_pavu():
-    qtile.cmd_spawn('pavucontrol-qt')
-
-
-def spawn_xmenu():
-    qtile.cmd_spawn(['/bin/bash', os.path.join(MYHOME, 'scripts', 'xmenu.sh')])
-
-
-##### DEFAULT WIDGET SETTINGS #####
+# DEFAULT WIDGET SETTINGS
 widget_defaults = dict(
     font=MYFONT,
     fontsize=16,
@@ -254,9 +240,8 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-##### WIDGETS #####
 
-
+# WIDGETS
 def init_wide_bar(tray=True):
     return (
         widget.TextBox(
@@ -265,7 +250,12 @@ def init_wide_bar(tray=True):
             background=BLACK,
             fontsize=32,
             padding=10,
-            mouse_callbacks={'Button1': spawn_xmenu}
+            mouse_callbacks={
+                'Button1': lambda: qtile.cmd_spawn([
+                    '/bin/bash', os.path.expanduser(os.path.join(
+                        '~', 'scripts', 'xmenu.sh'))
+                ])
+            }
         ),
         widget.GroupBox(
             font=MYFONT,
@@ -335,7 +325,7 @@ def init_wide_bar(tray=True):
             foreground=WHITE,
             background=GREEN,
             padding=5,
-            mouse_callbacks={'Button1': spawn_pavu}
+            mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('pavucontrol-qt')}
         ),
         widget.Volume(
             foreground=WHITE,
@@ -438,36 +428,16 @@ follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 
-##### FLOATING WINDOWS #####
+# FLOATING WINDOWS
 floating_layout = layout.Floating(float_rules=[
-    Match(wm_class='confirm'),
-    Match(wm_class='dialog'),
-    Match(wm_class='download'),
-    Match(wm_class='error'),
-    Match(wm_class='file_progress'),
-    Match(wm_class='notification'),
-    Match(wm_class='splash'),
-    Match(wm_class='toolbar'),
-    Match(wm_class='confirmreset'),  # gitk
-    Match(wm_class='makebranch'),  # gitk
-    Match(wm_class='maketag'),  # gitk
-    Match(title='branchdialog'),  # gitk
-    Match(title='pinentry'),  # GPG key password entry
-    Match(title='Connect to SPICE'),
-    Match(title='Steam'),
-    Match(wm_class='ssh-askpass'),  # ssh-askpass
-    Match(wm_class='Steam'),
-    Match(wm_class='lxpolkit'),
-    Match(wm_class='redshift-gtk'),
-    Match(wm_class='qjackctl')
+    *layout.Floating.default_float_rules
 ], **layout_theme)
 
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 
-##### STARTUP APPLICATIONS #####
 
-
+# STARTUP APPLICATIONS
 @hook.subscribe.startup
 def runner():
     subprocess.Popen(['xsetroot', '-cursor_name', 'left_ptr'])
