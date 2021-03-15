@@ -81,6 +81,11 @@ else
 	nnoremap <C-P> :CocList files<CR>
 	map  <plug>NERDCommenterToggle
 
+	nnoremap <C-k> :cnext<CR>
+	nnoremap <C-j> :cprev<CR>
+	nnoremap <C-q> :call ToggleQFList(1)<CR>
+	nnoremap <C-l> :call ToggleQFList(0)<CR>
+
 	vnoremap <leader>y "+y
 	nnoremap <leader>y "+yy
 	nnoremap <leader>p "+p
