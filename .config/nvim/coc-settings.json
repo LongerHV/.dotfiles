@@ -1,5 +1,5 @@
 {
-  // "coc.preferences.formatOnSaveFiletypes": ["json", "python"],
+  "coc.preferences.formatOnSaveFiletypes": ["json"],
 
   "python.linting.enabled": true,
   "python.linting.pycodestyleEnabled": true,
