@@ -58,6 +58,7 @@ else
 	endif
 	let g:airline_theme = 'oceanicnext'
 	colorscheme OceanicNext
+	set cursorline
 
 	" Fix transparency
 	hi Normal guibg=NONE ctermbg=NONE

@@ -86,9 +86,11 @@ skin=modarin256-defbg
 
 filepos_max_saved_entries=1024
 
+shadows=true
+
 [Layout]
 output_lines=0
-left_panel_size=83
+left_panel_size=84
 top_panel_size=0
 message_visible=true
 keybar_visible=true
@@ -110,6 +112,8 @@ source_codepage=Other_8_bit
 autodetect_codeset=
 clipboard_store=
 clipboard_paste=
+
+spell_language=en
 
 [Colors]
 base_color=

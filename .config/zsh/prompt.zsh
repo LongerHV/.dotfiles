@@ -27,6 +27,7 @@ SPACESHIP_PROMPT_ORDER=(
   host          # Hostname section
   dir           # Current directory section
   git           # Git section (git_branch + git_status)
+  pyenv         # Python venv
   line_sep      # Line break
   char          # Prompt character
 )
