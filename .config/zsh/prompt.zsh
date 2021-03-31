@@ -21,14 +21,20 @@ SPACESHIP_DIR_COLOR="blue"
 SPACESHIP_CHAR_SYMBOL=
 SPACESHIP_CHAR_SYMBOL_ROOT=#
 SPACESHIP_CHAR_SUFFIX=" "
+SPACESHIP_EXIT_CODE_SHOW=true
 
 SPACESHIP_PROMPT_ORDER=(
   user          # Username section
   host          # Hostname section
   dir           # Current directory section
   git           # Git section (git_branch + git_status)
-  pyenv         # Python venv
+  venv          # Python venv
   line_sep      # Line break
   char          # Prompt character
+)
+
+SPACESHIP_RPROMPT_ORDER=(
+  exit_code
+  vi_mode
 )
 
