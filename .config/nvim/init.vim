@@ -30,6 +30,7 @@ else
 	Plug 'cohama/lexima.vim'
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'luochen1990/rainbow'
+	Plug 'mhinz/vim-startify'
 	call plug#end()
 
 	" Extensions
@@ -77,6 +78,21 @@ else
 	" Vimspector
 	let g:vimspector_enable_mappings = 'HUMAN'
 
+	" Startify
+	let g:startify_change_to_dir = 0
+	let s:startify_ascii_header = [
+	 \ '                                        ▟▙            ',
+	 \ '                                        ▝▘            ',
+	 \ '██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖',
+	 \ '██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██',
+	 \ '██    ██  ██▀▀▀▀▀▘  ██▖  ▗██   ▜█▙▟█▛   ██  ██  ██  ██',
+	 \ '██    ██  ▜█▙▄▄▄▟▊  ▀██▙▟██▀   ▝████▘   ██  ██  ██  ██',
+	 \ '▀▀    ▀▀   ▝▀▀▀▀▀     ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀',
+	 \ '',
+	 \]
+	let g:startify_custom_header = map(s:startify_ascii_header +
+		\ startify#fortune#quote(), '"   ".v:val')
+
 	" Remaps
 	nnoremap <leader>t :CocCommand explorer<CR>
 	nnoremap <C-P> :CocList files<CR>
@@ -89,6 +105,8 @@ else
 
 	vnoremap <leader>y "+y
 	nnoremap <leader>y "+yy
+	vnoremap <leader>p "+p
+	vnoremap <leader>P "+P
 	nnoremap <leader>p "+p
 	nnoremap <leader>P "+P
 endif
