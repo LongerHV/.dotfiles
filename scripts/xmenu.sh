@@ -23,6 +23,7 @@ Editors
 戮 Steam			steam
  Screenshot		screengrab
  Refresh wallpaper	nitrogen --restore
+ Fix screen	xrandr --output DisplayPort-1 --primary --output DisplayPort-2 --left-of DisplayPort-1 --output HDMI-A-1 --right-of DisplayPort-1 --rotate left
 
  $(uname -r)	
 
