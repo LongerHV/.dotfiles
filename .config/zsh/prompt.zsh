@@ -2,6 +2,9 @@
 if [ $(whoami) = 'root' ]
 then
     color='red'
+elif [ ${SSH_TTY} ]
+then
+    color='yellow'
 else
     color='green'
 fi
@@ -15,6 +18,7 @@ SPACESHIP_USER_COLOR=$color
 SPACESHIP_HOST_SHOW=always
 SPACESHIP_HOST_PREFIX="%F{$color}@"
 SPACESHIP_HOST_COLOR=$color
+# SPACESHIP_HOST_COLOR_SSH="yellow"
 SPACESHIP_DIR_SHOW=always
 SPACESHIP_DIR_PREFIX=""
 SPACESHIP_DIR_COLOR="blue"
@@ -22,6 +26,7 @@ SPACESHIP_CHAR_SYMBOL=
 SPACESHIP_CHAR_SYMBOL_ROOT=#
 SPACESHIP_CHAR_SUFFIX=" "
 SPACESHIP_EXIT_CODE_SHOW=true
+SPACESHIP_VENV_SYMBOL="🐍 "
 
 SPACESHIP_PROMPT_ORDER=(
   user          # Username section
