@@ -2,14 +2,21 @@
   "coc.preferences.formatOnSaveFiletypes": ["json"],
 
   "python.linting.enabled": true,
-  "python.linting.pycodestyleEnabled": true,
-  "python.linting.pycodestylePath": "pycodestyle",
-  "python.linting.pycodestyleArgs": ["--ignore", "E501,W503"],
+  // "python.linting.pycodestyleEnabled": true,
+  // "python.linting.pycodestyleArgs": ["--ignore", "E501,W503"],
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": ["--ignore=E501,W503"],
   "python.formatting.autopep8Args": ["--ignore", "E501"],
 
   "explorer.icon.enableNerdfont": true,
 
-  "list.source.files.excludePatterns": ["**/*.pyc", "**/*.egg-info/*"],
+  "list.source.files.excludePatterns": [
+    "**/*.pyc",
+    "**/*.egg-info/*",
+    "**/cache/*",
+    "**/build/*",
+    "**/dist/*"
+  ],
   "suggest.completionItemKindLabels": {
     "method": "  ",
     "function": "  ",
