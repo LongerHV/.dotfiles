@@ -31,6 +31,10 @@ else
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'luochen1990/rainbow'
 	Plug 'mhinz/vim-startify'
+
+	Plug 'nvim-lua/popup.nvim'
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'nvim-telescope/telescope.nvim'
 	call plug#end()
 
 	" Extensions
@@ -45,6 +49,10 @@ else
 
 	" No line wrapping
 	set nowrap
+
+	" Better markdown
+	set conceallevel=0
+	let g:indentLine_conceallevel = 0
 
 	" Mouse
 	set mouse=a
@@ -98,16 +106,24 @@ else
 	nnoremap <C-P> :CocList files<CR>
 	map  <plug>NERDCommenterToggle
 
+	" Quick Fix lists
 	nnoremap <C-k> :cnext<CR>
 	nnoremap <C-j> :cprev<CR>
 	nnoremap <C-q> :call ToggleQFList(1)<CR>
 	nnoremap <C-l> :call ToggleQFList(0)<CR>
 
+	" Copy and paste (system clipboard)
 	vnoremap <leader>y "+y
 	nnoremap <leader>y "+yy
 	vnoremap <leader>p "+p
 	vnoremap <leader>P "+P
 	nnoremap <leader>p "+p
 	nnoremap <leader>P "+P
+
+	" Telescope
+	nnoremap <leader>ff <cmd>Telescope find_files<cr>
+	nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+	nnoremap <leader>fb <cmd>Telescope buffers<cr>
+	nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 endif
 
