@@ -16,3 +16,6 @@
 [submodule ".zsh_custom/plugins/zsh-vim-mode"]
 	path = .zsh_custom/plugins/zsh-vim-mode
 	url = https://github.com/softmoth/zsh-vim-mode.git
+[submodule "/home/longer/repos/styli.sh"]
+	path = /home/longer/repos/styli.sh
+	url = https://github.com/thevinter/styli.sh
