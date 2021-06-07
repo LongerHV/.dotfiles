@@ -22,7 +22,7 @@ Editors
 嗢 VLC				vlc
 戮 Steam			steam
  Screenshot		screengrab
- Refresh wallpaper	nitrogen --restore
+ Refresh wallpaper	~/repos/styli.sh/styli.sh -r earthporn -w 2560 -h 1440 -m 3 -b bg-fill
  Fix screen	xrandr --output DisplayPort-1 --primary --output DisplayPort-2 --left-of DisplayPort-1 --output HDMI-A-1 --right-of DisplayPort-1 --rotate left
 
  $(uname -r)	

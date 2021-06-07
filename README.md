@@ -22,7 +22,7 @@ GUI applications use adapta theme
 
 - zsh
 
-- nvim
+- nvim (>5.0)
 
 - qtile
 
@@ -36,7 +36,7 @@ GUI applications use adapta theme
 	
 - pcmanfm-qt
 
-- nitrogen
+- feh
 
 - LightDM
 
@@ -46,7 +46,7 @@ GUI applications use adapta theme
 
 - Brave browser
 
-- pipewire, pipewire-pulse, pipewire-jack (+ cadence, pavucontrol-qt)
+- pipewire, pipewire-pulse, pipewire-jack, pavucontrol-qt
 
 - redshift-gtk
 

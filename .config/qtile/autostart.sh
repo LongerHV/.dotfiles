@@ -18,6 +18,7 @@ run-or-restart() {
 
 # run nitrogen --restore                      # wallpaper
 run /bin/bash "$HOME/scripts/bing_image.sh"
+~/repos/styli.sh/styli.sh -r earthporn -w 2560 -h 1440 -m 3 -b bg-fill
 run-or-restart picom                                   # compositor
 run-or-restart redshift-gtk -t 5000:3500
 # run-or-restart redshift-gtk -t 5000:3500 -b 0.8:0.8    # redshift

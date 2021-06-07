@@ -37,7 +37,6 @@ else
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope.nvim'
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-	" ------------
 	call plug#end()
 
 	" Extensions
@@ -52,6 +51,10 @@ else
 
 	" No line wrapping
 	set nowrap
+
+	" Better markdown
+	set conceallevel=0
+	let g:indentLine_conceallevel = 0
 
 	" Mouse
 	set mouse=a
@@ -106,11 +109,13 @@ else
 	nnoremap <C-P> :Telescope find_files<CR>
 	map  <plug>NERDCommenterToggle
 
+	" Quick Fix lists
 	nnoremap <C-k> :cnext<CR>
 	nnoremap <C-j> :cprev<CR>
 	nnoremap <C-q> :call ToggleQFList(1)<CR>
 	nnoremap <C-l> :call ToggleQFList(0)<CR>
 
+	" Copy and paste (system clipboard)
 	vnoremap <leader>y "+y
 	nnoremap <leader>y "+yy
 	vnoremap <leader>p "+p
