@@ -31,10 +31,17 @@ else
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'luochen1990/rainbow'
 	Plug 'mhinz/vim-startify'
+
+	" Experimental
+	Plug 'nvim-lua/popup.nvim'
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'nvim-telescope/telescope.nvim'
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+	" ------------
 	call plug#end()
 
 	" Extensions
-	let g:coc_global_extensions = ['coc-pyright', 'coc-json', 'coc-vimlsp', 'coc-prettier', 'coc-explorer', 'coc-lists']
+	let g:coc_global_extensions = ['coc-pyright', 'coc-json', 'coc-vimlsp', 'coc-prettier', 'coc-explorer', 'coc-lists', 'coc-pydocstring']
 	let g:vimspector_install_gadgets = ['debugpy']
 
 	" Leader
@@ -60,6 +67,7 @@ else
 	let g:airline_theme = 'oceanicnext'
 	colorscheme OceanicNext
 	set cursorline
+	set colorcolumn=80
 
 	" Fix transparency
 	hi Normal guibg=NONE ctermbg=NONE
@@ -95,7 +103,7 @@ else
 
 	" Remaps
 	nnoremap <leader>t :CocCommand explorer<CR>
-	nnoremap <C-P> :CocList files<CR>
+	nnoremap <C-P> :Telescope find_files<CR>
 	map  <plug>NERDCommenterToggle
 
 	nnoremap <C-k> :cnext<CR>
@@ -109,5 +117,12 @@ else
 	vnoremap <leader>P "+P
 	nnoremap <leader>p "+p
 	nnoremap <leader>P "+P
+
+	" Telescope
+	nnoremap <leader>ff <cmd>Telescope find_files<cr>
+	nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+	nnoremap <leader>fb <cmd>Telescope buffers<cr>
+	nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+	nnoremap <leader>ft <cmd>Telescope treesitter<cr>
 endif
 
