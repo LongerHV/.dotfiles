@@ -13,7 +13,7 @@ package=$(pacman -Ssq | fzf)
 pacman -Si $package | less
 
 echo ":: Selected package: $package"
-pacman -Qq $package &> /dev/null && echo ":: Package already in the system"
+pacman -Qq $package 1> /dev/null 2>&1 && echo ":: Package already in the system"
 read -p ":: Install package? [y/N] " ans
 if [ "$ans" = "y" ]
 then
