@@ -7,6 +7,20 @@ cfg () {
     && config push origin master
 }
 
+vv () {
+    if [ -d .venv ];
+    then
+        source .venv/bin/activate
+    elif [ -d venv ];
+    then
+        source venv/bin/activate
+    else
+        python -m venv .venv
+        source .venv/bin/activate
+        python -m pip install pynvim flake8 autopep8
+    fi
+}
+
 # fix tldr
 alias tldr='LANG=en_US.utf8 tldr'
 
