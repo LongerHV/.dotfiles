@@ -24,7 +24,8 @@ else
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-repeat'
 	Plug 'mhartington/oceanic-next'
-	Plug 'vim-airline/vim-airline'
+	" Plug 'vim-airline/vim-airline'
+	Plug 'hoob3rt/lualine.nvim'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'yggdroot/indentline'
 	Plug 'cohama/lexima.vim'
@@ -40,7 +41,7 @@ else
 	call plug#end()
 
 	" Extensions
-	let g:coc_global_extensions = ['coc-pyright', 'coc-json', 'coc-vimlsp', 'coc-prettier', 'coc-explorer', 'coc-lists', 'coc-pydocstring']
+	let g:coc_global_extensions = ['coc-pyright', 'coc-json', 'coc-yaml', 'coc-vimlsp', 'coc-prettier', 'coc-explorer', 'coc-lists', 'coc-pydocstring', 'coc-markdownlint']
 	let g:vimspector_install_gadgets = ['debugpy']
 
 	" Leader
@@ -62,12 +63,19 @@ else
 	" Search
 	set ignorecase smartcase
 
+	" Lualine
+lua << EOF
+	require('lualine').setup {
+		options = {theme = 'oceanicnext'}
+	}
+EOF
+
 	" Theme
 	syntax enable
 	if (has("termguicolors"))
 		set termguicolors
 	endif
-	let g:airline_theme = 'oceanicnext'
+	" let g:airline_theme = 'oceanicnext'
 	colorscheme OceanicNext
 	set cursorline
 	set colorcolumn=80

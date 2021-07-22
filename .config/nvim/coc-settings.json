@@ -5,8 +5,10 @@
   // "python.linting.pycodestyleEnabled": true,
   // "python.linting.pycodestyleArgs": ["--ignore", "E501,W503"],
   "python.linting.flake8Enabled": true,
+  // "python.linting.pylintEnabled": true,
   "python.linting.flake8Args": ["--ignore=E501,W503"],
   "python.formatting.autopep8Args": ["--ignore", "E501"],
+  // "pydocstring.formatter": "sphinx",
   "pydocstring.formatter": "google",
 
   "explorer.icon.enableNerdfont": true,
