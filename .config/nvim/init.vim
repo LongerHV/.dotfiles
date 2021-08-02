@@ -157,6 +157,14 @@ EOF
 	nnoremap J Jzz
 	nnoremap <C-u> <C-u>zz
 	nnoremap <C-d> <C-d>zz
+	nnoremap { {zz
+	nnoremap } }zz
+	nnoremap ( (zz
+	nnoremap ) )zz
+	nnoremap [[ [[zz
+	nnoremap [] []zz
+	nnoremap ]] ]]zz
+	nnoremap ][ ][zz
 
 	" Add relative jumps to jumplist
 	nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
