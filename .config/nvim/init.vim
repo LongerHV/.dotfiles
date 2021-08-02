@@ -18,27 +18,36 @@ if exists('g:vscode')
 else
 	" Plugins
 	call plug#begin('~/.config/nvim/plugged')
+
+	" LSP
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+	" Syntax highlighting + indents
 	Plug 'sheerun/vim-polyglot'
-	" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+	" Debugging
 	Plug 'puremourning/vimspector'
+	" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+	" Additional movements / bindings
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-repeat'
-	Plug 'mhartington/oceanic-next'
-	" Plug 'vim-airline/vim-airline'
-	Plug 'hoob3rt/lualine.nvim'
 	Plug 'scrooloose/nerdcommenter'
-	Plug 'yggdroot/indentline'
 	Plug 'cohama/lexima.vim'
-	Plug 'ryanoasis/vim-devicons'
-	Plug 'luochen1990/rainbow'
-	Plug 'mhinz/vim-startify'
 
-	" Experimental
+	" Looks
+	Plug 'mhinz/vim-startify'
+	Plug 'mhartington/oceanic-next'
+	Plug 'hoob3rt/lualine.nvim'
+	Plug 'luochen1990/rainbow'
+	Plug 'ryanoasis/vim-devicons'
+	Plug 'yggdroot/indentline'
+
+	" Telescope (Fuzzy finding)
 	Plug 'nvim-lua/popup.nvim'
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope.nvim'
-	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 	call plug#end()
 
 	" Extensions
@@ -133,13 +142,33 @@ EOF
 	nnoremap <C-q> :call ToggleQFList(1)<CR>
 	nnoremap <C-l> :call ToggleQFList(0)<CR>
 
-	" Copy and paste (system clipboard)
+	" Copy and paste
 	vnoremap <leader>y "+y
 	nnoremap <leader>y "+yy
 	vnoremap <leader>p "+p
 	vnoremap <leader>P "+P
 	nnoremap <leader>p "+p
 	nnoremap <leader>P "+P
+	nnoremap Y y$
+
+	" Keep it centered
+	nnoremap n nzz
+	nnoremap N Nzz
+	nnoremap J Jzz
+	nnoremap <C-u> <C-u>zz
+	nnoremap <C-d> <C-d>zz
+
+	" Add relative jumps to jumplist
+	nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+	nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+
+	" Moving text
+	vnoremap <C-j> :m '>+1<CR>gv=gv
+	vnoremap <C-k> :m '<-2<CR>gv=gv
+	inoremap <C-j> <esc>:m .+1<CR>==
+	inoremap <C-k> <esc>:m .-2<CR>==
+	nnoremap <C-j> :m .+1<CR>==
+	nnoremap <C-k> :m .-2<CR>==
 
 	" Telescope
 	nnoremap <leader>ff <cmd>Telescope find_files<cr>
