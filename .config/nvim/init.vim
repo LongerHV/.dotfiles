@@ -184,5 +184,6 @@ EOF
 	nnoremap <leader>fb <cmd>Telescope buffers<cr>
 	nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 	nnoremap <leader>ft <cmd>Telescope treesitter<cr>
+	nnoremap <leader>fr <cmd>Telescope registers<cr>
 endif
 
