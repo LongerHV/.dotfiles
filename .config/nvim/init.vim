@@ -24,15 +24,16 @@ else
 
 	" Syntax highlighting + indents
 	Plug 'sheerun/vim-polyglot'
+	" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 	" Debugging
 	Plug 'puremourning/vimspector'
-	" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 	" Additional movements / bindings
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-repeat'
 	Plug 'scrooloose/nerdcommenter'
+	" Plug 'terrortylor/nvim-comment'
 	Plug 'cohama/lexima.vim'
 
 	" Looks
@@ -40,6 +41,7 @@ else
 	Plug 'mhartington/oceanic-next'
 	Plug 'hoob3rt/lualine.nvim'
 	Plug 'luochen1990/rainbow'
+	" Plug 'p00f/nvim-ts-rainbow'
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'yggdroot/indentline'
 
