@@ -21,6 +21,9 @@ else
 
 	" LSP
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	" Plug 'hrsh7th/nvim-compe'
+	" Plug 'neovim/nvim-lspconfig'
+	" Plug 'kyazdani42/nvim-tree.lua'
 
 	" Syntax highlighting + indents
 	Plug 'sheerun/vim-polyglot'
@@ -28,13 +31,15 @@ else
 
 	" Debugging
 	Plug 'puremourning/vimspector'
+	" Plug 'mfussenegger/nvim-dap'
 
 	" Additional movements / bindings
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-repeat'
 	Plug 'scrooloose/nerdcommenter'
-	" Plug 'terrortylor/nvim-comment'
+	" Plug 'b3nj5m1n/kommentary'
 	Plug 'cohama/lexima.vim'
+	" Plug 'windwp/nvim-autopairs'
 
 	" Looks
 	Plug 'mhinz/vim-startify'
@@ -44,6 +49,7 @@ else
 	" Plug 'p00f/nvim-ts-rainbow'
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'yggdroot/indentline'
+	" Plug 'lukas-reineke/indent-blankline.nvim'
 
 	" Telescope (Fuzzy finding)
 	Plug 'nvim-lua/popup.nvim'
