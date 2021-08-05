@@ -9,4 +9,5 @@ require "config.treesitter"
 require "config.remaps"
 require "config.telescope"
 require('nvim-autopairs').setup{}
+vim.cmd('source $HOME/.config/nvim/plug-config/startify.vim')
 -- require "config.vimspector"
