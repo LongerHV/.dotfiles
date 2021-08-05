@@ -6,7 +6,9 @@
 " nodejs
 
 " TODO:
-" * vimspector (debugging)
+" * Use .lua config
+" * Switch to packer
+" * Try more lua plugins
 
 " Embedded in VSCode
 if exists('g:vscode')
