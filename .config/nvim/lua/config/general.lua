@@ -12,3 +12,6 @@ vim.api.nvim_set_option('mouse', 'a')
 -- Searh case
 vim.api.nvim_set_option('ignorecase', true)
 vim.api.nvim_set_option('smartcase', true)
+
+-- Syntax highlighting
+vim.o.syntax = 'enable'

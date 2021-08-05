@@ -4,7 +4,6 @@ require'lualine'.setup {
 }
 
 -- Color theme
-vim.o.syntax = 'enable'
 vim.o.termguicolors = true
 vim.cmd 'colorscheme OceanicNext'
 vim.o.cursorline = true
