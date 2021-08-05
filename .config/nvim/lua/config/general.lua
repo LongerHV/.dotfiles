@@ -1,0 +1,14 @@
+-- Line numbering
+vim.api.nvim_win_set_option(0, 'number', true)
+vim.api.nvim_win_set_option(0, 'relativenumber', true)
+vim.api.nvim_win_set_option(0, 'wrap', false)
+
+-- Better Markdown
+vim.api.nvim_set_option('conceallevel', 0)
+
+-- Mouse
+vim.api.nvim_set_option('mouse', 'a')
+
+-- Searh case
+vim.api.nvim_set_option('ignorecase', true)
+vim.api.nvim_set_option('smartcase', true)
