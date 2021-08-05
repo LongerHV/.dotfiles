@@ -21,6 +21,7 @@ return require('packer').startup(function(use)
 	-- Syntax highlighting + indents
 	use 'sheerun/vim-polyglot'
 	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+	use 'nvim-treesitter/nvim-treesitter-textobjects'
 	-- use 'nvim-treesitter/playground'
 
 	-- Debugging
@@ -31,7 +32,6 @@ return require('packer').startup(function(use)
 	use 'tpope/vim-surround'
 	use 'tpope/vim-repeat'
 	use 'b3nj5m1n/kommentary'
-	-- use 'cohama/lexima.vim'
 	use 'windwp/nvim-autopairs'
 
 	-- Looks
