@@ -14,3 +14,10 @@ vim.cmd 'hi Normal guibg=NONE ctermbg=NONE'
 vim.cmd 'hi LineNr guibg=NONE ctermbg=NONE'
 vim.cmd 'hi SignColumn guibg=NONE ctermbg=NONE'
 vim.cmd 'hi EndOfBuffer guibg=NONE ctermbg=NONE'
+
+-- Indent line
+require'indent_blankline'.setup {
+	use_treesitter = true,
+	show_current_context = true,
+	context_patterns = {'class', 'function', 'method', '^if', '^for', '^while', '^try'},
+}
