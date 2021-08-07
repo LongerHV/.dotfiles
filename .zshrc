@@ -4,7 +4,7 @@ PATH=$PATH:~/.platformio/penv/bin
 PATH=$PATH:~/go/bin
 
 # Default editor
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 # History in cache directory:
