@@ -21,3 +21,6 @@ require'indent_blankline'.setup {
 	show_current_context = true,
 	context_patterns = {'class', 'function', 'method', '^if', '^for', '^while', '^try'},
 }
+
+-- Colorizer
+require'colorizer'.setup()

@@ -14,8 +14,10 @@ return require('packer').startup(function(use)
 	-- LSP
 	use {'neoclide/coc.nvim', branch = 'release'}
 	use 'rafcamlet/coc-nvim-lua'
-	-- use 'hrsh7th/nvim-compe'
 	-- use 'neovim/nvim-lspconfig'
+	-- use 'nvim-lua/completion-nvim'
+	-- use 'nvim-lua/lsp_extensions.nvim'
+	-- use 'nvim-lua/lsp-status.nvim'
 	-- use 'kyazdani42/nvim-tree.lua'
 
 	-- Syntax highlighting + indents
@@ -35,12 +37,13 @@ return require('packer').startup(function(use)
 	use 'windwp/nvim-autopairs'
 
 	-- Looks
-	use 'mhinz/vim-startify'
+	use 'glepnir/dashboard-nvim'
 	use 'mhartington/oceanic-next'
 	use 'hoob3rt/lualine.nvim'
 	use 'p00f/nvim-ts-rainbow'
 	use 'ryanoasis/vim-devicons'
 	use 'lukas-reineke/indent-blankline.nvim'
+	use 'norcalli/nvim-colorizer.lua'
 
 	-- Telescope (Fuzzy finding)
 	use 'nvim-lua/popup.nvim'

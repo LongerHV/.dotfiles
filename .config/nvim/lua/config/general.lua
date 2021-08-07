@@ -15,3 +15,6 @@ vim.api.nvim_set_option('smartcase', true)
 
 -- Syntax highlighting
 vim.o.syntax = 'enable'
+
+-- Start page
+vim.g.dashboard_default_executive = 'telescope'
