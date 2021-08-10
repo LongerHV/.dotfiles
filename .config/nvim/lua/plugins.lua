@@ -1,3 +1,8 @@
+-- TODO
+-- * Replace CoC with builtin LSP
+-- * Setup DAP (debugger)
+-- * Remove polyglot (when python indents work well in Treesitter)
+
 -- Bootstrap packer
 local execute = vim.api.nvim_command
 local fn = vim.fn
