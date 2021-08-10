@@ -27,13 +27,23 @@ return require('packer').startup(function(use)
 
 	-- Syntax highlighting + indents
 	use 'sheerun/vim-polyglot'
+
+	-- Treesitter
 	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-	use 'nvim-treesitter/nvim-treesitter-textobjects'
-	-- use 'nvim-treesitter/playground'
+	use {
+		'nvim-treesitter/nvim-treesitter-textobjects',
+		requires = 'nvim-treesitter/nvim-treesitter'
+	}
+	use {
+		'nvim-treesitter/playground',
+		requires = 'nvim-treesitter/nvim-treesitter'
+	}
 
 	-- Debugging
 	-- use 'puremourning/vimspector'
 	-- use 'mfussenegger/nvim-dap'
+	-- use 'rcarriga/nvim-dap-ui'
+	-- use 'Pocco81/DAPInstall.nvim'
 
 	-- Additional movements
 	use 'blackCauldron7/surround.nvim'
@@ -45,13 +55,17 @@ return require('packer').startup(function(use)
 	use 'glepnir/dashboard-nvim'
 	use 'mhartington/oceanic-next'
 	use 'hoob3rt/lualine.nvim'
-	use 'p00f/nvim-ts-rainbow'
 	use 'kyazdani42/nvim-web-devicons'
 	use 'lukas-reineke/indent-blankline.nvim'
 	use 'norcalli/nvim-colorizer.lua'
+	use {
+		'p00f/nvim-ts-rainbow',
+		requires = 'nvim-treesitter/nvim-treesitter'
+	}
 
 	-- Telescope (Fuzzy finding)
-	use 'nvim-lua/popup.nvim'
-	use 'nvim-lua/plenary.nvim'
-	use 'nvim-telescope/telescope.nvim'
+	use {
+		'nvim-telescope/telescope.nvim',
+		requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+	}
 end)
