@@ -18,3 +18,8 @@ vim.o.syntax = 'enable'
 
 -- Start page
 vim.g.dashboard_default_executive = 'telescope'
+
+-- Surround
+require 'surround'.setup{
+	mappings_style = 'surround'
+}

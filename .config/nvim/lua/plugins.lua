@@ -31,7 +31,7 @@ return require('packer').startup(function(use)
 	-- use 'mfussenegger/nvim-dap'
 
 	-- Additional movements
-	use 'tpope/vim-surround'
+	use 'blackCauldron7/surround.nvim'
 	use 'tpope/vim-repeat'
 	use 'b3nj5m1n/kommentary'
 	use 'windwp/nvim-autopairs'
@@ -41,7 +41,7 @@ return require('packer').startup(function(use)
 	use 'mhartington/oceanic-next'
 	use 'hoob3rt/lualine.nvim'
 	use 'p00f/nvim-ts-rainbow'
-	use 'ryanoasis/vim-devicons'
+	use 'kyazdani42/nvim-web-devicons'
 	use 'lukas-reineke/indent-blankline.nvim'
 	use 'norcalli/nvim-colorizer.lua'
 
