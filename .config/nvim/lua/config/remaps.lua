@@ -33,6 +33,10 @@ vim.api.nvim_set_keymap('n', '[[', '[[zz', {noremap = true})
 vim.api.nvim_set_keymap('n', '[]', '[]zz', {noremap = true})
 vim.api.nvim_set_keymap('n', ']]', ']]zz', {noremap = true})
 vim.api.nvim_set_keymap('n', '][', '][zz', {noremap = true})
+vim.api.nvim_set_keymap('n', '[m', '[mzz', {noremap = true})
+vim.api.nvim_set_keymap('n', '[M', '[Mzz', {noremap = true})
+vim.api.nvim_set_keymap('n', ']m', ']uzz', {noremap = true})
+vim.api.nvim_set_keymap('n', ']M', ']Mzz', {noremap = true})
 
 -- Add relative jumps to jumplist
 vim.api.nvim_set_keymap('n', 'k', '(v:count > 5 ? "m\'" . v:count : "") . \'k\'', {noremap = true, expr = true})
