@@ -1,7 +1,6 @@
 -- TODO
 -- * Replace CoC with builtin LSP
 -- * Setup DAP (debugger)
--- * Remove polyglot (when python indents work well in Treesitter)
 
 -- Bootstrap packer
 local execute = vim.api.nvim_command
@@ -25,9 +24,6 @@ return require('packer').startup(
 		-- use 'nvim-lua/lsp_extensions.nvim'
 		-- use 'nvim-lua/lsp-status.nvim'
 		-- use 'kyazdani42/nvim-tree.lua'
-
-		-- Syntax highlighting + indents
-		use 'sheerun/vim-polyglot'
 
 		-- Treesitter
 		use {
