@@ -9,7 +9,7 @@ vim.api.nvim_set_option('conceallevel', 0)
 -- Mouse
 vim.api.nvim_set_option('mouse', 'a')
 
--- Searh case
+-- Search case
 vim.api.nvim_set_option('ignorecase', true)
 vim.api.nvim_set_option('smartcase', true)
 
@@ -23,3 +23,6 @@ vim.g.dashboard_default_executive = 'telescope'
 require 'surround'.setup{
 	mappings_style = 'surround'
 }
+
+-- Indent size
+vim.cmd('autocmd FileType c setlocal tabstop=2 shiftwidth=2 expandtab')
