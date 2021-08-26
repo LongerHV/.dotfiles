@@ -1,3 +1,9 @@
+-- TODO
+-- * Setup DAP (debugger)
+-- Prettier
+-- Python linter
+-- Snippets maybe?
+
 vim.g.mapleader = " "
 
 require "plugins"
