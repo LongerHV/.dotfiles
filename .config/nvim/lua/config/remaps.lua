@@ -59,3 +59,6 @@ vim.api.nvim_set_keymap('i', '<C-j>', '<esc>:m .+1<CR>==', {noremap = true})
 vim.api.nvim_set_keymap('i', '<C-k>', '<esc>:m .-2<CR>==', {noremap = true})
 vim.api.nvim_set_keymap('n', '<C-j>', ':m .+1<CR>==', {noremap = true})
 vim.api.nvim_set_keymap('n', '<C-k>', ':m .-2<CR>==', {noremap = true})
+
+-- Navigation tree
+vim.api.nvim_set_keymap('n', '<leader>t', '<cmd>NvimTreeToggle<cr>', {})

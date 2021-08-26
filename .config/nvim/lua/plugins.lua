@@ -1,5 +1,4 @@
 -- TODO
--- * Replace CoC with builtin LSP
 -- * Setup DAP (debugger)
 
 -- Bootstrap packer
@@ -13,17 +12,27 @@ if fn.empty(fn.glob(install_path)) > 0 then
   execute 'packadd packer.nvim'
 end
 
+vim.api.nvim_exec(
+  [[
+  augroup Packer
+    autocmd!
+    autocmd BufWritePost init.lua PackerCompile
+  augroup end
+]],
+  false
+)
+
 -- Plugin specification
 return require('packer').startup(
 	function(use)
 		-- LSP
-		use {'neoclide/coc.nvim', branch = 'release'}
-		use 'rafcamlet/coc-nvim-lua'
-		-- use 'neovim/nvim-lspconfig'
-		-- use 'nvim-lua/completion-nvim'
+		use 'neovim/nvim-lspconfig'
+		use 'hrsh7th/nvim-cmp'
+		use 'hrsh7th/cmp-buffer'
+		use 'hrsh7th/cmp-nvim-lsp'
 		-- use 'nvim-lua/lsp_extensions.nvim'
 		-- use 'nvim-lua/lsp-status.nvim'
-		-- use 'kyazdani42/nvim-tree.lua'
+		use 'kyazdani42/nvim-tree.lua'
 
 		-- Treesitter
 		use {
@@ -36,11 +45,10 @@ return require('packer').startup(
 		}
 		use {
 			'nvim-treesitter/playground',
-			requires = 'nvim-treesitter/nvim-treesitter'
+			requires = 'nvim-treesitter/nvim-treesitter',
 		}
 
 		-- Debugging
-		-- use 'puremourning/vimspector'
 		-- use 'mfussenegger/nvim-dap'
 		-- use 'rcarriga/nvim-dap-ui'
 		-- use 'Pocco81/DAPInstall.nvim'
