@@ -14,3 +14,4 @@ require "config.telescope"
 require('nvim-autopairs').setup{}
 require "config.remaps"
 require "config.lsp"
+require "config.language"

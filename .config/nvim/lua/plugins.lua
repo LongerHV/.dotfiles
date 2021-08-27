@@ -33,6 +33,11 @@ return require('packer').startup(
     -- use 'saadparwaiz1/cmp_luasnip'
     -- use 'L3MON4D3/LuaSnip'
 
+    -- Language support
+    -- use 'mfussenegger/nvim-lint'
+    use 'LongerHV/nvim-lint'
+    use 'mhartington/formatter.nvim'
+
     -- File manager
     use 'kyazdani42/nvim-tree.lua'
 
