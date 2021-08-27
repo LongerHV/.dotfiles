@@ -23,3 +23,6 @@ vim.g.dashboard_default_executive = 'telescope'
 require 'surround'.setup{
   mappings_style = 'surround'
 }
+
+-- Nvim Tree
+vim.g.nvim_tree_width = 40
