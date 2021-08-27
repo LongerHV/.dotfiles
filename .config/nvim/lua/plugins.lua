@@ -30,8 +30,8 @@ return require('packer').startup(
     use 'kabouzeid/nvim-lspinstall'
     -- use 'nvim-lua/lsp_extensions.nvim'
     -- use 'nvim-lua/lsp-status.nvim'
-    -- use 'saadparwaiz1/cmp_luasnip'
-    -- use 'L3MON4D3/LuaSnip'
+    use 'saadparwaiz1/cmp_luasnip'
+    use 'L3MON4D3/LuaSnip'
 
     -- Language support
     use {
