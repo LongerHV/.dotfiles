@@ -24,7 +24,7 @@ require'indent_blankline'.setup {
 		'try_statement', 'except_clause', 'finally_clause',
 		'while_statement', 'if_statement',
 	},
-	filetype_exclude = {'dashboard', 'coc-explorer'},
+	filetype_exclude = {'dashboard', 'NvimTree'},
 }
 
 -- Colorizer
