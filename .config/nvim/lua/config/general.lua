@@ -23,7 +23,3 @@ vim.g.dashboard_default_executive = 'telescope'
 require 'surround'.setup{
   mappings_style = 'surround'
 }
-
--- Indent size
-vim.cmd('autocmd FileType c setlocal tabstop=2 shiftwidth=2 expandtab')
-vim.cmd('autocmd FileType lua setlocal tabstop=2 shiftwidth=2 expandtab')

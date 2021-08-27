@@ -1,8 +1,12 @@
+-- Indent size
+vim.cmd('autocmd FileType c setlocal tabstop=2 shiftwidth=2 expandtab')
+vim.cmd('autocmd FileType lua setlocal tabstop=2 shiftwidth=2 expandtab')
+
 -- Diagnostics and formatting
 local null_ls = require('null-ls')
 null_ls.config({
   sources = {
-    -- Pyhon
+    -- Python
     null_ls.builtins.formatting.autopep8,
     null_ls.builtins.formatting.isort,
     null_ls.builtins.diagnostics.flake8,
