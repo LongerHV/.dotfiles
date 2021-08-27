@@ -34,9 +34,10 @@ return require('packer').startup(
     -- use 'L3MON4D3/LuaSnip'
 
     -- Language support
-    -- use 'mfussenegger/nvim-lint'
-    use 'LongerHV/nvim-lint'
-    use 'mhartington/formatter.nvim'
+    use {
+      'jose-elias-alvarez/null-ls.nvim',
+      requires = { 'neovim/nvim-lspconfig', 'nvim-lua/plenary.nvim' }
+    }
 
     -- File manager
     use 'kyazdani42/nvim-tree.lua'
