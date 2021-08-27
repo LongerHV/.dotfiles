@@ -92,6 +92,7 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- nvim-cmp setup
 local cmp = require'cmp'
+local lspkind = require'lspkind'
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -114,5 +115,12 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
     { name = 'buffer' },
+  },
+  -- Pictograms
+  formatting = {
+    format = function(_, vim_item)
+      vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
+      return vim_item
+    end
   },
 }
