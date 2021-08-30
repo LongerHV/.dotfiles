@@ -1,8 +1,3 @@
--- Status line
-require'lualine'.setup {
-	options = {theme = 'oceanicnext'}
-}
-
 -- Color theme
 vim.o.termguicolors = true
 vim.cmd 'colorscheme OceanicNext'
@@ -17,15 +12,12 @@ vim.cmd 'hi EndOfBuffer guibg=NONE ctermbg=NONE'
 
 -- Indent line
 require'indent_blankline'.setup {
-	use_treesitter = true,
-	show_current_context = true,
-	context_patterns = {
-		'class', 'function', 'method', 'for_statement',
-		'try_statement', 'except_clause', 'finally_clause',
-		'while_statement', 'if_statement',
-	},
-	filetype_exclude = {'dashboard', 'NvimTree'},
+  use_treesitter = true,
+  show_current_context = true,
+  context_patterns = {
+    'class', 'function', 'method', 'for_statement',
+    'try_statement', 'except_clause', 'finally_clause',
+    'while_statement', 'if_statement',
+  },
+  filetype_exclude = {'dashboard', 'NvimTree'},
 }
-
--- Colorizer
-require'colorizer'.setup()

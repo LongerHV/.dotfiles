@@ -19,15 +19,10 @@ vim.o.syntax = 'enable'
 -- Start page
 vim.g.dashboard_default_executive = 'telescope'
 
--- Surround
-require 'surround'.setup{
-  mappings_style = 'surround'
-}
-
 -- Nvim Tree
 vim.g.nvim_tree_width = 40
 
--- Autopairs
-require'nvim-autopairs'.setup({
-  check_ts = true
-})
+-- Indents
+vim.cmd 'autocmd FileType c setlocal tabstop=2 shiftwidth=2 expandtab'
+vim.cmd 'autocmd FileType lua setlocal tabstop=2 shiftwidth=2 expandtab'
+vim.cmd 'filetype indent plugin on'
