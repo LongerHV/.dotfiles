@@ -27,5 +27,7 @@ require 'surround'.setup{
 -- Nvim Tree
 vim.g.nvim_tree_width = 40
 
--- Indent
-vim.cmd 'filetype indent plugin on'
+-- Autopairs
+require'nvim-autopairs'.setup({
+  check_ts = true
+})

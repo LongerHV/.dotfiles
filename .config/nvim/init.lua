@@ -11,7 +11,6 @@ require "config.general"
 require "config.theme"
 require "config.treesitter"
 require "config.telescope"
-require('nvim-autopairs').setup{}
 require "config.remaps"
 require "config.lsp"
 require "config.language"

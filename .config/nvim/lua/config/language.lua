@@ -1,6 +1,7 @@
 -- Indent size
 vim.cmd('autocmd FileType c setlocal tabstop=2 shiftwidth=2 expandtab')
 vim.cmd('autocmd FileType lua setlocal tabstop=2 shiftwidth=2 expandtab')
+vim.cmd 'filetype indent plugin on'
 
 -- Diagnostics and formatting
 local null_ls = require('null-ls')
