@@ -4,6 +4,6 @@
 vim.g.mapleader = ' '
 
 require 'config.general'
-require 'config.theme'
 require 'plugins'
+require 'config.theme'
 require 'config.remaps'
