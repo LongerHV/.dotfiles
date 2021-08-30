@@ -20,87 +20,141 @@ vim.api.nvim_exec(
 )
 
 -- Plugin specification
-return require('packer').startup(
-  function(use)
-    -- Packeage manager
-    use 'wbthomason/packer.nvim'
+return require('packer').startup(function(use)
+  -- Package manager
+  use 'wbthomason/packer.nvim'
 
-    -- LSP
-    use {
+  -- LSP
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
       'neovim/nvim-lspconfig',
-      require = {
-        'hrsh7th/nvim-cmp',
-        'hrsh7th/cmp-buffer',
-        'hrsh7th/cmp-nvim-lsp',
-        'kabouzeid/nvim-lspinstall',
-        'saadparwaiz1/cmp_luasnip',
-        'L3MON4D3/LuaSnip',
-        'onsails/lspkind-nvim',
-      },
-      config = require'config.lsp'.config()
-    }
-    -- use 'nvim-lua/lsp_extensions.nvim'
-    -- use 'nvim-lua/lsp-status.nvim'
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-nvim-lsp',
+      'kabouzeid/nvim-lspinstall',
+      'saadparwaiz1/cmp_luasnip',
+      'L3MON4D3/LuaSnip',
+      'onsails/lspkind-nvim',
+    },
+    config = function()
+      require'config.lsp'
+    end
+  }
+  -- use 'nvim-lua/lsp_extensions.nvim'
+  -- use 'nvim-lua/lsp-status.nvim'
 
-    -- Language support
-    use {
-      'jose-elias-alvarez/null-ls.nvim',
-      requires = { 'neovim/nvim-lspconfig', 'nvim-lua/plenary.nvim' },
-      after = {'neovim/nvim-lspconifg'},
-      config = require'config.language'.config_diagnostics(),
-    }
+  -- Language support
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
+    requires = { 'neovim/nvim-lspconfig', 'nvim-lua/plenary.nvim' },
+    config = function()
+      require'config.language'
+    end
+  }
 
-    -- File manager
-    use 'kyazdani42/nvim-tree.lua'
+  -- File manager
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function ()
+      vim.g.nvim_tree_width = 40
+    end
+  }
 
-    -- Treesitter
-    use {
-      'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate',
-      requires = {
-        'nvim-treesitter/nvim-treesitter-textobjects',
-        'nvim-treesitter/playground',
-        'p00f/nvim-ts-rainbow',
-      },
-      config = require'config.treesitter'.config(),
-    }
+  -- Treesitter
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = function()
+      require'config.treesitter'
+    end,
+  }
+  use {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    requires ='nvim-treesitter/nvim-treesitter'
+  }
+  use {
+    'nvim-treesitter/playground',
+    requires ='nvim-treesitter/nvim-treesitter'
+  }
+  use {
+    'p00f/nvim-ts-rainbow',
+    requires ='nvim-treesitter/nvim-treesitter'
+  }
 
-    -- Debugging
-    -- use 'mfussenegger/nvim-dap'
-    -- use 'rcarriga/nvim-dap-ui'
-    -- use 'Pocco81/DAPInstall.nvim'
+  -- Debugging
+  -- use 'mfussenegger/nvim-dap'
+  -- use 'rcarriga/nvim-dap-ui'
+  -- use 'Pocco81/DAPInstall.nvim'
 
-    -- Additional movements
-    use 'tpope/vim-repeat'
-    use 'b3nj5m1n/kommentary'
-    use {
-      'blackCauldron7/surround.nvim',
-      config = require 'surround'.setup({ mappings_style = 'surround' }),
-    }
-    use {
-      'windwp/nvim-autopairs',
-      config = require'nvim-autopairs'.setup({ check_ts = true }),
-    }
+  -- Additional movements
+  use 'tpope/vim-repeat'
+  use 'b3nj5m1n/kommentary'
+  use {
+    'blackCauldron7/surround.nvim',
+    config = function()
+      require 'surround'.setup({ mappings_style = 'surround' })
+    end,
+  }
+  use {
+    'windwp/nvim-autopairs',
+    after = { 'nvim-cmp' },
+    config = function()
+      require'nvim-autopairs'.setup({ check_ts = true })
+      require'nvim-autopairs.completion.cmp'.setup({
+        map_cr = true,
+        map_complete = true,
+        -- auto_select = true
+        })
+    end,
+  }
 
-    -- Looks
-    use 'glepnir/dashboard-nvim'
-    use 'mhartington/oceanic-next'
-    use 'kyazdani42/nvim-web-devicons'
-    use 'lukas-reineke/indent-blankline.nvim'
-    use {
-      'hoob3rt/lualine.nvim',
-      config = require'lualine'.setup({ options = {theme = 'oceanicnext'} }),
-    }
-    use {
-      'norcalli/nvim-colorizer.lua',
-      config = require'colorizer'.setup(),
-    }
+  -- Looks
+  use {
+    'glepnir/dashboard-nvim',
+    requires = 'nvim-telescope/telescope.nvim',
+    config = function()
+      vim.g.dashboard_default_executive = 'telescope'
+    end
+  }
+  use {
+    'mhartington/oceanic-next',
+    config = function()
+      vim.cmd('colorscheme OceanicNext')
+    end
+  }
 
-    -- Telescope (Fuzzy finding)
-    use {
-      'nvim-telescope/telescope.nvim',
-      requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
-      config = require'config.telescope'.config(),
-    }
-  end
-)
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    requires = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require'config.blankline'
+    end
+  }
+  use {
+    'hoob3rt/lualine.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function()
+      require'lualine'.setup({ options = {theme = 'oceanicnext'} })
+    end,
+  }
+  use {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require'colorizer'.setup()
+    end,
+  }
+
+  -- Telescope (Fuzzy finding)
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      'nvim-lua/popup.nvim',
+      'nvim-lua/plenary.nvim',
+      'kyazdani42/nvim-web-devicons'
+    },
+    config = function()
+      require'config.telescope'
+    end,
+  }
+end)

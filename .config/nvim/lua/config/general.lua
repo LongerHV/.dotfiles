@@ -16,12 +16,6 @@ vim.api.nvim_set_option('smartcase', true)
 -- Syntax highlighting
 vim.o.syntax = 'enable'
 
--- Start page
-vim.g.dashboard_default_executive = 'telescope'
-
--- Nvim Tree
-vim.g.nvim_tree_width = 40
-
 -- Indents
 vim.cmd 'autocmd FileType c setlocal tabstop=2 shiftwidth=2 expandtab'
 vim.cmd 'autocmd FileType lua setlocal tabstop=2 shiftwidth=2 expandtab'

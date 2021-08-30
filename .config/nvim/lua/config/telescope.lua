@@ -1,13 +1,7 @@
-local M = {}
-
-function M.config()
-  vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', {noremap = true})
-  vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', {noremap = true})
-  vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>', {noremap = true})
-  vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', {noremap = true})
-  vim.api.nvim_set_keymap('n', '<leader>ft', '<cmd>Telescope treesitter<cr>', {noremap = true})
-  vim.api.nvim_set_keymap('n', '<leader>fr', '<cmd>Telescope registers<cr>', {noremap = true})
-  vim.api.nvim_set_keymap('n', '<leader>T', '<cmd>Telescope<cr>', {noremap = true})
-end
-
-return M
+vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>ft', '<cmd>Telescope treesitter<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>fr', '<cmd>Telescope registers<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>T', '<cmd>Telescope<cr>', {noremap = true})
