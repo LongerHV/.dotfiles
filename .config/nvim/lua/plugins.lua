@@ -139,7 +139,7 @@ return require('packer').startup(function(use)
     'hoob3rt/lualine.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
-      require'lualine'.setup({ options = {theme = 'oceanicnext'} })
+      require'lualine'.setup({options = {theme = 'oceanicnext'}})
     end,
   }
   use {

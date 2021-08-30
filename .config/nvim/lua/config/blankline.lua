@@ -4,7 +4,7 @@ require'indent_blankline'.setup {
   context_patterns = {
     'class', 'function', 'method', 'for_statement',
     'try_statement', 'except_clause', 'finally_clause',
-    'while_statement', 'if_statement',
+    'while_statement', 'if_statement', 'with_statement',
   },
   filetype_exclude = {'dashboard', 'NvimTree'},
 }
