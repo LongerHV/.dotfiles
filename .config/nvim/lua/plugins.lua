@@ -22,6 +22,9 @@ vim.api.nvim_exec(
 -- Plugin specification
 return require('packer').startup(
   function(use)
+    -- Packeage manager
+    use 'wbthomason/packer.nvim'
+
     -- LSP
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/nvim-cmp'
