@@ -8,4 +8,5 @@ fi
 target=~/Applications/nvim.appimage
 link=~/.local/bin/nvim
 mkdir -p $(dirname ${target})
+mkdir -p $(dirname ${link})
 wget -x -O ${target} ${url} && chmod +x ${target} && ln -sf ${target} ${link}
