@@ -2,6 +2,7 @@
 PATH=$PATH:~/.local/bin
 PATH=$PATH:~/.platformio/penv/bin
 PATH=$PATH:~/go/bin
+PATH=$PATH:~/.cargo/bin
 
 # Default editor
 export VISUAL=nvim
