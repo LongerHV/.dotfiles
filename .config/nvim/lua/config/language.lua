@@ -27,4 +27,8 @@ null_ls.config({
 		}),
 	},
 })
-require("lspconfig")["null-ls"].setup({})
+require("lspconfig")["null-ls"].setup({
+	on_attach = function()
+		vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+	end
+})
