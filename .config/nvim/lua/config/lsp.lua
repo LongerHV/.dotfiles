@@ -64,17 +64,21 @@ end
 local function setup_servers()
 	require("lspinstall").setup()
 
-	-- get all installed servers
-	local servers = require("lspinstall").installed_servers()
-	-- ... and add manually installed servers
-	table.insert(servers, "clangd")
+	-- local required_servers = { "python", "lua", "json", "yaml", "dockerfile" }
+	local installed_servers = require("lspinstall").installed_servers()
+	table.insert(installed_servers, "clangd")
 
-	for _, server in pairs(servers) do
+	--[[ for _, server in pairs(required_servers) do
+		if not vim.tbl_contains(installed_servers, server) then
+			require("lspinstall").install_server(server)
+		end
+	end ]]
+
+	for _, server in pairs(installed_servers) do
 		local config = make_config()
 		if server == "lua" then
 			config.settings = lua_settings
-		end
-		if server == "clangd" then
+		elseif server == "clangd" then
 			config.filetypes = { "c", "cpp" }
 		end
 
