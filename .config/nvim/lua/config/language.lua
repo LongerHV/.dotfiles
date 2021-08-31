@@ -10,16 +10,21 @@ null_ls.config({
 		null_ls.builtins.formatting.prettier,
 
 		-- C/C++
-		null_ls.builtins.formatting.clang_format,
+		-- Formatting is handled by clangd language server
+		-- null_ls.builtins.formatting.clang_format,
 
 		-- Markdown
-		null_ls.builtins.diagnostics.write_good,
 		null_ls.builtins.diagnostics.markdownlint,
 
 		-- Lua
 		-- cargo install stylua
 		-- add ~/.cargo/bin to PATH
 		null_ls.builtins.formatting.stylua,
+
+		-- Spell checking
+		null_ls.builtins.diagnostics.codespell.with({
+			args = { "--builtin", "clear,rare,code", "-" },
+		}),
 	},
 })
 require("lspconfig")["null-ls"].setup({})
