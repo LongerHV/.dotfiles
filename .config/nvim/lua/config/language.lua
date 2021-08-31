@@ -17,8 +17,9 @@ null_ls.config({
 		null_ls.builtins.diagnostics.markdownlint,
 
 		-- Lua
+		-- cargo install stylua
+		-- add ~/.cargo/bin to PATH
 		null_ls.builtins.formatting.stylua,
-		-- null_ls.builtins.diagnostics.luacheck,
 	},
 })
 require("lspconfig")["null-ls"].setup({})
