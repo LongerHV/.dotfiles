@@ -29,6 +29,7 @@ require("nvim-treesitter.configs").setup({
 				-- ["is"] = "@scopename.inner",
 				["ib"] = "@block.inner",
 				["ab"] = "@block.outer",
+				["ak"] = "@comment.outer",
 			},
 		},
 		swap = {
