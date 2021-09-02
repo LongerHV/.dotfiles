@@ -17,6 +17,8 @@ vim.api.nvim_set_option("smartcase", true)
 vim.o.syntax = "enable"
 
 -- Indents
+vim.api.nvim_set_option("tabstop", 4)
+vim.api.nvim_set_option("shiftwidth", 4)
+vim.api.nvim_set_option("smartindent", true)
 vim.cmd("autocmd FileType c setlocal tabstop=2 shiftwidth=2 expandtab")
-vim.cmd("autocmd FileType lua setlocal tabstop=2 shiftwidth=2")
 vim.cmd("filetype indent plugin on")
