@@ -22,9 +22,9 @@ null_ls.config({
 		null_ls.builtins.formatting.stylua,
 
 		-- Spell checking
-		-- null_ls.builtins.diagnostics.codespell.with({
-			-- args = { "--builtin", "clear,rare,code", "-" },
-		-- }),
+		null_ls.builtins.diagnostics.codespell.with({
+			args = { "--builtin", "clear,rare,code", "-" },
+		}),
 	},
 })
 require("lspconfig")["null-ls"].setup({
