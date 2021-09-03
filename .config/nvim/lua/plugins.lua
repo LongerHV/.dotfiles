@@ -82,6 +82,21 @@ return require("packer").startup(function(use)
 		"p00f/nvim-ts-rainbow",
 		requires = "nvim-treesitter/nvim-treesitter",
 	})
+	use({
+		"RRethy/nvim-treesitter-textsubjects",
+		requires = "nvim-treesitter/nvim-treesitter",
+		setup = function()
+			require'nvim-treesitter.configs'.setup {
+				textsubjects = {
+					enable = true,
+					keymaps = {
+						['.'] = 'textsubjects-smart',
+						[';'] = 'textsubjects-container-outer',
+					}
+				},
+			}
+		end
+	})
 
 	-- Debugging
 	-- use 'mfussenegger/nvim-dap'
