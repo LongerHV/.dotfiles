@@ -1,3 +1,5 @@
+local remap = vim.api.nvim_set_keymap
+
 require("nvim-treesitter.configs").setup({
 	ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
 	indent = { enable = true },
@@ -35,17 +37,28 @@ require("nvim-treesitter.configs").setup({
 		swap = {
 			enable = true,
 			swap_next = {
-				["<leader>a"] = "@parameter.inner",
-				["<leader>b"] = "@block.outer",
+				["<leader>l"] = "@parameter.inner",
+				["<leader>j"] = "@statement.outer",
 			},
 			swap_previous = {
-				["<leader>A"] = "@parameter.inner",
-				["<leader>B"] = "@block.outer",
+				["<leader>h"] = "@parameter.inner",
+				["<leader>k"] = "@statement.outer",
 			},
 		},
-		move = {
+		--[[ move = {
 			enable = true,
 			set_jumps = true, -- whether to set jumps in the jumplist
-		},
+		}, ]]
 	},
 })
+
+-- remap('n', ']]', '<cmd>TSTextobjectGotoNextStart @class.outer<cr>zz', {})
+-- remap('n', '][', '<cmd>TSTextobjectGotoNextEnd @class.outer<cr>zz', {})
+-- remap('n', '[[', '<cmd>TSTextobjectGotoPreviousStart @class.outer<cr>zz', {})
+-- remap('n', '[]', '<cmd>TSTextobjectGotoPreviousEnd @class.outer<cr>zz', {})
+-- remap('n', ']m', '<cmd>TSTextobjectGotoNextStart @function.outer<cr>zz', {})
+-- remap('n', ']M', '<cmd>TSTextobjectGotoNextEnd @function.outer<cr>zz', {})
+-- remap('n', '[m', '<cmd>TSTextobjectGotoPreviousStart @function.outer<cr>zz', {})
+-- remap('n', '[M', '<cmd>TSTextobjectGotoPreviousEnd @function.outer<cr>zz', {})
+remap("n", "(", "<cmd>TSTextobjectGotoPreviousStart @block.outer<cr>zz", {})
+remap("n", ")", "<cmd>TSTextobjectGotoNextStart @block.outer<cr>zz", {})
