@@ -26,6 +26,7 @@ return require("packer").startup(function(use)
 
 	-- LSP
 	use({
+		-- Autocomplete
 		"hrsh7th/nvim-cmp",
 		requires = {
 			"neovim/nvim-lspconfig",
@@ -43,7 +44,7 @@ return require("packer").startup(function(use)
 	-- use 'nvim-lua/lsp_extensions.nvim'
 	-- use 'nvim-lua/lsp-status.nvim'
 
-	-- Language support
+	-- Linting and formatting
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
 		requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" },
@@ -71,6 +72,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use({
+		-- Additional objects (such as function, class, block etc)
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		requires = "nvim-treesitter/nvim-treesitter",
 	})
@@ -79,23 +81,25 @@ return require("packer").startup(function(use)
 		requires = "nvim-treesitter/nvim-treesitter",
 	})
 	use({
+		-- Different colours of nested parentheses
 		"p00f/nvim-ts-rainbow",
 		requires = "nvim-treesitter/nvim-treesitter",
 	})
 	use({
+		-- Smarter selections using treesitter
 		"RRethy/nvim-treesitter-textsubjects",
 		requires = "nvim-treesitter/nvim-treesitter",
 		setup = function()
-			require'nvim-treesitter.configs'.setup {
+			require("nvim-treesitter.configs").setup({
 				textsubjects = {
 					enable = true,
 					keymaps = {
-						['.'] = 'textsubjects-smart',
-						[';'] = 'textsubjects-container-outer',
-					}
+						["."] = "textsubjects-smart",
+						[";"] = "textsubjects-container-outer",
+					},
 				},
-			}
-		end
+			})
+		end,
 	})
 
 	-- Debugging
@@ -105,20 +109,22 @@ return require("packer").startup(function(use)
 
 	-- Additional movements
 	use({
+		-- Use 'CTRL + /' to comment line or selection
 		"b3nj5m1n/kommentary",
 		config = function()
-			-- Use 'CTRL + /' to comment line or selection
 			vim.api.nvim_set_keymap("n", "", "<Plug>kommentary_line_default", {})
 			vim.api.nvim_set_keymap("v", "", "<Plug>kommentary_visual_default<C-c>", {})
 		end,
 	})
 	use({
+		-- Manipulate parentheses, brackets etc
 		"blackCauldron7/surround.nvim",
 		config = function()
 			require("surround").setup({ mappings_style = "surround" })
 		end,
 	})
 	use({
+		-- Auto close brackets etc (with treesitter support)
 		"windwp/nvim-autopairs",
 		after = { "nvim-cmp" },
 		config = function()
@@ -133,6 +139,7 @@ return require("packer").startup(function(use)
 
 	-- Looks
 	use({
+		-- Startpage
 		"glepnir/dashboard-nvim",
 		requires = "nvim-telescope/telescope.nvim",
 		config = function()
@@ -140,6 +147,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use({
+		-- Color theme
 		"mhartington/oceanic-next",
 		config = function()
 			vim.cmd("colorscheme OceanicNext")
@@ -151,6 +159,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use({
+		-- Draw indentation lines (highlighting based on treesitter)
 		"lukas-reineke/indent-blankline.nvim",
 		requires = { "nvim-treesitter/nvim-treesitter" },
 		config = function()
@@ -158,6 +167,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use({
+		-- Status line
 		"hoob3rt/lualine.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
@@ -165,6 +175,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use({
+		-- Color highlighter
 		"norcalli/nvim-colorizer.lua",
 		config = function()
 			require("colorizer").setup()
