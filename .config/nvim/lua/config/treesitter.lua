@@ -1,10 +1,11 @@
 local remap = vim.api.nvim_set_keymap
+local vscode = vim.g.vscode and true or false
 
 require("nvim-treesitter.configs").setup({
 	ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-	indent = { enable = true },
-	highlight = { enable = true, additional_vim_regex_highlighting = false },
-	autopairs = { enable = true },
+	indent = { enable = not vscode },
+	highlight = { enable = not vscode, additional_vim_regex_highlighting = false },
+	autopairs = { enable = not vscode },
 	rainbow = {
 		enable = true,
 		extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
