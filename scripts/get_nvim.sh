@@ -2,6 +2,7 @@
 
 target_dir=~/Applications
 target=${target_dir}/nvim.appimage
+target_temp=/tmp/nvim.appimage
 link=~/.local/bin/nvim
 
 if [ $1 ]
@@ -23,7 +24,8 @@ then
 	echo "Neovim is already up to date"
 	exit 0
 else
-	wget -x -O ${target} ${url} && chmod +x ${target}
-	echo ${digest} | sha256sum --check - || exit
+	wget -x -O ${target_temp} ${url} || exit
+	cd /tmp && echo ${digest} | sha256sum --check - || exit
+	mv ${target_temp} ${target} && chmod +x ${target}
 	ln -sf ${target} ${link}
 fi
