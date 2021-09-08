@@ -62,6 +62,7 @@ end
 
 -- LSP Install
 local function setup_servers()
+	local lsp_status = require("lsp-status")
 	require("lspinstall").setup()
 
 	-- local required_servers = { "python", "lua", "json", "yaml", "dockerfile" }
@@ -81,6 +82,9 @@ local function setup_servers()
 		elseif server == "clangd" then
 			config.filetypes = { "c", "cpp" }
 		end
+
+		config.capabilities = lsp_status.capabilities
+		config.on_attach = lsp_status.on_attach
 
 		require("lspconfig")[server].setup(config)
 	end

@@ -30,6 +30,7 @@ return require("packer").startup(function(use)
 		"hrsh7th/nvim-cmp",
 		requires = {
 			"neovim/nvim-lspconfig",
+			"nvim-lua/lsp-status.nvim",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-nvim-lsp",
 			"kabouzeid/nvim-lspinstall",
@@ -38,6 +39,11 @@ return require("packer").startup(function(use)
 			"onsails/lspkind-nvim",
 		},
 		config = function()
+			local lsp_status = require("lsp-status")
+			lsp_status.config({
+				status_symbol = "",
+				indicator_hint = "",
+			})
 			require("config.lsp")
 		end,
 	})
@@ -171,12 +177,10 @@ return require("packer").startup(function(use)
 		"hoob3rt/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", "nvim-lua/lsp-status.nvim" },
 		config = function()
-			local lsp_status = require("lsp-status")
-			lsp_status.config({ status_symbol = "" })
 			require("lualine").setup({
 				options = { theme = "oceanicnext" },
 				sections = {
-					lualine_x = { lsp_status.status, "encoding", "fileformat", "filetype" },
+					lualine_x = { require("lsp-status").status, "encoding", "fileformat", "filetype" },
 				},
 			})
 		end,
