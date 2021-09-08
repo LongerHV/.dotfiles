@@ -169,9 +169,16 @@ return require("packer").startup(function(use)
 	use({
 		-- Status line
 		"hoob3rt/lualine.nvim",
-		requires = "kyazdani42/nvim-web-devicons",
+		requires = { "kyazdani42/nvim-web-devicons", "nvim-lua/lsp-status.nvim" },
 		config = function()
-			require("lualine").setup({ options = { theme = "oceanicnext" } })
+			local lsp_status = require("lsp-status")
+			lsp_status.config({ status_symbol = "" })
+			require("lualine").setup({
+				options = { theme = "oceanicnext" },
+				sections = {
+					lualine_x = { lsp_status.status, "encoding", "fileformat", "filetype" },
+				},
+			})
 		end,
 	})
 	use({
