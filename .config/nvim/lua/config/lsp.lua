@@ -182,9 +182,13 @@ _G.s_tab_complete = function()
 	end
 end
 
+-- Remaps
 remap("i", "<Tab>", "v:lua.tab_complete()", { expr = true })
 remap("s", "<Tab>", "v:lua.tab_complete()", { expr = true })
 remap("i", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
 remap("s", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
 remap("i", "<C-E>", "<Plug>luasnip-next-choice", {})
 remap("s", "<C-E>", "<Plug>luasnip-next-choice", {})
+
+-- Snippets
+require("luasnip/loaders/from_vscode").lazy_load({ paths = { "~/.local/share/nvim/site/pack/packer/start/friendly-snippets" } })

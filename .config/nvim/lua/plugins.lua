@@ -38,6 +38,7 @@ return require("packer").startup(function(use)
 			"kabouzeid/nvim-lspinstall",
 			"saadparwaiz1/cmp_luasnip",
 			"L3MON4D3/LuaSnip",
+			"rafamadriz/friendly-snippets",
 			"onsails/lspkind-nvim",
 		},
 		config = function()
