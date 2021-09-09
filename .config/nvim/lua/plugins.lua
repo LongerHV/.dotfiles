@@ -113,7 +113,7 @@ return require("packer").startup(function(use)
 	-- use 'rcarriga/nvim-dap-ui'
 	-- use 'Pocco81/DAPInstall.nvim'
 
-	-- Additional movements
+	-- Quality of life enhancements
 	use({
 		-- Use 'CTRL + /' to comment line or selection
 		"b3nj5m1n/kommentary",
@@ -141,6 +141,12 @@ return require("packer").startup(function(use)
 				-- auto_select = true
 			})
 		end,
+	})
+	use({
+		"folke/which-key.nvim",
+		config = function()
+			require("which-key").setup({})
+		end
 	})
 
 	-- Looks
