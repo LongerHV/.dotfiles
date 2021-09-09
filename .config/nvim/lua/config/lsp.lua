@@ -1,7 +1,8 @@
 local remap = vim.api.nvim_set_keymap
 local buf_remap = vim.api.nvim_buf_set_keymap
+local lsp_status = require("lsp-status")
 
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
 	local opts = { noremap = true, silent = true }
@@ -24,6 +25,8 @@ local on_attach = function(_, bufnr)
 	buf_remap(bufnr, "n", "<leader>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
 	buf_remap(bufnr, "n", "<leader>o", [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts)
 	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+
+	lsp_status.on_attach(client)
 end
 
 -- Configure lua language server for neovim development
@@ -50,7 +53,7 @@ local lua_settings = {
 
 -- config that activates keymaps and enables snippet support
 local function make_config()
-	local capabilities = vim.lsp.protocol.make_client_capabilities()
+	local capabilities = lsp_status.capabilities
 	capabilities.textDocument.completion.completionItem.snippetSupport = true
 	return {
 		-- enable snippet support
@@ -62,7 +65,6 @@ end
 
 -- LSP Install
 local function setup_servers()
-	local lsp_status = require("lsp-status")
 	require("lspinstall").setup()
 
 	-- local required_servers = { "python", "lua", "json", "yaml", "dockerfile" }
@@ -82,9 +84,6 @@ local function setup_servers()
 		elseif server == "clangd" then
 			config.filetypes = { "c", "cpp" }
 		end
-
-		config.capabilities = lsp_status.capabilities
-		config.on_attach = lsp_status.on_attach
 
 		require("lspconfig")[server].setup(config)
 	end
