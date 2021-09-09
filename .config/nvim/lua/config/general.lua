@@ -16,6 +16,10 @@ vim.api.nvim_set_option("smartcase", true)
 -- Syntax highlighting
 vim.o.syntax = "enable"
 
+-- Minimal number of lines to scroll when the cursor gets off the screen
+vim.g.scrolloff = 8
+vim.g.sidescrolloff = 8
+
 -- Indents
 vim.api.nvim_set_option("tabstop", 4)
 vim.api.nvim_set_option("shiftwidth", 4)
