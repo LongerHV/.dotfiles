@@ -149,7 +149,7 @@ return require("packer").startup(function(use)
 		"glepnir/dashboard-nvim",
 		requires = "nvim-telescope/telescope.nvim",
 		config = function()
-			vim.g.dashboard_default_executive = "telescope"
+			require("config.dashboard")
 		end,
 	})
 	use({
