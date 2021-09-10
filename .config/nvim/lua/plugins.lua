@@ -35,6 +35,7 @@ return require("packer").startup(function(use)
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-nvim-lua",
+			"ray-x/lsp_signature.nvim",
 			"kabouzeid/nvim-lspinstall",
 			"saadparwaiz1/cmp_luasnip",
 			"L3MON4D3/LuaSnip",
@@ -51,7 +52,6 @@ return require("packer").startup(function(use)
 		end,
 	})
 	-- use 'nvim-lua/lsp_extensions.nvim'
-	-- use 'nvim-lua/lsp-status.nvim'
 
 	-- Linting and formatting
 	use({

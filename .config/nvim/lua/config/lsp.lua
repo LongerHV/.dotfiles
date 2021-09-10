@@ -1,6 +1,7 @@
 local remap = vim.api.nvim_set_keymap
 local buf_remap = vim.api.nvim_buf_set_keymap
 local lsp_status = require("lsp-status")
+local lsp_signature = require("lsp_signature")
 
 local on_attach = function(client, bufnr)
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
@@ -27,6 +28,10 @@ local on_attach = function(client, bufnr)
 	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 
 	lsp_status.on_attach(client)
+	lsp_signature.on_attach({
+		floating_window_above_first = true,
+		floating_window_above_current_line = true,
+	})
 end
 
 -- Configure lua language server for neovim development
