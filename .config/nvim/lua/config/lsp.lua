@@ -29,8 +29,7 @@ local on_attach = function(client, bufnr)
 
 	lsp_status.on_attach(client)
 	lsp_signature.on_attach({
-		floating_window_above_first = true,
-		floating_window_above_current_line = true,
+		floating_window_above_cur_line = true,
 	})
 end
 
@@ -102,13 +101,13 @@ require("lspinstall").post_install_hook = function()
 	vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
 end
 
--- Set completeopt to have a better completion experience
-vim.o.completeopt = "menuone,noselect"
+vim.o.completeopt = "menuone,noselect,preview"
 
 -- nvim-cmp setup
 local cmp = require("cmp")
 local lspkind = require("lspkind")
 cmp.setup({
+	preselect = cmp.PreselectMode.None,
 	snippet = {
 		expand = function(args)
 			require("luasnip").lsp_expand(args.body)
@@ -123,7 +122,7 @@ cmp.setup({
 		["<C-e>"] = cmp.mapping.close(),
 		["<CR>"] = cmp.mapping.confirm({
 			behavior = cmp.ConfirmBehavior.Replace,
-			select = true,
+			select = false,
 		}),
 	},
 	sources = {
