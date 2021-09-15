@@ -141,15 +141,16 @@ return require("packer").startup(function(use)
 			require("nvim-autopairs.completion.cmp").setup({
 				map_cr = true,
 				map_complete = true,
-				auto_select = false
+				auto_select = false,
 			})
 		end,
 	})
 	use({
 		"folke/which-key.nvim",
 		config = function()
+			vim.api.nvim_set_option("timeoutlen", 300)
 			require("which-key").setup({})
-		end
+		end,
 	})
 
 	-- Looks

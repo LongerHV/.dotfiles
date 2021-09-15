@@ -17,8 +17,8 @@ vim.api.nvim_set_option("smartcase", true)
 vim.o.syntax = "enable"
 
 -- Minimal number of lines to scroll when the cursor gets off the screen
-vim.g.scrolloff = 8
-vim.g.sidescrolloff = 8
+vim.api.nvim_set_option("scrolloff", 8)
+vim.api.nvim_set_option("sidescrolloff", 8)
 
 -- Indents
 vim.api.nvim_set_option("tabstop", 4)
