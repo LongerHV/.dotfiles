@@ -50,6 +50,13 @@ require("nvim-treesitter.configs").setup({
 			set_jumps = true, -- whether to set jumps in the jumplist
 		}, ]]
 	},
+	textsubjects = {
+		enable = true,
+		keymaps = {
+			["."] = "textsubjects-smart",
+			[";"] = "textsubjects-container-outer",
+		},
+	},
 })
 
 -- remap('n', ']]', '<cmd>TSTextobjectGotoNextStart @class.outer<cr>zz', {})

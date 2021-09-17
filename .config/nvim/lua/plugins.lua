@@ -75,39 +75,15 @@ return require("packer").startup(function(use)
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
+		requires = {
+			"nvim-treesitter/nvim-treesitter-textobjects",
+			"nvim-treesitter/playground",
+			"p00f/nvim-ts-rainbow",
+			"RRethy/nvim-treesitter-textsubjects",
+		},
 		run = ":TSUpdate",
 		config = function()
 			require("config.treesitter")
-		end,
-	})
-	use({
-		-- Additional objects (such as function, class, block etc)
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		requires = "nvim-treesitter/nvim-treesitter",
-	})
-	use({
-		"nvim-treesitter/playground",
-		requires = "nvim-treesitter/nvim-treesitter",
-	})
-	use({
-		-- Different colours of nested parentheses
-		"p00f/nvim-ts-rainbow",
-		requires = "nvim-treesitter/nvim-treesitter",
-	})
-	use({
-		-- Smarter selections using treesitter
-		"RRethy/nvim-treesitter-textsubjects",
-		requires = "nvim-treesitter/nvim-treesitter",
-		setup = function()
-			require("nvim-treesitter.configs").setup({
-				textsubjects = {
-					enable = true,
-					keymaps = {
-						["."] = "textsubjects-smart",
-						[";"] = "textsubjects-container-outer",
-					},
-				},
-			})
 		end,
 	})
 
