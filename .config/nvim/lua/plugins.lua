@@ -68,6 +68,7 @@ return require("packer").startup(function(use)
 		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
 			vim.g.nvim_tree_width = 40
+			vim.g.nvim_tree_follow = 1
 			vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>NvimTreeToggle<cr>", {})
 		end,
 	})
