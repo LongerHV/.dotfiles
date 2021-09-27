@@ -67,10 +67,14 @@ return require("packer").startup(function(use)
 		"kyazdani42/nvim-tree.lua",
 		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
-			vim.g.nvim_tree_width = 40
 			vim.g.nvim_tree_follow = 1
 			vim.g.nvim_tree_auto_close = 1
 			vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>NvimTreeToggle<cr>", {})
+			require("nvim-tree").setup({
+				view = {
+					width = 40,
+				},
+			})
 		end,
 	})
 
