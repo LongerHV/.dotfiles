@@ -21,9 +21,12 @@
 import os
 import subprocess
 from typing import List  # noqa: F401
-from libqtile.config import Key, Screen, Group, Drag, Click, ScratchPad, DropDown
+
+from libqtile import bar, extension, hook, layout, qtile, widget
 from libqtile.command import lazy
-from libqtile import layout, bar, widget, hook, extension, qtile
+from libqtile.config import (Click, Drag, DropDown, Group, Key, ScratchPad,
+                             Screen)
+
 from mylib import BGroupBox
 
 # DEFINING SOME VARIABLES
@@ -209,7 +212,7 @@ for i, group in enumerate(groups[:-1], 1):
 
 # DEFAULT THEME SETTINGS FOR LAYOUTS
 layout_theme = {"border_width": 3,
-                "margin": 16,
+                "margin": 5,
                 "border_focus": GREEN,
                 "border_normal": BLACK
                 }
@@ -325,7 +328,8 @@ def init_wide_bar(tray=True):
             foreground=WHITE,
             background=GREEN,
             padding=5,
-            mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('pavucontrol-qt')}
+            mouse_callbacks={
+                'Button1': lambda: qtile.cmd_spawn('pavucontrol-qt')}
         ),
         widget.Volume(
             foreground=WHITE,
@@ -410,7 +414,10 @@ bar_list = (
 if __name__ in ["config", "__main__"]:
     screens = []
     for widgets in bar_list:
-        screens.append(Screen(top=bar.Bar(widgets=widgets, opacity=0.95, size=28)))
+        screens.append(
+            Screen(top=bar.Bar(
+                widgets=widgets, opacity=0.95, size=28, margin=5,
+            )))
 
 ##### DRAG FLOATING WINDOWS #####
 mouse = (
