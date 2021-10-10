@@ -416,7 +416,7 @@ if __name__ in ["config", "__main__"]:
     for widgets in bar_list:
         screens.append(
             Screen(top=bar.Bar(
-                widgets=widgets, opacity=0.95, size=28, margin=5,
+                widgets=widgets, opacity=0.95, size=30, margin=5,
             )))
 
 ##### DRAG FLOATING WINDOWS #####
