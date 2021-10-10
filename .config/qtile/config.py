@@ -190,14 +190,14 @@ keys = [
 
 # GROUPS
 groups = (
-    Group(' WWW', layout='max'),
-    Group(' DEV', layout='max'),
+    Group(' WWW', layout='monadtall'),
+    Group(' DEV', layout='monadtall'),
     Group(' SYS', layout='monadtall'),
-    Group(' VRT', layout='max'),
-    Group(' MUS', layout='max'),
-    Group(' VID', layout='max'),
-    Group(' FUN', layout='max'),
-    Group(' MSG', layout='max'),
+    Group(' VRT', layout='monadtall'),
+    Group(' MUS', layout='monadtall'),
+    Group(' VID', layout='monadtall'),
+    Group(' FUN', layout='monadtall'),
+    Group(' MSG', layout='monadtall'),
     ScratchPad('scratchpad', [DropDown(
         'term', MYTERM, width=0.9, height=0.9,
         x=0.05, y=0.05, opacity=1.0, on_focus_lost_hide=False
