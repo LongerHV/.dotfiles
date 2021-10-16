@@ -21,7 +21,7 @@ while GUI applications use adapta theme.
 
 - zsh
 
-- nvim (>5.0)
+- nvim (nightly)
 
 - qtile
 
@@ -40,6 +40,10 @@ while GUI applications use adapta theme.
 - LightDM
 
 - Light-locker
+
+- playerctl
+
+- Nerd Fonds (Hack and Ubuntu)
 
 ### Other used programs
 

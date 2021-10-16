@@ -34,7 +34,7 @@ os.environ['QT_QPA_PLATFORMTHEME'] = 'qt5ct'
 MOD = "mod4"  # Sets mod key to SUPER/WINDOWS
 ALT = "mod1"
 MYTERM = "alacritty"
-MYFONT = "Hack Nerd Font"
+MYFONT = "Ubuntu Nerd Font"
 
 BLACK = '#29414f'
 RED = '#ec5f67'
@@ -172,6 +172,12 @@ keys = [
     Key([], "F12",
         lazy.group["scratchpad"].dropdown_toggle('term'),
         desc='Dropdown terminal'),
+
+    Key([], "XF86AudioMute", lazy.spawn(
+        "pactl set-sink-mute @DEFAULT_SINK@ toggle")),
+    Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
+    Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
+    Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
     #  Key([MOD, ALT], "Return",
     #      lazy.group["ScratchPad"].dropdown_toggle(MYTERM),
     #      desc='Dropdown terminal'),
@@ -190,14 +196,14 @@ keys = [
 
 # GROUPS
 groups = (
-    Group(' WWW', layout='monadtall'),
-    Group(' DEV', layout='monadtall'),
-    Group(' SYS', layout='monadtall'),
-    Group(' VRT', layout='monadtall'),
-    Group(' MUS', layout='monadtall'),
-    Group(' VID', layout='monadtall'),
-    Group(' FUN', layout='monadtall'),
-    Group(' MSG', layout='monadtall'),
+    Group('1', label='', layout='monadtall'),
+    Group('2', label='', layout='monadtall'),
+    Group('3', label='', layout='monadtall'),
+    Group('4', label='', layout='monadtall'),
+    Group('5', label='', layout='monadtall'),
+    Group('6', label='', layout='monadtall'),
+    Group('7', label='', layout='monadtall'),
+    Group('8', label='', layout='monadtall'),
     ScratchPad('scratchpad', [DropDown(
         'term', MYTERM, width=0.9, height=0.9,
         x=0.05, y=0.05, opacity=1.0, on_focus_lost_hide=False
@@ -211,11 +217,12 @@ for i, group in enumerate(groups[:-1], 1):
     keys.append(Key([MOD, "shift"], str(i), lazy.window.togroup(group.name)))
 
 # DEFAULT THEME SETTINGS FOR LAYOUTS
-layout_theme = {"border_width": 3,
-                "margin": 5,
-                "border_focus": GREEN,
-                "border_normal": BLACK
-                }
+layout_theme = {
+    "border_width": 3,
+    "margin": 8,
+    "border_focus": GREEN,
+    "border_normal": BLACK
+}
 
 # THE LAYOUTS
 layouts = (
@@ -245,39 +252,118 @@ extension_defaults = widget_defaults.copy()
 
 
 # WIDGETS
+def init_xmenu():
+    return widget.TextBox(
+        text="",
+        foreground=WHITE,
+        background=BLACK,
+        fontsize=32,
+        padding=8,
+        mouse_callbacks={
+            'Button1': lambda: qtile.cmd_spawn([
+                '/bin/bash', os.path.expanduser(os.path.join(
+                    '~', 'scripts', 'xmenu.sh'))
+            ])
+        }
+    )
+
+
+def init_group_box():
+    return widget.GroupBox(
+        fontsize=26,
+        spacing=5,
+        disable_drag=True,
+        active=WHITE,
+        inactive=WHITE,
+        rounded=False,
+        highlight_method="block",
+        this_current_screen_border=GREEN,
+        this_screen_border=CYAN,
+        other_current_screen_border=BLACK,
+        other_screen_border=BLACK,
+        foreground=WHITE,
+        background=BLACK,
+        margin_x=6,
+        margin_y=3,
+        padding_x=4,
+        padding_y=7,
+    )
+
+
+def init_check_updates():
+    return widget.CheckUpdates(
+        execute=' '.join([MYTERM, '-e', 'yay']),
+        distro='Arch_yay',
+        display_format=' Updates: {updates}',
+        update_interval=1800,
+        foreground=WHITE,
+        background=CYAN,
+        padding=5
+    )
+
+
+def init_bitcoin_ticker():
+    return widget.BitcoinTicker(
+        # currency='USD',
+        fmt=" {}",
+        foreground=WHITE,
+        background=GREEN,
+        padding=5
+    )
+
+
+def init_thermal_sensor():
+    return widget.ThermalSensor(
+        fmt=' {}',
+        tag_sensor="Package id 0",
+        foreground=WHITE,
+        background=CYAN,
+        padding=5
+    )
+
+
+def init_volume():
+    return widget.Volume(
+        fmt=" {}",
+        foreground=WHITE,
+        background=GREEN,
+        padding=5
+    )
+
+
+def init_current_layout_icon():
+    return widget.CurrentLayoutIcon(
+        custom_icon_paths=[os.path.expanduser(
+            "$HOME/.config/qtile/icons")],
+        foreground=WHITE,
+        background=CYAN,
+        scale=0.5
+    )
+
+
+def init_curren_layout():
+    return widget.CurrentLayout(
+        foreground=WHITE,
+        background=CYAN,
+        padding=5
+    )
+
+
+def init_clock():
+    return widget.Clock(
+        fmt=" {}",
+        foreground=WHITE,
+        background=GREEN,
+        padding=5,
+        format="%A, %d %B [ %H:%M ]"
+    )
+
+
 def init_wide_bar(tray=True):
     return (
-        widget.TextBox(
-            text="",
-            foreground=WHITE,
-            background=BLACK,
-            fontsize=32,
-            padding=10,
-            mouse_callbacks={
-                'Button1': lambda: qtile.cmd_spawn([
-                    '/bin/bash', os.path.expanduser(os.path.join(
-                        '~', 'scripts', 'xmenu.sh'))
-                ])
-            }
-        ),
-        widget.GroupBox(
-            font=MYFONT,
-            fontsize=20,
-            spacing=0,
-            disable_drag=True,
-            active=WHITE,
-            inactive=WHITE,
-            rounded=False,
-            highlight_method="block",
-            this_current_screen_border=GREEN,
-            this_screen_border=CYAN,
-            other_current_screen_border=BLACK,
-            other_screen_border=BLACK,
-            foreground=WHITE,
-            background=BLACK,
-        ),
-        widget.TaskList(
-        ),
+        init_xmenu(),
+        init_group_box(),
+        widget.TaskList(),
         widget.Systray(
             background=BLACK,
             padding=5
@@ -287,73 +373,13 @@ def init_wide_bar(tray=True):
             padding=5,
             background=BLACK
         ),
-        widget.CheckUpdates(
-            execute=' '.join([MYTERM, '-e', 'yay']),
-            distro='Arch_yay',
-            display_format=' Updates: {updates}',
-            update_interval=1800,
-            foreground=WHITE,
-            background=CYAN,
-            padding=5
-        ),
-        widget.TextBox(
-            text="",
-            padding=5,
-            foreground=WHITE,
-            background=GREEN,
-            fontsize=16
-        ),
-        widget.BitcoinTicker(
-            # currency='USD',
-            # fmt='{}{}',
-            foreground=WHITE,
-            background=GREEN,
-            padding=5
-        ),
-        widget.TextBox(
-            text="",
-            padding=5,
-            foreground=WHITE,
-            background=CYAN,
-            fontsize=16
-        ),
-        widget.ThermalSensor(
-            tag_sensor="Package id 0",
-            foreground=WHITE,
-            background=CYAN,
-            padding=5
-        ),
-        widget.TextBox(
-            text="Vol:",
-            foreground=WHITE,
-            background=GREEN,
-            padding=5,
-            mouse_callbacks={
-                'Button1': lambda: qtile.cmd_spawn('pavucontrol-qt')}
-        ),
-        widget.Volume(
-            foreground=WHITE,
-            background=GREEN,
-            padding=5
-        ),
-        widget.CurrentLayoutIcon(
-            custom_icon_paths=[os.path.expanduser(
-                "$HOME/.config/qtile/icons")],
-            foreground=WHITE,
-            background=CYAN,
-            scale=0.7
-        ),
-        widget.CurrentLayout(
-            foreground=WHITE,
-            background=CYAN,
-            padding=5
-        ),
-        widget.Clock(
-            foreground=WHITE,
-            background=GREEN,
-            padding=5,
-            format="%A, %d %B [ %H:%M ]"
-        ),
+        init_check_updates(),
+        init_bitcoin_ticker(),
+        init_thermal_sensor(),
+        init_volume(),
+        init_current_layout_icon(),
+        init_curren_layout(),
+        init_clock(),
         widget.Sep(
             linewidth=0,
             padding=5,
@@ -364,39 +390,11 @@ def init_wide_bar(tray=True):
 
 def init_short_bar():
     return (
-        BGroupBox(
-            font=MYFONT,
-            fontsize=20,
-            borderwidth=0,
-            foreground=WHITE,
-            this_current_screen_border=GREEN,
-            this_screen_border=CYAN,
-        ),
-        widget.Sep(
-            linewidth=0,
-            padding=5,
-            background=BLACK
-        ),
-        widget.TaskList(
-        ),
-        widget.CurrentLayoutIcon(
-            custom_icon_paths=[os.path.expanduser(
-                "$HOME/.config/qtile/icons")],
-            foreground=WHITE,
-            background=CYAN,
-            scale=0.7
-        ),
-        widget.CurrentLayout(
-            foreground=WHITE,
-            background=CYAN,
-            padding=5
-        ),
-        widget.Clock(
-            foreground=WHITE,
-            background=GREEN,
-            padding=5,
-            format="%A, %d %B [ %H:%M ]"
-        ),
+        init_group_box(),
+        widget.TaskList(),
+        init_current_layout_icon(),
+        init_curren_layout(),
+        init_clock(),
         widget.Sep(
             linewidth=0,
             padding=5,
@@ -412,14 +410,13 @@ bar_list = (
 )
 
 if __name__ in ["config", "__main__"]:
-    screens = []
-    for widgets in bar_list:
-        screens.append(
-            Screen(top=bar.Bar(
-                widgets=widgets, opacity=0.95, size=30, margin=5,
-            )))
+    screens = [
+        Screen(top=bar.Bar(
+            widgets=widgets, opacity=1, size=30, margin=[8, 8, 0, 8],
+        )) for widgets in bar_list
+    ]
 
-##### DRAG FLOATING WINDOWS #####
+# DRAG FLOATING WINDOWS
 mouse = (
     Drag([MOD], "Button1", lazy.window.set_position_floating(),
          start=lazy.window.get_position()),
