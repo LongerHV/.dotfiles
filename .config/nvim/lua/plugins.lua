@@ -36,19 +36,15 @@ return require("packer").startup(function(use)
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-nvim-lua",
 			"ray-x/lsp_signature.nvim",
-			"kabouzeid/nvim-lspinstall",
+			"williamboman/nvim-lsp-installer",
 			"saadparwaiz1/cmp_luasnip",
 			"L3MON4D3/LuaSnip",
 			"rafamadriz/friendly-snippets",
 			"onsails/lspkind-nvim",
 		},
 		config = function()
-			local lsp_status = require("lsp-status")
-			lsp_status.config({
-				status_symbol = "",
-				indicator_hint = "",
-			})
 			require("config.lsp")
+			require("config.lsp_cmp")
 		end,
 	})
 	-- use 'nvim-lua/lsp_extensions.nvim'

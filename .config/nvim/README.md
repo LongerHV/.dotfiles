@@ -8,7 +8,7 @@ Requires neovim-nightly. Use `~/scripts/get_nvim.sh` to install latest appimage
 ### Debian
 
 ```bash
-sudo apt install nodejs npm clangd cargo gcc g++ wget curl unzip git codespell \
+sudo apt install nodejs npm cargo gcc g++ wget curl unzip git codespell \
     python3 python3-pip python3-venv \
     python3-flake8 python3-isort python3-autopep8
 sudo npm install -g prettier markdownlint markdownlint-cli yarn neovim
@@ -18,7 +18,7 @@ cargo install stylua
 ### Arch
 
 ```bash
-sudo pacman -S nodejs yarn prettier rust clang base-devel git wget curl unzip \
+sudo pacman -S nodejs yarn prettier rust base-devel git wget curl unzip \
     codespell python python-pip python-venv python-isort flake8 autopep8
 sudo npm install -g markdownlint markdownlint-cli neovim
 cargo install stylua
@@ -33,9 +33,5 @@ Install plugins and Language Servers.
 ```vim
 :PackerSync
 :PackerCompile
-:LspInstall python
-:LspInstall lua
-:LspInstall yaml
-:LspInstall json
-:LspInstall dockerfile
+:LspInstall pyright sumneko_lua yamlls jsonls dockerls clangd bashls
 ```
