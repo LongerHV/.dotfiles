@@ -12,8 +12,6 @@
 
 - zsh configuration (with plugins as submodules)
 
-- Hack Nerd Font
-
 Qtile, Alacritty and Neovim are configured to use Oceanic theme,
 while GUI applications use adapta theme.
 
