@@ -360,7 +360,7 @@ def init_clock():
 
 
 def init_wide_bar(tray=True):
-    return (
+    return [
         init_xmenu(),
         init_group_box(),
         widget.TaskList(),
@@ -385,11 +385,11 @@ def init_wide_bar(tray=True):
             padding=5,
             background=GREEN
         )
-    )
+    ]
 
 
 def init_short_bar():
-    return (
+    return [
         init_group_box(),
         widget.TaskList(),
         init_current_layout_icon(),
@@ -400,7 +400,7 @@ def init_short_bar():
             padding=5,
             background=GREEN
         )
-    )
+    ]
 
 
 bar_list = (
@@ -450,7 +450,8 @@ def runner():
 @hook.subscribe.startup_once
 def start_once():
     home = os.path.expanduser('~')
-    subprocess.call([home + '/.config/qtile/autostart.sh'])
+    if qtile.core.name == 'x11':
+        subprocess.call([home + '/.config/qtile/autostart.sh'])
 
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
