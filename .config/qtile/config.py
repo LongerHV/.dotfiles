@@ -244,7 +244,7 @@ layouts = (
 # DEFAULT WIDGET SETTINGS
 widget_defaults = dict(
     font=MYFONT,
-    fontsize=16,
+    fontsize=18,
     padding=2,
     background=BLACK
 )
@@ -337,7 +337,7 @@ def init_current_layout_icon():
             "$HOME/.config/qtile/icons")],
         foreground=WHITE,
         background=CYAN,
-        scale=0.5
+        scale=0.6
     )
 
 
