@@ -41,10 +41,13 @@ return require("packer").startup(function(use)
 			"L3MON4D3/LuaSnip",
 			"rafamadriz/friendly-snippets",
 			"onsails/lspkind-nvim",
+			"kosayoda/nvim-lightbulb",
+			"weilbith/nvim-code-action-menu",
 		},
 		config = function()
 			require("config.lsp")
 			require("config.lsp_cmp")
+			vim.cmd([[autocmd CursorHold,CursorHoldI * lua require("nvim-lightbulb").update_lightbulb()]])
 		end,
 	})
 	-- use 'nvim-lua/lsp_extensions.nvim'
