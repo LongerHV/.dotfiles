@@ -1,5 +1,5 @@
 local null_ls = require("null-ls")
-null_ls.config({
+null_ls.setup({
 	sources = {
 		-- Python
 		null_ls.builtins.formatting.autopep8,
@@ -26,8 +26,6 @@ null_ls.config({
 			args = { "--builtin", "clear,rare,code", "-" },
 		}),
 	},
-})
-require("lspconfig")["null-ls"].setup({
 	on_attach = function()
 		vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 	end,

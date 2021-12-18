@@ -45,9 +45,30 @@ local common_on_attach = function(client, bufnr)
 end
 
 lsp_installer.on_server_ready(function(server)
+	local capabilities = vim.lsp.protocol.make_client_capabilities()
+	capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 	local opts = {
 		on_attach = common_on_attach,
+		capabilities = capabilities,
 	}
+
+	if server.name == "texlab" then
+		opts["settings"] = {
+			texlab = {
+				build = {
+					onSave = true,
+					forwardSearchAfter = true;
+				},
+				forwardSearch = {
+					executable = "zathura",
+					args = { "--synctex-forward", "%l:1:%f", "%p" },
+				},
+				chktex = {
+					onOpenAndSave = true,
+				}
+			},
+		}
+	end
 
 	server:setup(opts)
 	vim.cmd([[ do User LspAttach Buffers ]])

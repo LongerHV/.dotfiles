@@ -120,12 +120,10 @@ return require("packer").startup(function(use)
 		"windwp/nvim-autopairs",
 		after = { "nvim-cmp" },
 		config = function()
+			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+			local cmp = require("cmp")
 			require("nvim-autopairs").setup({ check_ts = true })
-			require("nvim-autopairs.completion.cmp").setup({
-				map_cr = true,
-				map_complete = true,
-				auto_select = false,
-			})
+			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({}))
 		end,
 	})
 	use({
@@ -171,7 +169,7 @@ return require("packer").startup(function(use)
 		requires = { "kyazdani42/nvim-web-devicons", "nvim-lua/lsp-status.nvim" },
 		config = function()
 			require("lualine").setup({
-				options = { theme = "oceanicnext" },
+				options = { theme = "OceanicNext" },
 				sections = {
 					lualine_x = { require("lsp-status").status, "encoding", "fileformat", "filetype" },
 				},
@@ -198,4 +196,7 @@ return require("packer").startup(function(use)
 			require("config.telescope")
 		end,
 	})
+
+	-- Git
+	use("airblade/vim-gitgutter")
 end)
